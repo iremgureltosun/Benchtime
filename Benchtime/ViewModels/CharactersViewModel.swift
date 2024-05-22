@@ -11,7 +11,10 @@ import SwiftUI
 
 @Observable final class CharactersViewModel {
     var figureList: [Figure] = []
+    
+    @ObservationIgnored
     var page: Int = 1
+    
     var isLoading: Bool = false
     var name: String = ""
     var status: CharacterStatus?
@@ -35,7 +38,7 @@ import SwiftUI
         print("Setup is done")
     }
 
-    func fetchAll() throws {
+    func search() throws {
         try service?.search(page: page, name: name, status: status, gender: gender)
             .sink { completion in
                 switch completion {
@@ -43,6 +46,24 @@ import SwiftUI
                     // Handle successful completion
                     break
                 case let .failure(error):
+                    // Handle failure
+                    print("Error: \(error)")
+                }
+            } receiveValue: { response in
+                self.figureList = response.results
+            }
+            .store(in: &cancellables)
+        
+    }
+    func fetchAll() throws {
+        try service?.search(page: page, name: "", status: nil, gender: nil)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    // Handle successful completion
+                    break
+                case let .failure(error):
+                    self.figureList = []
                     // Handle failure
                     print("Error: \(error)")
                 }

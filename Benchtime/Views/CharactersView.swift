@@ -23,6 +23,14 @@ struct CharactersView: View {
             scrollableContent
         }
         .ignoresSafeArea(edges: [.top])
+        .onChange(of: viewModel.name, initial: false, { old, new in
+            if new.isEmpty {
+                viewModel.figureList = []
+                try? viewModel.fetchAll()
+            } else {
+                try? viewModel.search()
+            }
+        })
         .onAppear {
             viewModel.setup(with: service)
             try? viewModel.fetchAll()
