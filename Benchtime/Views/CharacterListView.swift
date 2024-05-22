@@ -41,8 +41,8 @@ struct CharacterListView: View {
 
     @ViewBuilder private var content: some View {
         LazyVGrid(columns: listItems, spacing: 20) {
-            ForEach(0 ..< viewModel.figureList.count, id: \.self) { index in
-                getCell(for: viewModel.figureList[index])
+            ForEach(Array(viewModel.figureList.enumerated()), id: \.element.id) { _, figure in
+                getCell(for: figure)
             }
         }
     }

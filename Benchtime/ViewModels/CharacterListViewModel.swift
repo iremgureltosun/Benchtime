@@ -20,20 +20,19 @@ import SwiftUI
     var status: CharacterStatus?
     var gender: CharacterGender?
     var figureList: [Figure] = []
-   
-    
+
     // Some calculated properties
     var recordCount: Int {
         figureList.count
     }
-    
+
     func setup(with service: CharacterService) {
         self.service = service
     }
 
     func search() throws {
         let filter = CharacterFilterCriteria.name(text: searchText)
-        self.figureList = []
+        figureList = []
         try service?.search(by: filter)
             .receive(on: DispatchQueue.main)
             .sink { completion in
@@ -53,18 +52,18 @@ import SwiftUI
 
     func onSearchTextChanged() async {
         guard await debouncer.sleep() else { return }
-         
+
         let filter = CharacterFilterCriteria.name(text: searchText)
-        if case .name(let text) = filter, text.isEmpty {
-            figureList = []
+        if case let .name(text) = filter, text.isEmpty {
             try? fetchAll()
         } else {
+            figureList = []
             try? search()
         }
     }
 
     func fetchAll() throws {
-        let filter = CharacterFilterCriteria.name(text: searchText)
+        let filter = CharacterFilterCriteria.none(page: page)
         try service?.search(by: filter)
             .receive(on: DispatchQueue.main)
             .sink { completion in
