@@ -5,28 +5,26 @@
 //  Created by Tosun, Irem on 20.05.2024.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct BenchtimeApp: App {
-//    var sharedModelContainer: ModelContainer = {
-//        let schema = Schema([
-//            Item.self,
-//        ])
-//        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-//
-//        do {
-//            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-//        } catch {
-//            fatalError("Could not create ModelContainer: \(error)")
-//        }
-//    }()
-
+   
     var body: some Scene {
         WindowGroup {
-            MainView()
+                MainView()
+            }
         }
-        //.modelContainer(sharedModelContainer)
+}
+
+extension EnvironmentValues {
+    var appManager: ApplicationManager {
+        get { self[AppKey.self] }
+        set { self[AppKey.self] = newValue }
     }
+}
+
+private struct AppKey: EnvironmentKey {
+    static var defaultValue: ApplicationManager = ApplicationManager.shared
 }

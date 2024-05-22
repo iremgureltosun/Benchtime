@@ -8,17 +8,29 @@
 import SwiftUI
 
 struct MainView: View {
+    @State var appManager = ApplicationManager.shared
+
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $appManager.routes) {
             TabView {
-                CharactersView()
+                CharacterListView()
+                    .environment(\.appManager, appManager)
                     .padding(.bottom, 10)
                     .tabItem {
                         Label("Characters", systemImage: "person")
                     }
 
+                PlaygroundView()
+                    .tabItem {
+                        Label("Playground", systemImage: "message")
+                    }
             }
-           
+            .navigationDestination(for: Route.self) { route in
+                switch route {
+                case let .characterDetail(id):
+                    CharacterDetailView(id: id)
+                }
+            }
         }
     }
 }

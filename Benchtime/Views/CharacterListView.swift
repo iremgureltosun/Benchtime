@@ -8,10 +8,11 @@
 import Resolver
 import SwiftUI
 
-struct CharactersView: View {
-    @State var viewModel = CharactersViewModel()
+struct CharacterListView: View {
+    @State var viewModel = CharacterListViewModel()
     @Injected var service: CharacterService
-
+    @Environment(\.appManager) private var applicationManager
+    
     var body: some View {
         VStack {
             HeaderView(themeStyle: .desert, title: "Rick and Morty", subtitle: "Characters")
@@ -61,6 +62,9 @@ struct CharactersView: View {
                 .font(.caption2)
             }
         }
+        .onTapGesture {
+            applicationManager.routes.append(Route.characterDetail(id: String(figure.id)))
+        }
     }
 
     @ViewBuilder private var initialRow: some View {
@@ -98,5 +102,5 @@ struct CharactersView: View {
 }
 
 #Preview {
-    CharactersView()
+    CharacterListView()
 }

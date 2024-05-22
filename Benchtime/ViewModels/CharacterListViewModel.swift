@@ -9,11 +9,10 @@ import Combine
 import Observation
 import SwiftUI
 
-@Observable final class CharactersViewModel {
+@Observable final class CharacterListViewModel {
     var figureList: [Figure] = []
     
-    @ObservationIgnored
-    var page: Int = 1
+    @ObservationIgnored var page: Int = 1
     
     var isLoading: Bool = false
     var name: String = ""
@@ -24,18 +23,14 @@ import SwiftUI
         figureList.count
     }
 
-    @ObservationIgnored
-    private var service: CharacterService?
+    @ObservationIgnored private var service: CharacterService?
 
-    @ObservationIgnored
-    private var cancellables = Set<AnyCancellable>()
+    @ObservationIgnored private var cancellables = Set<AnyCancellable>()
 
-    @ObservationIgnored
-    let listItems: [GridItem] = Array(repeating: .init(.fixed(CGFloat(100))), count: 3)
+    @ObservationIgnored let listItems: [GridItem] = Array(repeating: .init(.fixed(CGFloat(100))), count: 3)
 
     func setup(with service: CharacterService) {
         self.service = service
-        print("Setup is done")
     }
 
     func search() throws {

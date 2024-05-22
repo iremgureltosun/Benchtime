@@ -9,11 +9,13 @@ import Network
 
 struct CharacterResponse: HTTPResponseProtocol {
     typealias HTTPEntityType = CharacterResponse.Type
+    
     let info: Info
     let results: [Figure]
 }
 
 // MARK: - Info
+
 struct Info: Codable {
     let count, pages: Int
     let next: String
@@ -21,9 +23,13 @@ struct Info: Codable {
 }
 
 // MARK: - Result
-struct Figure: Codable, Identifiable {
+
+struct Figure: HTTPResponseProtocol, Identifiable {
+    typealias HTTPEntityType = Figure.Type
+    
     let id: Int
-    let name, status, species, type: String
+    var name: String
+    let status, species, type: String
     let gender: String
     let origin, location: Location
     let image: String
@@ -33,6 +39,7 @@ struct Figure: Codable, Identifiable {
 }
 
 // MARK: - Location
+
 struct Location: Codable {
     let name: String
     let url: String

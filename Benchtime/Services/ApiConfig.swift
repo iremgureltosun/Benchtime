@@ -25,6 +25,22 @@ enum ApiConfig {
     }
 
     func getAll(page: Int, name: String, status: CharacterStatus?, gender: CharacterGender?) -> URL? {
+        switch self {
+        case .characters:
+            return getAllCharacters(page: page, name: name, status: status, gender: gender)
+        default: return nil // Not implemented yet
+        }
+    }
+
+    func get(by id: String) -> URL? {
+        switch self {
+        case .characters:
+            return URL(string: "\(url)/\(id)")
+        default: return nil // Not implemented yet
+        }
+    }
+
+    private func getAllCharacters(page: Int, name: String, status: CharacterStatus?, gender: CharacterGender?) -> URL? {
         var urlString = "\(url)/?page=\(page)"
         if !name.trimmingCharacters(in: .whitespaces).isEmpty {
             urlString += "&name=\(name)"
