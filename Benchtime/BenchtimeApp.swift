@@ -10,21 +10,9 @@ import SwiftUI
 
 @main
 struct BenchtimeApp: App {
-   
     var body: some Scene {
         WindowGroup {
                 MainView()
             }
         }
-}
-
-extension EnvironmentValues {
-    var appManager: ApplicationManager {
-        get { self[AppKey.self] }
-        set { self[AppKey.self] = newValue }
-    }
-}
-
-private struct AppKey: EnvironmentKey {
-    static var defaultValue: ApplicationManager = ApplicationManager.shared
 }

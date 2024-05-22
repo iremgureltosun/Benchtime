@@ -11,15 +11,22 @@ import Network
 
 @available(iOS 13.0, *)
 protocol CharacterService {
-    func search(page: Int, name: String, status: CharacterStatus?, gender: CharacterGender?) throws -> AnyPublisher<CharacterResponse, Error>
+    func search(by criteria: CharacterFilterCriteria) throws -> AnyPublisher<CharacterResponse, Error>
 }
 
 @available(iOS 13.0, *)
 final class CharacterServiceImpl: CoreNetworkService<CharacterResponse>, CharacterService {
-    func search(page: Int, name: String, status: CharacterStatus?, gender: CharacterGender?) throws -> AnyPublisher<CharacterResponse, Error> {
-        guard let charactersUrl = ApiConfig.characters.getAll(page: page, name: name, status: status, gender: gender) else {
+    func search(by criteria: CharacterFilterCriteria) throws -> AnyPublisher<CharacterResponse, Error> {
+        guard let charactersUrl = ApiConfig.getCharacters(by: criteria) else {
             throw HTTPError.invalidRequest
         }
         return try performRequest(urlRequest: URLRequest(url: charactersUrl))
     }
+}
+
+enum CharacterFilterCriteria {
+    case name(text: String)
+    case gender
+    case status
+    case none(page: Int)
 }

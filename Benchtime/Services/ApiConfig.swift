@@ -24,12 +24,21 @@ enum ApiConfig {
         }
     }
 
-    func getAll(page: Int, name: String, status: CharacterStatus?, gender: CharacterGender?) -> URL? {
-        switch self {
-        case .characters:
-            return getAllCharacters(page: page, name: name, status: status, gender: gender)
-        default: return nil // Not implemented yet
+    static func getCharacters(by criteria: CharacterFilterCriteria) -> URL? {
+        var urlString = "\(ApiConfig.characters.url)"
+        
+        switch criteria {
+        case let .none(page):
+            urlString = "\(urlString)/?page=\(page)"
+        case let .name(text):
+            if !text.trimmingCharacters(in: .whitespaces).isEmpty {
+                urlString = "\(urlString)?name=\(text)"
+            }
+        case .gender, .status:
+            // TO DO
+            print("Not implemented yet")
         }
+        return URL(string: urlString)
     }
 
     func get(by id: String) -> URL? {
@@ -38,19 +47,5 @@ enum ApiConfig {
             return URL(string: "\(url)/\(id)")
         default: return nil // Not implemented yet
         }
-    }
-
-    private func getAllCharacters(page: Int, name: String, status: CharacterStatus?, gender: CharacterGender?) -> URL? {
-        var urlString = "\(url)/?page=\(page)"
-        if !name.trimmingCharacters(in: .whitespaces).isEmpty {
-            urlString += "&name=\(name)"
-        }
-        if let status = status {
-            urlString += "&status=\(status.rawValue)"
-        }
-        if let gender = gender {
-            urlString += "&gender=\(gender.rawValue)"
-        }
-        return URL(string: urlString)
     }
 }

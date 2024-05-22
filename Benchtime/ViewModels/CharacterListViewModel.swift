@@ -10,31 +10,32 @@ import Observation
 import SwiftUI
 
 @Observable final class CharacterListViewModel {
-    var figureList: [Figure] = []
-    
+    @ObservationIgnored private let debouncer = Debouncer(duration: .seconds(0.5))
+    @ObservationIgnored private var service: CharacterService?
+    @ObservationIgnored private var cancellables = Set<AnyCancellable>()
     @ObservationIgnored var page: Int = 1
-    
+
     var isLoading: Bool = false
-    var name: String = ""
+    var searchText: String = ""
     var status: CharacterStatus?
     var gender: CharacterGender?
-
+    var figureList: [Figure] = []
+   
+    
+    // Some calculated properties
     var recordCount: Int {
         figureList.count
     }
-
-    @ObservationIgnored private var service: CharacterService?
-
-    @ObservationIgnored private var cancellables = Set<AnyCancellable>()
-
-    @ObservationIgnored let listItems: [GridItem] = Array(repeating: .init(.fixed(CGFloat(100))), count: 3)
-
+    
     func setup(with service: CharacterService) {
         self.service = service
     }
 
     func search() throws {
-        try service?.search(page: page, name: name, status: status, gender: gender)
+        let filter = CharacterFilterCriteria.name(text: searchText)
+        self.figureList = []
+        try service?.search(by: filter)
+            .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -48,10 +49,24 @@ import SwiftUI
                 self.figureList = response.results
             }
             .store(in: &cancellables)
-        
     }
+
+    func onSearchTextChanged() async {
+        guard await debouncer.sleep() else { return }
+         
+        let filter = CharacterFilterCriteria.name(text: searchText)
+        if case .name(let text) = filter, text.isEmpty {
+            figureList = []
+            try? fetchAll()
+        } else {
+            try? search()
+        }
+    }
+
     func fetchAll() throws {
-        try service?.search(page: page, name: "", status: nil, gender: nil)
+        let filter = CharacterFilterCriteria.name(text: searchText)
+        try service?.search(by: filter)
+            .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .finished:
@@ -66,5 +81,22 @@ import SwiftUI
                 self.figureList.insert(contentsOf: response.results, at: 0)
             }
             .store(in: &cancellables)
+    }
+}
+
+actor Debouncer {
+    private let duration: Duration
+    private var isPending = false
+
+    init(duration: Duration) {
+        self.duration = duration
+    }
+
+    func sleep() async -> Bool {
+        if isPending { return false }
+        isPending = true
+        try? await Task.sleep(for: duration)
+        isPending = false
+        return true
     }
 }

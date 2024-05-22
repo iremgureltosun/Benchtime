@@ -19,6 +19,7 @@
 		4D7DA63F2BFDE2F6007948BF /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DA63E2BFDE2F6007948BF /* CharacterDetailView.swift */; };
 		4D7DA6432BFDE34F007948BF /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DA6422BFDE34F007948BF /* CharacterDetailViewModel.swift */; };
 		4D7DA6452BFDE797007948BF /* CharacterDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DA6442BFDE797007948BF /* CharacterDetailService.swift */; };
+		4D7DA6482BFE0035007948BF /* EnvironmentVales+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DA6472BFE0035007948BF /* EnvironmentVales+.swift */; };
 		4D90DDF42BFB460D004E40A2 /* BenchtimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DDF32BFB460D004E40A2 /* BenchtimeApp.swift */; };
 		4D90DDFA2BFB460F004E40A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D90DDF92BFB460F004E40A2 /* Assets.xcassets */; };
 		4D90DDFD2BFB460F004E40A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D90DDFC2BFB460F004E40A2 /* Preview Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		4D7DA63E2BFDE2F6007948BF /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		4D7DA6422BFDE34F007948BF /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		4D7DA6442BFDE797007948BF /* CharacterDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailService.swift; sourceTree = "<group>"; };
+		4D7DA6472BFE0035007948BF /* EnvironmentVales+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentVales+.swift"; sourceTree = "<group>"; };
 		4D90DDF02BFB460D004E40A2 /* Benchtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Benchtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D90DDF32BFB460D004E40A2 /* BenchtimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchtimeApp.swift; sourceTree = "<group>"; };
 		4D90DDF92BFB460F004E40A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				4D90DE352BFB66C4004E40A2 /* DependencyInjection */,
 				4D7DA63C2BFDE232007948BF /* ApplicationManager.swift */,
+				4D7DA6472BFE0035007948BF /* EnvironmentVales+.swift */,
 			);
 			path = AppConfig;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				4D7DA6432BFDE34F007948BF /* CharacterDetailViewModel.swift in Sources */,
 				4D78B20B2BFC7CB100BD56B0 /* LoadingAnimationView.swift in Sources */,
 				4D90DE282BFB540B004E40A2 /* ApiConfig.swift in Sources */,
+				4D7DA6482BFE0035007948BF /* EnvironmentVales+.swift in Sources */,
 				4D78B20F2BFCB30600BD56B0 /* SearchTextfield.swift in Sources */,
 				4D7DA6382BFDD4D2007948BF /* PlaygroundViewModel.swift in Sources */,
 			);

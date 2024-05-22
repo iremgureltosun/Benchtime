@@ -5,41 +5,42 @@
 //  Created by Tosun, Irem on 20.05.2024.
 //
 
+import Combine
 import Resolver
 import SwiftUI
 
 struct CharacterListView: View {
+    // MARK: View related storables
+
+    let listItems: [GridItem] = Array(repeating: .init(.fixed(CGFloat(100))), count: 3)
+
     @State var viewModel = CharacterListViewModel()
     @Injected var service: CharacterService
     @Environment(\.appManager) private var applicationManager
-    
+
     var body: some View {
         VStack {
-            HeaderView(themeStyle: .desert, title: "Rick and Morty", subtitle: "Characters")
+            header
 
-            initialRow
+            filteringRow
                 .padding(.horizontal, 40)
                 .padding(.top, -40)
 
             scrollableContent
         }
         .ignoresSafeArea(edges: [.top])
-        .onChange(of: viewModel.name, initial: false, { old, new in
-            if new.isEmpty {
-                viewModel.figureList = []
-                try? viewModel.fetchAll()
-            } else {
-                try? viewModel.search()
-            }
-        })
         .onAppear {
             viewModel.setup(with: service)
             try? viewModel.fetchAll()
         }
     }
 
+    @ViewBuilder private var header: some View {
+        HeaderView(themeStyle: .desert, title: "Rick and Morty", subtitle: "Characters")
+    }
+
     @ViewBuilder private var content: some View {
-        LazyVGrid(columns: viewModel.listItems, spacing: 20) {
+        LazyVGrid(columns: listItems, spacing: 20) {
             ForEach(0 ..< viewModel.figureList.count, id: \.self) { index in
                 getCell(for: viewModel.figureList[index])
             }
@@ -63,25 +64,22 @@ struct CharacterListView: View {
             }
         }
         .onTapGesture {
-            applicationManager.routes.append(Route.characterDetail(id: String(figure.id)))
+            applicationManager.navigate(to: .characterDetail(id: String(figure.id)))
         }
     }
 
-    @ViewBuilder private var initialRow: some View {
+    @ViewBuilder private var filteringRow: some View {
         VStack(alignment: .trailing, content: {
-            searchField
+            SearchTextfield(searchText: $viewModel.searchText)
 
-            counter
+            Text("\(viewModel.recordCount) records")
+                .font(.caption)
         })
-    }
-
-    @ViewBuilder private var searchField: some View {
-        SearchTextfield(searchText: $viewModel.name)
-    }
-
-    @ViewBuilder private var counter: some View {
-        Text("\(viewModel.recordCount) records")
-            .font(.caption)
+        .onChange(of: viewModel.searchText, initial: false, { _, _ in
+            Task {
+                await viewModel.onSearchTextChanged()
+            }
+        })
     }
 
     @ViewBuilder private var scrollableContent: some View {

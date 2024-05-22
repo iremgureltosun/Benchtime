@@ -30,6 +30,10 @@ enum Route: Hashable {
         routes = []
         errorWrapper = nil
     }
+
+    func navigate(to route: Route) {
+        routes.append(route)
+    }
 }
 
 struct ErrorWrapper: Identifiable {
