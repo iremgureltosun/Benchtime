@@ -13,14 +13,14 @@ import SwiftUI
     @ObservationIgnored private let debouncer = Debouncer(duration: .seconds(0.5))
     @ObservationIgnored private var service: CharacterService?
     @ObservationIgnored private var cancellables = Set<AnyCancellable>()
+    @ObservationIgnored var hasAppeared: Bool = false
     @ObservationIgnored var page: Int = 1
-
-    var isLoading: Bool = false
+   
+    var isLoading: Bool = false 
     var searchText: String = ""
     var status: CharacterStatus?
     var gender: CharacterGender?
     var figureList: [Figure] = []
-    var hasAppeared: Bool = false
 
     // Some calculated properties
     var recordCount: Int {

@@ -20,9 +20,14 @@ struct MainView: View {
                         Label("Characters", systemImage: "person")
                     }
 
-                PlaygroundView()
+                TitlePlaygroundView()
                     .tabItem {
-                        Label("Playground", systemImage: "message")
+                        Label("Play", systemImage: "message")
+                    }
+                
+                AnimatedButtonView()
+                    .tabItem {
+                        Label("Animate", systemImage: "circle.fill")
                     }
             }
             .navigationDestination(for: Route.self) { route in
