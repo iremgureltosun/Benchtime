@@ -31,8 +31,16 @@ struct CharacterListView: View {
         .ignoresSafeArea(edges: [.top])
         .onAppear {
             viewModel.setup(with: service)
-            try? viewModel.fetchAll()
+            if !viewModel.hasAppeared {
+                try? viewModel.fetchAll()
+                viewModel.hasAppeared = true
+            }
         }
+        .onChange(of: viewModel.searchText, initial: false, { _, _ in
+            Task {
+                await viewModel.onSearchTextChanged()
+            }
+        })
     }
 
     @ViewBuilder private var header: some View {
@@ -41,7 +49,7 @@ struct CharacterListView: View {
 
     @ViewBuilder private var content: some View {
         LazyVGrid(columns: listItems, spacing: 20) {
-            ForEach(Array(viewModel.figureList.enumerated()), id: \.element.id) { _, figure in
+            ForEach(viewModel.figureList, id: \.self) { figure in
                 getCell(for: figure)
             }
         }
@@ -74,11 +82,6 @@ struct CharacterListView: View {
 
             Text("\(viewModel.recordCount) records")
                 .font(.caption)
-        })
-        .onChange(of: viewModel.searchText, initial: false, { _, _ in
-            Task {
-                await viewModel.onSearchTextChanged()
-            }
         })
     }
 

@@ -9,7 +9,7 @@ import Network
 
 struct CharacterResponse: HTTPResponseProtocol {
     typealias HTTPEntityType = CharacterResponse.Type
-    
+
     let info: Info
     let results: [Figure]
 }
@@ -24,9 +24,9 @@ struct Info: Codable {
 
 // MARK: - Result
 
-struct Figure: HTTPResponseProtocol, Identifiable {
+struct Figure: HTTPResponseProtocol {
     typealias HTTPEntityType = Figure.Type
-    
+
     let id: Int
     var name: String
     let status, species, type: String
@@ -36,6 +36,21 @@ struct Figure: HTTPResponseProtocol, Identifiable {
     let episode: [String]
     let url: String
     let created: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name //= "namexxx"
+        case status
+        case species
+        case type
+        case gender
+        case origin
+        case location
+        case image
+        case episode
+        case url
+        case created
+    }
 }
 
 // MARK: - Location
@@ -43,4 +58,14 @@ struct Figure: HTTPResponseProtocol, Identifiable {
 struct Location: Codable {
     let name: String
     let url: String
+}
+
+extension Figure: Hashable {
+    static func == (lhs: Figure, rhs: Figure) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }

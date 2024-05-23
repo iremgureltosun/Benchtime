@@ -20,6 +20,7 @@ import SwiftUI
     var status: CharacterStatus?
     var gender: CharacterGender?
     var figureList: [Figure] = []
+    var hasAppeared: Bool = false
 
     // Some calculated properties
     var recordCount: Int {
