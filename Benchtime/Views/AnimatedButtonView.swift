@@ -5,14 +5,11 @@
 //  Created by Tosun, Irem on 23.05.2024.
 //
 
+import Combine
 import SwiftUI
 
 struct AnimatedButtonView: View {
-    @State private var vaneRotationAngle: CGFloat = 0
-    @State private var handRotationAngle: CGFloat = 0
-
-    private let timerVane = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    private let timerHand = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
+    @State private var model: AnimationButtonViewModel = .init()
 
     var body: some View {
         GeometryReader { geometry in
@@ -22,18 +19,27 @@ struct AnimatedButtonView: View {
                     .frame(width: 300)
 
                 vane(geometry)
-                    .rotationEffect(Angle(degrees: vaneRotationAngle))
+                    .rotationEffect(Angle(degrees: model.vaneRotationAngle))
 
                 hand(geometry)
-                    .rotationEffect(Angle(degrees: handRotationAngle))
+                    .rotationEffect(Angle(degrees: model.handRotationAngle))
+            }
+        }.onChange(of: model.handTimer, initial: false) { _, _ in
+            model.rotate(type: .hand, angle: 10)
+        }
+        .onChange(of: model.vaneTimer, initial: false) { _, _ in
+            model.rotate(type: .vane, angle: 10)
+        }
+        .onAppear {
+            model.startTimers()
+            // Buggy field that moves the vane with a wrong angle
+            withAnimation(.easeInOut(duration: 1).delay(4).repeatForever(autoreverses: false)) {
+                model.rotate(type: .vane, angle: -20)
             }
         }
-        .onReceive(timerVane, perform: { _ in
-            vaneRotationAngle += 10
-        })
-        .onReceive(timerHand, perform: { _ in
-            handRotationAngle += 10
-        })
+        .onDisappear {
+            model.stopTimers()
+        }
     }
 
     @ViewBuilder private func vane(_ geometry: GeometryProxy) -> some View {

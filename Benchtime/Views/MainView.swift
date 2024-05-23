@@ -27,7 +27,7 @@ struct MainView: View {
                 
                 AnimatedButtonView()
                     .tabItem {
-                        Label("Animate", systemImage: "circle.fill")
+                        Label("Clock", systemImage: "clock")
                     }
             }
             .navigationDestination(for: Route.self) { route in
