@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		4D6C793B2BFF35D40059BE83 /* SubheadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C793A2BFF35D40059BE83 /* SubheadlineView.swift */; };
 		4D6C793D2BFF36370059BE83 /* PlaygroundRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C793C2BFF36370059BE83 /* PlaygroundRowView.swift */; };
-		4D6C793F2BFF43500059BE83 /* AnimatedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C793E2BFF43500059BE83 /* AnimatedButtonView.swift */; };
-		4D6C79412BFF5C110059BE83 /* AnimationButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C79402BFF5C110059BE83 /* AnimationButtonViewModel.swift */; };
+		4D6C793F2BFF43500059BE83 /* AnimatedClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C793E2BFF43500059BE83 /* AnimatedClockView.swift */; };
+		4D6C79412BFF5C110059BE83 /* AnimationClockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C79402BFF5C110059BE83 /* AnimationClockViewModel.swift */; };
+		4D6C79442C0065DF0059BE83 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C79432C0065DF0059BE83 /* Color+.swift */; };
+		4D6C79462C0066130059BE83 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C79452C0066130059BE83 /* View+.swift */; };
 		4D78B2072BFC747A00BD56B0 /* RefreshableContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D78B2062BFC747A00BD56B0 /* RefreshableContentView.swift */; };
 		4D78B2092BFC75AA00BD56B0 /* ShowMorelndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D78B2082BFC75AA00BD56B0 /* ShowMorelndicatorView.swift */; };
 		4D78B20B2BFC7CB100BD56B0 /* LoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D78B20A2BFC7CB100BD56B0 /* LoadingAnimationView.swift */; };
@@ -64,8 +66,10 @@
 /* Begin PBXFileReference section */
 		4D6C793A2BFF35D40059BE83 /* SubheadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubheadlineView.swift; sourceTree = "<group>"; };
 		4D6C793C2BFF36370059BE83 /* PlaygroundRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundRowView.swift; sourceTree = "<group>"; };
-		4D6C793E2BFF43500059BE83 /* AnimatedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButtonView.swift; sourceTree = "<group>"; };
-		4D6C79402BFF5C110059BE83 /* AnimationButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationButtonViewModel.swift; sourceTree = "<group>"; };
+		4D6C793E2BFF43500059BE83 /* AnimatedClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedClockView.swift; sourceTree = "<group>"; };
+		4D6C79402BFF5C110059BE83 /* AnimationClockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationClockViewModel.swift; sourceTree = "<group>"; };
+		4D6C79432C0065DF0059BE83 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		4D6C79452C0066130059BE83 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		4D78B2062BFC747A00BD56B0 /* RefreshableContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableContentView.swift; sourceTree = "<group>"; };
 		4D78B2082BFC75AA00BD56B0 /* ShowMorelndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMorelndicatorView.swift; sourceTree = "<group>"; };
 		4D78B20A2BFC7CB100BD56B0 /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
@@ -128,6 +132,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D6C79422C0065C70059BE83 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4D6C79432C0065DF0059BE83 /* Color+.swift */,
+				4D6C79452C0066130059BE83 /* View+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4D7DA6392BFDD4FA007948BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +182,7 @@
 		4D90DDF22BFB460D004E40A2 /* Benchtime */ = {
 			isa = PBXGroup;
 			children = (
+				4D6C79422C0065C70059BE83 /* Extensions */,
 				4D7DA6462BFDE7CD007948BF /* AppConfig */,
 				4D7DA6392BFDD4FA007948BF /* Models */,
 				4D90DE3D2BFB736A004E40A2 /* Theme */,
@@ -215,7 +229,7 @@
 				4D90DE222BFB537A004E40A2 /* MainView.swift */,
 				4D7DA6352BFDD4AE007948BF /* TitlePlaygroundView.swift */,
 				4D7DA63E2BFDE2F6007948BF /* CharacterDetailView.swift */,
-				4D6C793E2BFF43500059BE83 /* AnimatedButtonView.swift */,
+				4D6C793E2BFF43500059BE83 /* AnimatedClockView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,7 +240,7 @@
 				4D90DE302BFB5D17004E40A2 /* CharacterListViewModel.swift */,
 				4D7DA6372BFDD4D2007948BF /* TitlePlaygroundViewModel.swift */,
 				4D7DA6422BFDE34F007948BF /* CharacterDetailViewModel.swift */,
-				4D6C79402BFF5C110059BE83 /* AnimationButtonViewModel.swift */,
+				4D6C79402BFF5C110059BE83 /* AnimationClockViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -414,7 +428,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D90DE3F2BFB7379004E40A2 /* ThemeStyle.swift in Sources */,
-				4D6C79412BFF5C110059BE83 /* AnimationButtonViewModel.swift in Sources */,
+				4D6C79412BFF5C110059BE83 /* AnimationClockViewModel.swift in Sources */,
+				4D6C79462C0066130059BE83 /* View+.swift in Sources */,
 				4D78B2092BFC75AA00BD56B0 /* ShowMorelndicatorView.swift in Sources */,
 				4D7DA63D2BFDE232007948BF /* ApplicationManager.swift in Sources */,
 				4D7DA63F2BFDE2F6007948BF /* CharacterDetailView.swift in Sources */,
@@ -423,13 +438,14 @@
 				4D90DE2F2BFB5D07004E40A2 /* CharacterListView.swift in Sources */,
 				4D90DE2D2BFB582A004E40A2 /* CharacterService.swift in Sources */,
 				4D6C793D2BFF36370059BE83 /* PlaygroundRowView.swift in Sources */,
+				4D6C79442C0065DF0059BE83 /* Color+.swift in Sources */,
 				4D90DE3A2BFB6EFE004E40A2 /* RemoteImageView.swift in Sources */,
 				4D90DE232BFB537A004E40A2 /* MainView.swift in Sources */,
 				4D78B2072BFC747A00BD56B0 /* RefreshableContentView.swift in Sources */,
 				4D90DE3C2BFB7343004E40A2 /* HeaderView.swift in Sources */,
 				4D90DE372BFB66DA004E40A2 /* Resolver+Services.swift in Sources */,
 				4D7DA6362BFDD4AE007948BF /* TitlePlaygroundView.swift in Sources */,
-				4D6C793F2BFF43500059BE83 /* AnimatedButtonView.swift in Sources */,
+				4D6C793F2BFF43500059BE83 /* AnimatedClockView.swift in Sources */,
 				4D6C793B2BFF35D40059BE83 /* SubheadlineView.swift in Sources */,
 				4D90DDF42BFB460D004E40A2 /* BenchtimeApp.swift in Sources */,
 				4D7DA6452BFDE797007948BF /* CharacterDetailService.swift in Sources */,

@@ -9,26 +9,24 @@ import Combine
 import Foundation
 import Observation
 
-@Observable final class AnimationButtonViewModel {
-    @ObservationIgnored private var subscriptions: Set<AnyCancellable> = []
-
+@Observable final class AnimationClockViewModel {
+    private var subscriptions: Set<AnyCancellable> = []
     var vaneRotationAngle: CGFloat = 0
     var handRotationAngle: CGFloat = 0
 
-    var vaneTimer = 0
-    var handTimer = 0
-
     func startTimers() {
-        Timer.publish(every: 1, on: .main, in: .common)
-            .autoconnect()
-            .scan(0) { accumulated, _ in accumulated + 1 }
-            .assign(to: \.vaneTimer, on: self)
-            .store(in: &subscriptions)
-
         Timer.publish(every: 3, on: .main, in: .common)
             .autoconnect()
-            .scan(0) { accumulated, _ in accumulated + 1 }
-            .assign(to: \.handTimer, on: self)
+            .sink(receiveValue: { _ in
+                self.rotate(type: .vane, angle: 3)
+            })
+            .store(in: &subscriptions)
+
+        Timer.publish(every: 1, on: .main, in: .common)
+            .autoconnect()
+            .sink(receiveValue: { _ in
+                self.rotate(type: .hand, angle: 3)
+            })
             .store(in: &subscriptions)
     }
 

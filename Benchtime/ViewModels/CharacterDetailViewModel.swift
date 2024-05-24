@@ -34,6 +34,7 @@ import Foundation
                 }
             } receiveValue: { response in
                 self.characterDetails = response
+               // print(response)
             }
             .store(in: &cancellables)
     }

@@ -5,13 +5,13 @@
 //  Created by Tosun, Irem on 22.05.2024.
 //
 
-import SwiftUI
 import Resolver
+import SwiftUI
 
 struct CharacterDetailView: View {
     @State private var viewModel: CharacterDetailViewModel
     @Injected private var service: CharacterDetailService
-    
+
     init(id: String) {
         viewModel = .init(id: id)
     }
@@ -20,6 +20,12 @@ struct CharacterDetailView: View {
         VStack {
             if let figure = viewModel.characterDetails {
                 RemoteImageView(url: figure.image, contentMode: .fit)
+
+                Text(figure.gender)
+                Text(figure.name)
+                Text(figure.status)
+                Text(figure.species)
+                Text(figure.origin.name)
             }
         }
         .onAppear {

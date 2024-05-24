@@ -25,7 +25,7 @@ struct MainView: View {
                         Label("Play", systemImage: "message")
                     }
                 
-                AnimatedButtonView()
+                AnimatedClockView()
                     .tabItem {
                         Label("Clock", systemImage: "clock")
                     }

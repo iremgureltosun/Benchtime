@@ -50,6 +50,7 @@ struct CharacterListView: View {
     @ViewBuilder private var content: some View {
         LazyVGrid(columns: listItems, spacing: 20) {
             ForEach(viewModel.figureList, id: \.self) { figure in
+                // let _ = print(figure)
                 getCell(for: figure)
             }
         }
