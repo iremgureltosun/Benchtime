@@ -29,8 +29,9 @@ struct Figure: HTTPResponseProtocol {
 
     let id: Int
     var name: String
-    let status, species, type: String
-    let gender: String
+    let status: CharacterStatus
+    let species, type: String
+    let gender: CharacterGender
     let origin, location: Location
     let image: String
     let episode: [String]
@@ -53,13 +54,6 @@ struct Figure: HTTPResponseProtocol {
     }
 }
 
-// MARK: - Location
-
-struct Location: Codable {
-    let name: String
-    let url: String
-}
-
 extension Figure: Hashable {
     static func == (lhs: Figure, rhs: Figure) -> Bool {
         lhs.id == rhs.id
@@ -69,3 +63,5 @@ extension Figure: Hashable {
         hasher.combine(id)
     }
 }
+
+

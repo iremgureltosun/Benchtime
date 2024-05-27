@@ -59,18 +59,18 @@ struct CharacterListView: View {
     @ViewBuilder private func getCell(for figure: Figure) -> some View {
         VStack {
             RemoteImageView(url: figure.image, contentMode: .fit)
+                .frame(width: 80, height: 80, alignment: .top)
+                .clipShape(Circle())
 
-            HStack {
-                Group {
-                    Text(figure.species)
+            HStack(alignment: .top, content: {
+                Image(systemName: "circle.fill")
+                    .foregroundColor(figure.status.color)
+                    .font(.caption2)
 
-                    Spacer()
-
-                    Text(figure.name)
-                }
-                .lineLimit(2, reservesSpace: true)
-                .font(.caption2)
-            }
+                Text(figure.name)
+                    .lineLimit(2, reservesSpace: true)
+                    .font(.caption2)
+            })
         }
         .onTapGesture {
             applicationManager.navigate(to: .characterDetail(id: String(figure.id)))

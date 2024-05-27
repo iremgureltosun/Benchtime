@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum ApiConfig {
+public enum ApiConfig {
     private static let baseURL: String = "https://rickandmortyapi.com/api/"
     case characters
     case locations
     case episodes
 
-    private var url: String {
+    var url: String {
         switch self {
         case .characters:
             return "\(Self.baseURL)character"
@@ -26,7 +26,7 @@ enum ApiConfig {
 
     static func getCharacters(by criteria: CharacterFilterCriteria) -> URL? {
         var urlString = "\(ApiConfig.characters.url)"
-        
+
         switch criteria {
         case let .none(page):
             urlString = "\(urlString)/?page=\(page)"
@@ -40,10 +40,12 @@ enum ApiConfig {
         }
         return URL(string: urlString)
     }
+}
 
+extension ApiConfig {
     func get(by id: String) -> URL? {
         switch self {
-        case .characters:
+        case .characters, .episodes:
             return URL(string: "\(url)/\(id)")
         default: return nil // Not implemented yet
         }

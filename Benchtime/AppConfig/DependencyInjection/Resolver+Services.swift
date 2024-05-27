@@ -11,6 +11,7 @@ extension Resolver: ResolverRegistering {
     func registerServices() {
         register(CharacterService.self) { CharacterServiceImpl() }
         register(CharacterDetailService.self) { CharacterDetailServiceImpl() }
+        register(EpisodeService.self) { EpisodeServiceImpl() }
     }
 
     public static func registerAllServices() {

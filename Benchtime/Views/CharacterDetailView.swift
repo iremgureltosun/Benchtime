@@ -10,7 +10,9 @@ import SwiftUI
 
 struct CharacterDetailView: View {
     @State private var viewModel: CharacterDetailViewModel
-    @Injected private var service: CharacterDetailService
+    @Injected private var characterService: CharacterDetailService
+    @Injected private var episodeService: EpisodeService
+
 
     init(id: String) {
         viewModel = .init(id: id)
@@ -20,17 +22,62 @@ struct CharacterDetailView: View {
         VStack {
             if let figure = viewModel.characterDetails {
                 RemoteImageView(url: figure.image, contentMode: .fit)
+                    .frame(width: 180, height: 180, alignment: .top)
+                    .clipShape(Circle())
 
-                Text(figure.gender)
-                Text(figure.name)
-                Text(figure.status)
-                Text(figure.species)
-                Text(figure.origin.name)
+                VStack(alignment: .leading, spacing: 15) {
+                    profileRow(status: figure.status, figure.gender.genderIconName, field: figure.name)
+
+                    profileRow(Image(systemName: "house"), title: "Hometown:", field: figure.origin.name)
+
+                    profileRow(title: "Species:", field: figure.species)
+
+                    profileRow(title: "Last known location:", field: figure.location.name)
+                }
             }
+            RoundedRectangle(cornerSize: /*@START_MENU_TOKEN@*/CGSize(width: 20, height: 10)/*@END_MENU_TOKEN@*/)
+                .ignoresSafeArea()
+                .foregroundColor(.accent).opacity(0.4)
         }
         .onAppear {
-            viewModel.setup(service: service)
+            viewModel.setup(characterService: characterService, episodeService: episodeService)
             viewModel.getCharacter()
+        }
+    }
+
+    @ViewBuilder private func profileRow(_ icon: Image? = nil, title: String, field: String) -> some View {
+        HStack {
+            Spacer()
+
+            if let icon = icon {
+                icon
+                    .foregroundColor(.black)
+            }
+            Text(title)
+                .font(.subheadline)
+                .foregroundColor(.black)
+
+            Text(field)
+                .foregroundColor(.gray)
+            Spacer()
+        }
+    }
+
+    @ViewBuilder private func profileRow(status: CharacterStatus, _ text: String, field: String) -> some View {
+        HStack {
+            Spacer()
+
+            Image(systemName: "circle.fill")
+                .foregroundColor(status.color)
+                .font(.caption2)
+
+            Text(text)
+                .font(.title2)
+                .foregroundColor(.gray)
+
+            Text(field)
+
+            Spacer()
         }
     }
 }
