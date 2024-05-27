@@ -13,7 +13,6 @@ struct CharacterDetailView: View {
     @Injected private var characterService: CharacterDetailService
     @Injected private var episodeService: EpisodeService
 
-
     init(id: String) {
         viewModel = .init(id: id)
     }
@@ -37,7 +36,21 @@ struct CharacterDetailView: View {
             }
             RoundedRectangle(cornerSize: /*@START_MENU_TOKEN@*/CGSize(width: 20, height: 10)/*@END_MENU_TOKEN@*/)
                 .ignoresSafeArea()
-                .foregroundColor(.accent).opacity(0.4)
+                .foregroundColor(.gray).opacity(0.4)
+                .overlay {
+                    VStack {
+                        AnimatedTextView(title: "EPISODES")
+                        ScrollView(showsIndicators: false) {
+                            VStack {
+                                ForEach(viewModel.episodes, id: \.self) { episode in
+                                    EpisodesView(episode: episode)
+                                }
+                            }
+                        }
+                        .padding()
+                    }
+                    .padding()
+                }
         }
         .onAppear {
             viewModel.setup(characterService: characterService, episodeService: episodeService)

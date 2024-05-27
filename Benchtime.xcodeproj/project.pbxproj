@@ -13,6 +13,7 @@
 		4D4D70652C04739600BE2A59 /* CharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D70642C04739600BE2A59 /* CharacterGender.swift */; };
 		4D4D70672C0473F600BE2A59 /* EpisodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D70662C0473F600BE2A59 /* EpisodeService.swift */; };
 		4D4D706A2C048E0800BE2A59 /* EpisodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D70692C048E0800BE2A59 /* EpisodeHelper.swift */; };
+		4D4D706D2C04AF3B00BE2A59 /* AnimatedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D706C2C04AF3B00BE2A59 /* AnimatedTextView.swift */; };
 		4D6C793B2BFF35D40059BE83 /* SubheadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C793A2BFF35D40059BE83 /* SubheadlineView.swift */; };
 		4D6C793D2BFF36370059BE83 /* PlaygroundRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C793C2BFF36370059BE83 /* PlaygroundRowView.swift */; };
 		4D6C793F2BFF43500059BE83 /* AnimatedClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C793E2BFF43500059BE83 /* AnimatedClockView.swift */; };
@@ -77,6 +78,7 @@
 		4D4D70662C0473F600BE2A59 /* EpisodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeService.swift; sourceTree = "<group>"; };
 		4D4D70692C048E0800BE2A59 /* EpisodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeHelper.swift; sourceTree = "<group>"; };
 		4D4D706B2C048E8300BE2A59 /* HelperPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HelperPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4D4D706C2C04AF3B00BE2A59 /* AnimatedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextView.swift; sourceTree = "<group>"; };
 		4D6C793A2BFF35D40059BE83 /* SubheadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubheadlineView.swift; sourceTree = "<group>"; };
 		4D6C793C2BFF36370059BE83 /* PlaygroundRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundRowView.swift; sourceTree = "<group>"; };
 		4D6C793E2BFF43500059BE83 /* AnimatedClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedClockView.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				4D78B20E2BFCB30600BD56B0 /* SearchTextfield.swift */,
 				4D6C793A2BFF35D40059BE83 /* SubheadlineView.swift */,
 				4D6C793C2BFF36370059BE83 /* PlaygroundRowView.swift */,
+				4D4D706C2C04AF3B00BE2A59 /* AnimatedTextView.swift */,
 			);
 			path = ComponentViews;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				4D6C793B2BFF35D40059BE83 /* SubheadlineView.swift in Sources */,
 				4D90DDF42BFB460D004E40A2 /* BenchtimeApp.swift in Sources */,
 				4D7DA6452BFDE797007948BF /* CharacterDetailService.swift in Sources */,
+				4D4D706D2C04AF3B00BE2A59 /* AnimatedTextView.swift in Sources */,
 				4D4D706A2C048E0800BE2A59 /* EpisodeHelper.swift in Sources */,
 				4D78B20D2BFC9BF500BD56B0 /* CharacterStatus.swift in Sources */,
 				4D7DA63B2BFDD506007948BF /* Person.swift in Sources */,
