@@ -13,20 +13,27 @@ struct EpisodesView: View {
         RoundedRectangle(cornerRadius: 20)
             .strokeBorder(style: StrokeStyle())
             .foregroundColor(.purple)
-            .frame(height: 90)
-            .overlay {
-                VStack {
-                    Text(episode.name)
-                        .font(.title3)
-                        .foregroundColor(.blue)
+            .frame(height: 100)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .foregroundColor(.white)
+                    .overlay(
+                        VStack {
+                            Text(episode.name)
+                                .font(.title3)
+                                .foregroundColor(.blue)
 
-                    Text(episode.airDate)
-                        .font(.subheadline)
+                            Text(episode.airDate)
+                                .font(.subheadline)
+                                .foregroundColor(.black)
 
-                    Text("Episode: \(episode.episode)")
-                        .font(.caption)
-                }
-            }
+                            Text("Episode: \(episode.episode)")
+                                .font(.caption)
+                                .foregroundColor(.black)
+                        }
+                    )
+            )
+
     }
 }
 

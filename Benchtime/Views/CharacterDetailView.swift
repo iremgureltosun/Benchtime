@@ -20,29 +20,32 @@ struct CharacterDetailView: View {
     var body: some View {
         VStack {
             if let figure = viewModel.characterDetails {
-                RemoteImageView(url: figure.image, contentMode: .fit)
-                    .frame(width: 180, height: 180, alignment: .top)
-                    .clipShape(Circle())
+                HStack {
+                    RemoteImageView(url: figure.image, contentMode: .fit)
+                        .frame(width: 120, height: 120, alignment: .top)
+                        .clipShape(Circle())
 
-                VStack(alignment: .leading, spacing: 15) {
-                    profileRow(status: figure.status, figure.gender.genderIconName, field: figure.name)
+                    VStack(alignment: .trailing, spacing: 15) {
+                        profileRow(status: figure.status, figure.gender.genderIconName, field: figure.name)
 
-                    profileRow(Image(systemName: "house"), title: "Hometown:", field: figure.origin.name)
+                        profileRow(Image(systemName: "house"), title: "Hometown:", field: figure.origin.name)
 
-                    profileRow(title: "Species:", field: figure.species)
+                        profileRow(title: "Species:", field: figure.species)
 
-                    profileRow(title: "Last known location:", field: figure.location.name)
+                        profileRow(title: "Last known location:", field: figure.location.name)
+                    }
                 }
+                .padding()
             }
             RoundedRectangle(cornerRadius: 20)
                 .ignoresSafeArea()
-                .foregroundColor(.gray).opacity(0.1)
+                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/.opacity(0.3))
                 .overlay {
                     VStack {
                         AnimatedTextView(title: "EPISODES")
 
                         ScrollView(showsIndicators: false) {
-                            VStack {
+                            VStack(spacing: 10) {
                                 ForEach(viewModel.episodes, id: \.self) { episode in
                                     EpisodesView(episode: episode)
                                 }
@@ -50,9 +53,11 @@ struct CharacterDetailView: View {
                         }
                         .padding()
                     }
+                   
                     .padding()
                 }
         }
+        .background(Color.white)
         .onAppear {
             viewModel.setup(characterService: characterService, episodeService: episodeService)
             viewModel.getCharacter()
@@ -79,8 +84,6 @@ struct CharacterDetailView: View {
 
     @ViewBuilder private func profileRow(status: CharacterStatus, _ text: String, field: String) -> some View {
         HStack {
-            Spacer()
-
             Image(systemName: "circle.fill")
                 .foregroundColor(status.color)
                 .font(.caption2)
@@ -90,8 +93,6 @@ struct CharacterDetailView: View {
                 .foregroundColor(.gray)
 
             Text(field)
-
-            Spacer()
         }
     }
 }
