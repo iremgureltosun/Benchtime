@@ -10,7 +10,7 @@ import SwiftUI
 struct EpisodesView: View {
     let episode: Episode
     var body: some View {
-        RoundedRectangle(cornerSize: /*@START_MENU_TOKEN@*/CGSize(width: 20, height: 10)/*@END_MENU_TOKEN@*/)
+        RoundedRectangle(cornerRadius: 20)
             .strokeBorder(style: StrokeStyle())
             .foregroundColor(.purple)
             .frame(height: 90)

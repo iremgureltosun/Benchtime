@@ -34,12 +34,13 @@ struct CharacterDetailView: View {
                     profileRow(title: "Last known location:", field: figure.location.name)
                 }
             }
-            RoundedRectangle(cornerSize: /*@START_MENU_TOKEN@*/CGSize(width: 20, height: 10)/*@END_MENU_TOKEN@*/)
+            RoundedRectangle(cornerRadius: 20)
                 .ignoresSafeArea()
-                .foregroundColor(.gray).opacity(0.4)
+                .foregroundColor(.gray).opacity(0.1)
                 .overlay {
                     VStack {
                         AnimatedTextView(title: "EPISODES")
+
                         ScrollView(showsIndicators: false) {
                             VStack {
                                 ForEach(viewModel.episodes, id: \.self) { episode in
