@@ -11,8 +11,7 @@ struct EpisodesView: View {
     let episode: Episode
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
-            .strokeBorder(style: StrokeStyle())
-            .foregroundColor(.purple)
+            .foregroundColor(.orange) // Set background color to orange
             .frame(height: 90)
             .overlay {
                 VStack {
@@ -28,6 +27,7 @@ struct EpisodesView: View {
                 }
             }
     }
+
 }
 
 struct EpisodePreview: PreviewProvider {

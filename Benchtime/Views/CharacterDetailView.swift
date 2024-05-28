@@ -36,11 +36,9 @@ struct CharacterDetailView: View {
             }
             RoundedRectangle(cornerRadius: 20)
                 .ignoresSafeArea()
-                .foregroundColor(.gray).opacity(0.1)
+                .foregroundColor(.blue).opacity(0.1)
                 .overlay {
                     VStack {
-                        AnimatedTextView(title: "EPISODES")
-
                         ScrollView(showsIndicators: false) {
                             VStack {
                                 ForEach(viewModel.episodes, id: \.self) { episode in
