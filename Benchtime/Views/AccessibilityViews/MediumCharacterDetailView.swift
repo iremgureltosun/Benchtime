@@ -18,24 +18,21 @@ struct MediumCharacterDetailView: View {
                     .clipShape(Circle())
 
                 VStack(alignment: .trailing, spacing: 15) {
-                    ProfileTitleRowView(status: figure.status, text: figure.gender.genderIconName, field: figure.name)
+                    ProfileTitleRowView(figure: figure)
 
-                    ProfileRowView(icon: Image(systemName: "house"), title: "Hometown:", field: figure.origin.name)
+                    ProfileRowView(icon: Image(systemName: "house"), title: "Hometown", field: figure.origin.name)
 
-                    ProfileRowView(title: "Species:", field: figure.species)
+                    ProfileRowView(title: "Species", field: figure.species)
 
-                    ProfileRowView(title: "Last known location:", field: figure.location.name)
+                    ProfileRowView(title: "Last known location", field: figure.location.name)
                 }
             }
-            .padding()
         }
         RoundedRectangle(cornerRadius: 20)
             .ignoresSafeArea()
             .foregroundColor(/*@START_MENU_TOKEN@*/ .blue/*@END_MENU_TOKEN@*/ .opacity(0.3))
             .overlay {
                 VStack {
-                    AnimatedTextView(title: "EPISODES")
-
                     ScrollView(showsIndicators: false) {
                         VStack(spacing: 13) {
                             ForEach(viewModel.episodes, id: \.self) { episode in
@@ -43,7 +40,6 @@ struct MediumCharacterDetailView: View {
                             }
                         }
                     }
-                    .padding()
                 }
                 .padding()
             }

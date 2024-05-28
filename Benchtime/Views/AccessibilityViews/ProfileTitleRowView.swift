@@ -8,29 +8,43 @@
 import SwiftUI
 
 struct ProfileTitleRowView: View {
-    let status: CharacterStatus
-    let text: String, field: String
+    @Environment(\.sizeCategory) var sizeCategory
+    let figure: Figure
 
     var body: some View {
-        VStack(spacing: 0) {
-            Text(text)
-                .foregroundColor(.gray)
-                .font(.caption)
-            
-            HStack(alignment: .center) {
-                Image(systemName: "circle.fill")
-                    .resizable()
-                    .foregroundColor(status.color)
-                    .frame(width: 15, height: 15)
-
-                Text(field)
+        if sizeCategory > ConstantSizeCategory.limit {
+            VStack(spacing: 0) {
+                Text(figure.gender.genderIconName)
                     .font(.body)
+
+                HStack(alignment: .center) {
+                    Image(systemName: "circle.fill")
+                        .resizable()
+                        .foregroundColor(figure.status.color)
+                        .frame(width: 15, height: 15)
+
+                    Text(figure.name)
+                        .foregroundColor(.gray)
+                        .font(.caption)
+                }
             }
-            
+            .padding(.bottom, 30)
+        } else {
+            HStack {
+                Text(figure.gender.genderIconName)
+                    .font(.body)
+
+                HStack(alignment: .center) {
+                    Image(systemName: "circle.fill")
+                        .resizable()
+                        .foregroundColor(figure.status.color)
+                        .frame(width: 15, height: 15)
+
+                    Text(figure.name)
+                        .foregroundColor(.gray)
+                        .font(.body)
+                }
+            }
         }
     }
-}
-
-#Preview {
-    ProfileTitleRowView(status: .alive, text: "Morty Smith", field: "*")
 }

@@ -31,11 +31,11 @@ struct ExtraLargeCharacterDetailView: View {
             .tabViewStyle(PageTabViewStyle())
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
-        
+
         if viewModel.episodes.count > 0 {
             RoundedRectangle(cornerRadius: 20)
                 .ignoresSafeArea()
-                .foregroundColor( .blue .opacity(0.3))
+                .foregroundColor(.blue.opacity(0.3))
                 .overlay {
                     TabView(selection: $selectedEpisode) {
                         ForEach(Array(viewModel.episodes.enumerated()), id: \.1.id) { index, episode in
@@ -44,7 +44,7 @@ struct ExtraLargeCharacterDetailView: View {
                         }
                     }
                     .background(RoundedRectangle(cornerRadius: 20).fill(Color.orange))
-                    .padding(.top, 20)
+                    .padding(20)
                     .tabViewStyle(PageTabViewStyle())
                     .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
                 }
@@ -56,7 +56,7 @@ struct ExtraLargeCharacterDetailView: View {
             RemoteImageView(url: figure.image, contentMode: .fit)
                 .frame(width: sizeCategory.imageHeight, height: sizeCategory.imageHeight, alignment: .top)
                 .clipShape(Circle())
-            ProfileTitleRowView(status: figure.status, text: figure.gender.genderIconName, field: figure.name)
+            ProfileTitleRowView(figure: figure)
         }
     }
 

@@ -27,17 +27,19 @@ struct ProfileRowView: View {
     }
 
     @ViewBuilder private var mediumRowView: some View {
-        HStack {
-            if let icon = icon {
-                icon
-                    .resizable()
+        VStack (alignment: .trailing) {
+            HStack {
+                if let icon = icon {
+                    icon
+                        .resizable()
+                        .foregroundColor(.black)
+                        .frame(width: 15, height: 15)
+                }
+                Text(title)
+                    .font(.body)
+                    .fixedSize(horizontal: false, vertical: true)
                     .foregroundColor(.black)
-                    .frame(width: 15, height: 15)
             }
-            Text(title)
-                .font(.body)
-                .fixedSize(horizontal: false, vertical: true)
-                .foregroundColor(.black)
 
             Text(field)
                 .fixedSize(horizontal: false, vertical: true)
