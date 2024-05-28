@@ -8,32 +8,51 @@
 import SwiftUI
 
 struct EpisodesView: View {
+    @Environment(\.sizeCategory) var sizeCategory
     let episode: Episode
+
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
             .strokeBorder(style: StrokeStyle())
             .foregroundColor(.purple)
-            .frame(height: 100)
+            .frame(width: 300, height: sizeCategory.sectionHeight)
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
-                    .foregroundColor(.white)
+                    .foregroundColor(.orange)
                     .overlay(
                         VStack {
                             Text(episode.name)
-                                .font(.title3)
+                                .font(.body)
                                 .foregroundColor(.blue)
+                                .multilineTextAlignment(.center)
 
                             Text(episode.airDate)
-                                .font(.subheadline)
+                                .font(sizeCategory < ConstantSizeCategory.limit ? .subheadline : .system(size: 30))
                                 .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
 
                             Text("Episode: \(episode.episode)")
-                                .font(.caption)
+                                .font(sizeCategory < ConstantSizeCategory.limit ? .footnote : .system(size: 20))
                                 .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
                         }
                     )
             )
+    }
+}
 
+private extension ContentSizeCategory {
+    var sectionHeight: CGFloat {
+        switch self {
+        case .extraSmall: return 90
+        case .small: return 110
+        case .accessibilityMedium: return 180
+        case .accessibilityLarge: return 200
+        case .accessibilityExtraLarge: return 220
+        case .accessibilityExtraExtraLarge: return 320
+        case .accessibilityExtraExtraExtraLarge: return 400
+        default: return 120
+        }
     }
 }
 

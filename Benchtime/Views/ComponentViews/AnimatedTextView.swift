@@ -14,7 +14,7 @@ struct AnimatedTextView: View {
     
     var body: some View {
         Text(title)
-            .font(.title3)
+            .font(.subheadline)
             .fontWeight(.bold)
             .foregroundColor(.white)
             .padding()
