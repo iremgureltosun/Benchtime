@@ -25,10 +25,9 @@ enum ApiConfig {
     }
 
     static func getCharacters(by criteria: [CharacterFilterCriteria], page: Int?) -> URL? {
-        var urlString = "\(ApiConfig.characters.url)"
         let helper = CharacterHelper()
         if criteria.isEmpty {
-            return URL(string: helper.makeUrlString(page: page ?? 1))
+            return URL(string: helper.makeUrlString(with: [], page: page))
         } else {
             return URL(string: helper.makeUrlString(with: criteria))
         }

@@ -28,9 +28,11 @@ struct TitlePlaygroundView: View {
 
             Spacer()
 
-            SubheadlineView(title: "Calculated Result")
+            SubheadlineView(title: "Calculated Results")
 
             PlaygroundRowView(for: viewModel.displayName, "Display Name:")
+
+            // PlaygroundRowView(for: viewModel.queryResult, "Query result")
 
             Divider()
 
@@ -40,14 +42,14 @@ struct TitlePlaygroundView: View {
                 } label: {
                     Text("Print Name")
                 }
-                
+
                 Spacer()
-                
-                Button {
-                    print("Make url button is clicked")
-                } label: {
-                    Text("Make url")
-                }
+
+//                Button {
+//                    viewModel.testButton()
+//                } label: {
+//                    Text("Make url")
+//                }
             }
         }
         .padding(.all, 20)

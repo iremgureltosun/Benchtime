@@ -10,6 +10,7 @@ import Observation
 @Observable final class TitlePlaygroundViewModel {
     var person: Person = .init(name: "Mary", surname: "Johnson", age: 38, gender: .female, addressText: "23000 St", city: "New york")
     var displayName: String = ""
+    var queryResult: String = ""
 
     func printPerson() {
         print("Person's gender is \(person.gender)")
@@ -17,6 +18,17 @@ import Observation
         print("Person's surname is \(person.surname)")
         displayName = person.displayName()
         print("Title of person --> \(displayName)")
+    }
+
+    func testButton() {
+        print("Do nothing just practicing")
+    }
+
+    func testQueryWithFilters() -> String {
+        let filters = [CharacterFilterCriteria.name(text: "jessie"),
+                       CharacterFilterCriteria.status(status: CharacterStatus.alive),
+                       CharacterFilterCriteria.gender(gender: CharacterGender.female)]
+        return CharacterHelper().makeUrlString(with: filters)
     }
 }
 
