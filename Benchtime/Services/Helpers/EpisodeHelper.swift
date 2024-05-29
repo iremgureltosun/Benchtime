@@ -6,7 +6,7 @@
 //
 
 import Foundation
-public struct EpisodeHelper {
+struct EpisodeHelper {
      func getListOfEpisodeIds(_ episodes: [String]) -> [String] {
         return episodes.map { url in
             let components = url.components(separatedBy: "/")

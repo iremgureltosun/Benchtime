@@ -34,10 +34,20 @@ struct TitlePlaygroundView: View {
 
             Divider()
 
-            Button {
-                viewModel.printPerson()
-            } label: {
-                Text("Print name")
+            HStack {
+                Button {
+                    viewModel.printPerson()
+                } label: {
+                    Text("Print Name")
+                }
+                
+                Spacer()
+                
+                Button {
+                    print("Make url button is clicked")
+                } label: {
+                    Text("Make url")
+                }
             }
         }
         .padding(.all, 20)

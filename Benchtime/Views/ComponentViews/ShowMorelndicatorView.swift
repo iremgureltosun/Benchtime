@@ -23,7 +23,7 @@ struct ShowMorelndicatorView: View {
 
 struct CustomCircleView: View {
     private let circleRadius: CGFloat = 10
-    private let circleColor: Color = .black
+    private let circleColor: Color = .primary
     var body: some View {
         Circle()
             .foregroundColor(circleColor)

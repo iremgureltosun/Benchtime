@@ -12,6 +12,10 @@ struct HeaderView: View {
     private let title: String
     private let subtitle: String
     
+    private var angle: Angle {
+        Angle(degrees: themeStyle.degree)
+    }
+    
     init(themeStyle: ThemeStyle, title: String, subtitle: String) {
         self.themeStyle = themeStyle
         self.title = title
@@ -22,7 +26,7 @@ struct HeaderView: View {
         ZStack {
             Rectangle()
                 .foregroundColor(themeStyle.colorPair.backgroundColor)
-                .rotationEffect(Angle(degrees: themeStyle.degree))
+                .rotationEffect(angle)
 
             VStack {
                 Spacer()
@@ -36,7 +40,7 @@ struct HeaderView: View {
                     .foregroundColor(themeStyle.colorPair.foregroundColor)
             }
         }
-        .frame(width: UIScreen.main.bounds.width * 2, height: 200)
+        .frame(width: UIScreen.main.bounds.width * 3, height: 200)
     }
 }
 

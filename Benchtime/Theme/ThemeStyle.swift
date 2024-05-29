@@ -12,18 +12,18 @@ typealias ColorPair = (backgroundColor: Color, foregroundColor: Color)
 enum ThemeStyle {
     case ocean
     case desert
-    
+
     var colorPair: ColorPair {
-        switch self{
+        switch self {
         case .ocean:
             return (.blue, .white)
         case .desert:
             return (.orange, .black)
         }
     }
-    
+
     var degree: Double {
-        switch self{
+        switch self {
         case .ocean:
             return 15
         case .desert:

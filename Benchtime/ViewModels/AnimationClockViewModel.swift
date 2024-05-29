@@ -15,14 +15,14 @@ import Observation
     var handRotationAngle: CGFloat = 0
 
     func startTimers() {
-        Timer.publish(every: 3, on: .main, in: .common)
+        Timer.publish(every: 1, on: .main, in: .common)
             .autoconnect()
             .sink(receiveValue: { _ in
                 self.rotate(type: .vane, angle: 3)
             })
             .store(in: &subscriptions)
 
-        Timer.publish(every: 1, on: .main, in: .common)
+        Timer.publish(every: 3, on: .main, in: .common)
             .autoconnect()
             .sink(receiveValue: { _ in
                 self.rotate(type: .hand, angle: 3)

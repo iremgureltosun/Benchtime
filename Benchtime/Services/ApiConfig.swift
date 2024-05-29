@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ApiConfig {
+enum ApiConfig {
     private static let baseURL: String = "https://rickandmortyapi.com/api/"
     case characters
     case locations
@@ -24,21 +24,14 @@ public enum ApiConfig {
         }
     }
 
-    static func getCharacters(by criteria: CharacterFilterCriteria) -> URL? {
+    static func getCharacters(by criteria: [CharacterFilterCriteria], page: Int?) -> URL? {
         var urlString = "\(ApiConfig.characters.url)"
-
-        switch criteria {
-        case let .none(page):
-            urlString = "\(urlString)/?page=\(page)"
-        case let .name(text):
-            if !text.trimmingCharacters(in: .whitespaces).isEmpty {
-                urlString = "\(urlString)?name=\(text)"
-            }
-        case .gender, .status:
-            // TO DO
-            print("Not implemented yet")
+        let helper = CharacterHelper()
+        if criteria.isEmpty {
+            return URL(string: helper.makeUrlString(page: page ?? 1))
+        } else {
+            return URL(string: helper.makeUrlString(with: criteria))
         }
-        return URL(string: urlString)
     }
 }
 

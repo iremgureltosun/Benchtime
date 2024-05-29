@@ -22,7 +22,7 @@ import SwiftUI
     var gender: CharacterGender?
     var figureList: [Figure] = []
 
-    // Some calculated properties
+    // Calculated property
     var recordCount: Int {
         figureList.count
     }
@@ -34,7 +34,7 @@ import SwiftUI
     func search() throws {
         let filter = CharacterFilterCriteria.name(text: searchText)
         figureList = []
-        try service?.search(by: filter)
+        try service?.search(by: [filter])
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
@@ -64,8 +64,7 @@ import SwiftUI
     }
 
     func fetchAll() throws {
-        let filter = CharacterFilterCriteria.none(page: page)
-        try service?.search(by: filter)
+        try service?.search(by: [], page: page)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
