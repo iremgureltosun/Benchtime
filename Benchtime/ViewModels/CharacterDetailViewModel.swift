@@ -47,6 +47,7 @@ import Foundation
                     return Empty<[Episode], Error>().eraseToAnyPublisher()
                 }
             }
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
