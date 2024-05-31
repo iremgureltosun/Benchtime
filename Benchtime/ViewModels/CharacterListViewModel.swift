@@ -15,8 +15,10 @@ import SwiftUI
     @ObservationIgnored private var cancellables = Set<AnyCancellable>()
     @ObservationIgnored var hasAppeared: Bool = false
     @ObservationIgnored var page: Int = 1
-   
-    var isLoading: Bool = false 
+    let genderOptions = CharacterGender.allCases
+    let statusOptions = CharacterStatus.allCases
+
+    var isLoading: Bool = false
     var searchText: String = ""
     var status: CharacterStatus?
     var gender: CharacterGender?
@@ -32,9 +34,19 @@ import SwiftUI
     }
 
     func search() throws {
-        let filter = CharacterFilterCriteria.name(text: searchText)
+        var filterList: [CharacterFilterCriteria] = []
+        let filterName = CharacterFilterCriteria.name(text: searchText)
+        filterList.append(filterName)
+
+        if let gender = gender {
+            filterList.append(.gender(gender: gender))
+        }
+        if let status = status {
+            filterList.append(.status(status: status))
+        }
+
         figureList = []
-        try service?.search(by: [filter])
+        try service?.search(by: filterList)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
@@ -98,4 +110,12 @@ actor Debouncer {
         isPending = false
         return true
     }
+}
+
+extension CharacterStatus: Identifiable {
+    var id: String { rawValue }
+}
+
+extension CharacterGender: Identifiable {
+    var id: String { rawValue }
 }

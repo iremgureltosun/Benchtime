@@ -23,7 +23,7 @@ struct CharacterListView: View {
             header
 
             filteringRow
-                .padding(.horizontal, 40)
+                .padding(.horizontal, 20)
                 .padding(.top, -40)
 
             scrollableContent
@@ -79,7 +79,35 @@ struct CharacterListView: View {
 
     @ViewBuilder private var filteringRow: some View {
         VStack(alignment: .trailing, content: {
+            Text("Selected status: \(viewModel.status?.rawValue ?? "")")
+
             SearchTextfield(searchText: $viewModel.searchText)
+
+            HStack {
+                Spacer()
+                Text("Filter by:")
+                    .font(.caption)
+
+                Picker("Status", selection: $viewModel.status) {
+                    Text("status").tag(CharacterStatus?.none)
+
+                    ForEach(viewModel.statusOptions, id: \.self) { status in
+                        Text(status.rawValue)
+                            .tag(status)
+                    }
+                }
+                .pickerStyle(MenuPickerStyle())
+
+                Picker("Gender", selection: $viewModel.gender) {
+                    Text("gender").tag(CharacterGender?.none)
+
+                    ForEach(viewModel.genderOptions, id: \.self) { gender in
+                        Text(gender.rawValue)
+                            .tag(gender)
+                    }
+                }
+                .pickerStyle(MenuPickerStyle())
+            }
 
             Text("\(viewModel.recordCount) records")
                 .font(.caption)

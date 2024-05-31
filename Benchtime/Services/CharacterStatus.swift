@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum CharacterStatus: String, Codable {
+enum CharacterStatus: String, Codable, CaseIterable {
     case alive = "Alive"
     case dead = "Dead"
     case unknown
@@ -23,3 +23,4 @@ extension CharacterStatus {
         }
     }
 }
+
