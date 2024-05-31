@@ -41,6 +41,16 @@ struct CharacterListView: View {
                 await viewModel.onSearchTextChanged()
             }
         })
+        .onChange(of: viewModel.gender, initial: false, { _, _ in
+            Task {
+                await viewModel.onSearchTextChanged()
+            }
+        })
+        .onChange(of: viewModel.status, initial: false, { _, _ in
+            Task {
+                await viewModel.onSearchTextChanged()
+            }
+        })
     }
 
     @ViewBuilder private var header: some View {
@@ -79,8 +89,6 @@ struct CharacterListView: View {
 
     @ViewBuilder private var filteringRow: some View {
         VStack(alignment: .trailing, content: {
-            Text("Selected status: \(viewModel.status?.rawValue ?? "")")
-
             SearchTextfield(searchText: $viewModel.searchText)
 
             HStack {
@@ -89,11 +97,13 @@ struct CharacterListView: View {
                     .font(.caption)
 
                 Picker("Status", selection: $viewModel.status) {
-                    Text("status").tag(CharacterStatus?.none)
+                    Text("status")
+                        .tag(CharacterStatus?.none)
 
-                    ForEach(viewModel.statusOptions, id: \.self) { status in
-                        Text(status.rawValue)
-                            .tag(status)
+                    ForEach(viewModel.statusOptions, id: \.self) { option in
+
+                        Text(option.rawValue)
+                            .tag(CharacterStatus?.some(option))
                     }
                 }
                 .pickerStyle(MenuPickerStyle())
@@ -101,9 +111,9 @@ struct CharacterListView: View {
                 Picker("Gender", selection: $viewModel.gender) {
                     Text("gender").tag(CharacterGender?.none)
 
-                    ForEach(viewModel.genderOptions, id: \.self) { gender in
-                        Text(gender.rawValue)
-                            .tag(gender)
+                    ForEach(viewModel.genderOptions, id: \.self) { option in
+                        Text(option.rawValue)
+                            .tag(CharacterGender?.some(option))
                     }
                 }
                 .pickerStyle(MenuPickerStyle())

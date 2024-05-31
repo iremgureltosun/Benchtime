@@ -20,8 +20,8 @@ import SwiftUI
 
     var isLoading: Bool = false
     var searchText: String = ""
-    var status: CharacterStatus?
-    var gender: CharacterGender?
+    var status: CharacterStatus? = nil
+    var gender: CharacterGender? = nil
     var figureList: [Figure] = []
 
     // Calculated property
@@ -66,8 +66,7 @@ import SwiftUI
     func onSearchTextChanged() async {
         guard await debouncer.sleep() else { return }
 
-        let filter = CharacterFilterCriteria.name(text: searchText)
-        if case let .name(text) = filter, text.isEmpty {
+        if searchText.isEmpty, gender == nil, status == nil {
             try? fetchAll()
         } else {
             figureList = []
