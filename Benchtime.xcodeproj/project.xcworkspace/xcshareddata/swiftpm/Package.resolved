@@ -1,6 +1,15 @@
 {
-  "originHash" : "ecd569fa11a9a3ab7f0122a98835934846e5c3d11453a640580ab9d398d3165b",
+  "originHash" : "82a256209f5e7f60d401a28ef5c6924c628147092f9a0822c857082949632754",
   "pins" : [
+    {
+      "identity" : "network",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/iremgureltosun/Network",
+      "state" : {
+        "revision" : "2429b033a59a13ff05a62f3fec65409c5dd408f2",
+        "version" : "1.0.0"
+      }
+    },
     {
       "identity" : "resolver",
       "kind" : "remoteSourceControl",

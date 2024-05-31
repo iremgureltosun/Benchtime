@@ -36,6 +36,7 @@ struct EpisodesView: View {
                                 .foregroundColor(.black)
                                 .multilineTextAlignment(.center)
                         }
+                        .padding(.horizontal, 10)
                     )
             )
     }

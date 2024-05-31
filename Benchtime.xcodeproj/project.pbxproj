@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D328E3A2C09AEDA0030C948 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 4D328E392C09AEDA0030C948 /* Network */; };
 		4D4D705E2C04720F00BE2A59 /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D705D2C04720F00BE2A59 /* EpisodesView.swift */; };
 		4D4D70602C04733F00BE2A59 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D705F2C04733F00BE2A59 /* Episode.swift */; };
 		4D4D70632C04736B00BE2A59 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D70622C04736B00BE2A59 /* Location.swift */; };
@@ -138,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D328E3A2C09AEDA0030C948 /* Network in Frameworks */,
 				4D90DE342BFB5E7F004E40A2 /* Resolver in Frameworks */,
 				4D90DE212BFB4928004E40A2 /* Network in Frameworks */,
 			);
@@ -374,6 +376,7 @@
 			packageProductDependencies = (
 				4D90DE202BFB4928004E40A2 /* Network */,
 				4D90DE332BFB5E7F004E40A2 /* Resolver */,
+				4D328E392C09AEDA0030C948 /* Network */,
 			);
 			productName = Benchtime;
 			productReference = 4D90DDF02BFB460D004E40A2 /* Benchtime.app */;
@@ -448,8 +451,8 @@
 			);
 			mainGroup = 4D90DDE72BFB460D004E40A2;
 			packageReferences = (
-				4D90DE1F2BFB4928004E40A2 /* XCLocalSwiftPackageReference "../micro/Network" */,
 				4D90DE322BFB5E7F004E40A2 /* XCRemoteSwiftPackageReference "Resolver" */,
+				4D328E382C09AEDA0030C948 /* XCRemoteSwiftPackageReference "Network" */,
 			);
 			productRefGroup = 4D90DDF12BFB460D004E40A2 /* Products */;
 			projectDirPath = "";
@@ -867,14 +870,15 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		4D90DE1F2BFB4928004E40A2 /* XCLocalSwiftPackageReference "../micro/Network" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../micro/Network;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
+		4D328E382C09AEDA0030C948 /* XCRemoteSwiftPackageReference "Network" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iremgureltosun/Network";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		4D90DE322BFB5E7F004E40A2 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Resolver";
@@ -886,6 +890,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4D328E392C09AEDA0030C948 /* Network */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D328E382C09AEDA0030C948 /* XCRemoteSwiftPackageReference "Network" */;
+			productName = Network;
+		};
 		4D90DE202BFB4928004E40A2 /* Network */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Network;
