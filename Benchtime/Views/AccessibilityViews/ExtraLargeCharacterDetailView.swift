@@ -16,43 +16,41 @@ struct ExtraLargeCharacterDetailView: View {
     var body: some View {
         if let figure = viewModel.characterDetails {
             TabView(selection: $selectedTab) {
-                getTab1(for: figure)
-                    .tag(1)
-                // View 2
-                getTab2(for: figure)
-                    .tag(2)
-                // View 3
-                ProfileRowView(title: "Species", field: figure.species)
-                    .tag(3)
+                Group {
+                    getTab1(for: figure)
+                        .tag(1)
+                    // View 2
+                    getTab2(for: figure)
+                        .tag(2)
+                    // View 3
+                    ProfileRowView(title: "Species", field: figure.species)
+                        .tag(3)
 
-                ProfileRowView(title: "Last known location", field: figure.location.name)
-                    .tag(4)
+                    ProfileRowView(title: "Last known location", field: figure.location.name)
+                        .tag(4)
+                }.padding(.bottom, 20)
             }
             .tabViewStyle(PageTabViewStyle())
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
 
         if viewModel.episodes.count > 0 {
-            RoundedRectangle(cornerRadius: 20)
-                .ignoresSafeArea()
-                .foregroundColor(.blue.opacity(0.3))
-                .overlay {
-                    TabView(selection: $selectedEpisode) {
-                        ForEach(Array(viewModel.episodes.enumerated()), id: \.1.id) { index, episode in
-                            EpisodesView(episode: episode)
-                                .tag(index)
-                        }
-                    }
-                    .background(RoundedRectangle(cornerRadius: 20).fill(Color.orange))
-                    .padding(20)
-                    .tabViewStyle(PageTabViewStyle())
-                    .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+            TabView(selection: $selectedEpisode) {
+                ForEach(Array(viewModel.episodes.enumerated()), id: \.1.id) { index, episode in
+                    EpisodesView(episode: episode)
+                        .tag(index)
                 }
+            }
+            .background(RoundedRectangle(cornerRadius: 20).fill(Color.orange)) // Apply background with corner radius
+            .clipShape(RoundedRectangle(cornerRadius: 20)) // Clip the shape
+            .ignoresSafeArea()
+            .tabViewStyle(PageTabViewStyle())
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
     }
 
     @ViewBuilder private func getTab1(for figure: Figure) -> some View {
-        VStack {
+        VStack(spacing: 0) {
             RemoteImageView(url: figure.image, contentMode: .fit)
                 .frame(width: sizeCategory.imageHeight, height: sizeCategory.imageHeight, alignment: .top)
                 .clipShape(Circle())
