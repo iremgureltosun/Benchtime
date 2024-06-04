@@ -39,3 +39,4 @@ struct CharacterHelper {
         "\(ApiConfig.characters.url)/?page=\(page)"
     }
 }
+       
