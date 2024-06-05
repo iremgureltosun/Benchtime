@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-final class MockCharacterDetailService: CharacterDetailService {
+final class MockCharacterDetailService: Observable, CharacterDetailService {
     func get(by id: String) throws -> AnyPublisher<Figure, any Error> {
         return Future<Figure, Error> { promise in
             Task {

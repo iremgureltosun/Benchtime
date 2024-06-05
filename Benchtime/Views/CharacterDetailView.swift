@@ -11,7 +11,9 @@ import SwiftUI
 struct CharacterDetailView: View {
     @Environment(\.sizeCategory) var sizeCategory
     @State private var viewModel: CharacterDetailViewModel
-    @Injected private var characterService: CharacterDetailService
+    @Environment(\.detailService) private var characterService: CharacterDetailService // Method 2
+
+    // @Injected private var characterService: CharacterDetailService // Method 1
     @Injected private var episodeService: EpisodeService
 
     init(id: String) {
@@ -36,4 +38,5 @@ struct CharacterDetailView: View {
 
 #Preview {
     CharacterDetailView(id: "3")
+        .environment(\.detailService, MockCharacterDetailService())// Method 2
 }
