@@ -18,3 +18,5 @@ let list = [CharacterFilterCriteria.name(text: "jessie"),
 let queryHelper = CharacterHelper()
 let urlString = queryHelper.makeUrlString(with: list)
 let getAllUrlString = queryHelper.makeUrlString(with: [])
+
+let detail: Figure = MockDataProvider.load(resourceName: "characterDetail")
