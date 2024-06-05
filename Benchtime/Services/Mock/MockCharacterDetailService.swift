@@ -7,9 +7,15 @@
 
 import Combine
 import Foundation
-//
-//final class MockCharacterDetailService: CharacterDetailService {
-//    func get(by id: String) throws -> AnyPublisher<Figure, any Error> {
-//        MockDataProvider.load(resourceName: "characterDetail")
-//    }
-//}
+
+final class MockCharacterDetailService: CharacterDetailService {
+    func get(by id: String) throws -> AnyPublisher<Figure, any Error> {
+        return Future<Figure, Error> { promise in
+            Task {
+                let figure: Figure = MockDataProvider.load(resourceName: "characterDetail")
+                promise(.success(figure))
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+}
