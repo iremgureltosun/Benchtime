@@ -19,7 +19,11 @@ struct MainView: View {
                     .tabItem {
                         Label("Characters", systemImage: "person")
                     }
-
+               
+                ListUsersView()
+                    .tabItem {
+                        Label("Users", systemImage: "person")
+                    }
                 TitlePlaygroundView()
                     .tabItem {
                         Label("Play", systemImage: "message")

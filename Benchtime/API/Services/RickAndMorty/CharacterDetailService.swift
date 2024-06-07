@@ -18,7 +18,7 @@ protocol CharacterDetailService {
 final class CharacterDetailServiceImpl: CoreNetworkService<Figure>, CharacterDetailService {
 
     func get(by id: String) throws -> AnyPublisher<Figure, Error> {
-        guard let charactersUrl = ApiConfig.characters.get(by: id) else {
+        guard let charactersUrl = RickAndMorty.ApiConfig.characters.get(by: id) else {
             throw HTTPError.invalidRequest
         }
         return try performRequest(urlRequest: URLRequest(url: charactersUrl))

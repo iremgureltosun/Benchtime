@@ -4,10 +4,9 @@
 //
 //  Created by Tosun, Irem on 20.05.2024.
 //
-
+import Foundation
 import Combine
 import Observation
-import SwiftUI
 
 @Observable final class CharacterListViewModel {
     @ObservationIgnored private let debouncer = Debouncer(duration: .seconds(0.5))

@@ -10,7 +10,7 @@ import Foundation
 struct CharacterHelper {
     func makeUrlString(with criteria: [CharacterFilterCriteria], page: Int? = nil) -> String {
         var parameterDict: [String: String] = [:]
-        var urlString = "\(ApiConfig.characters.url)/?"
+        var urlString = "\(RickAndMorty.ApiConfig.characters.url)/?"
 
         guard !criteria.isEmpty else{
             return makeUrlString(page: page ?? 1)
@@ -36,7 +36,7 @@ struct CharacterHelper {
     }
 
     private func makeUrlString(page: Int) -> String {
-        "\(ApiConfig.characters.url)/?page=\(page)"
+        "\(RickAndMorty.ApiConfig.characters.url)/?page=\(page)"
     }
 }
        

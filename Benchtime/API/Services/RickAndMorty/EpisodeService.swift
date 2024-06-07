@@ -18,14 +18,14 @@ protocol EpisodeService {
 @available(iOS 13.0, *)
 final class EpisodeServiceImpl: CoreNetworkService<Episode>, EpisodeService {
     func getMultiple(by list: [String]) throws -> AnyPublisher<[Episode], Error> {
-        guard let url = ApiConfig.episodes.getMultiple(by: list) else {
+        guard let url = RickAndMorty.ApiConfig.episodes.getMultiple(by: list) else {
             throw HTTPError.invalidRequest
         }
         return try performRequest(urlRequest: URLRequest(url: url))
     }
     
     func get(by id: String) throws -> AnyPublisher<Episode, Error> {
-        guard let episodeUrl = ApiConfig.episodes.get(by: id) else {
+        guard let episodeUrl = RickAndMorty.ApiConfig.episodes.get(by: id) else {
             throw HTTPError.invalidRequest
         }
         return try performRequest(urlRequest: URLRequest(url: episodeUrl))

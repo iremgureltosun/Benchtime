@@ -17,7 +17,7 @@ protocol CharacterService {
 @available(iOS 13.0, *)
 final class CharacterServiceImpl: CoreNetworkService<CharacterResponse>, CharacterService {
     func search(by criteria: [CharacterFilterCriteria], page: Int? = nil) throws -> AnyPublisher<CharacterResponse, Error> {
-        guard let charactersUrl = ApiConfig.getCharacters(by: criteria, page: page) else {
+        guard let charactersUrl = RickAndMorty.ApiConfig.getCharacters(by: criteria, page: page) else {
             throw HTTPError.invalidRequest
         }
         return try performRequest(urlRequest: URLRequest(url: charactersUrl))
