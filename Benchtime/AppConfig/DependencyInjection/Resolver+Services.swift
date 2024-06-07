@@ -10,7 +10,7 @@ import Resolver
 extension Resolver: ResolverRegistering {
     func registerServices() {
         register(CharacterService.self) { CharacterServiceImpl() }
-        register(CharacterDetailService.self) { CharacterDetailServiceImpl() }
+        // register(CharacterDetailService.self) { MockCharacterDetailService() } // Method1
         register(EpisodeService.self) { EpisodeServiceImpl() }
     }
 
