@@ -40,7 +40,7 @@ struct Figure: HTTPResponseProtocol {
 
     enum CodingKeys: String, CodingKey {
         case id
-        case name //= "namexxx"
+        case name // = "namexxx"
         case status
         case species
         case type
@@ -51,6 +51,22 @@ struct Figure: HTTPResponseProtocol {
         case episode
         case url
         case created
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        status = try container.decode(CharacterStatus.self, forKey: .status)
+        species = try container.decode(String.self, forKey: .species)
+        type = try container.decode(String.self, forKey: .type)
+        gender = try container.decode(CharacterGender.self, forKey: .gender)
+        origin = try container.decode(Location.self, forKey: .origin)
+        location = try container.decode(Location.self, forKey: .location)
+        image = try container.decode(String.self, forKey: .image)
+        episode = try container.decodeIfPresent([String].self, forKey: .episode) ?? []
+        url = try container.decode(String.self, forKey: .url)
+        created = try container.decode(String.self, forKey: .created)
     }
 }
 
@@ -63,5 +79,3 @@ extension Figure: Hashable {
         hasher.combine(id)
     }
 }
-
-

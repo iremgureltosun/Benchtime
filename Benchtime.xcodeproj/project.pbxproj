@@ -52,7 +52,6 @@
 		4D90DDF42BFB460D004E40A2 /* BenchtimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DDF32BFB460D004E40A2 /* BenchtimeApp.swift */; };
 		4D90DDFA2BFB460F004E40A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D90DDF92BFB460F004E40A2 /* Assets.xcassets */; };
 		4D90DDFD2BFB460F004E40A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D90DDFC2BFB460F004E40A2 /* Preview Assets.xcassets */; };
-		4D90DE212BFB4928004E40A2 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 4D90DE202BFB4928004E40A2 /* Network */; };
 		4D90DE232BFB537A004E40A2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE222BFB537A004E40A2 /* MainView.swift */; };
 		4D90DE282BFB540B004E40A2 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE272BFB540B004E40A2 /* ApiConfig.swift */; };
 		4D90DE2B2BFB572F004E40A2 /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE2A2BFB572F004E40A2 /* CharacterResponse.swift */; };
@@ -150,7 +149,6 @@
 			files = (
 				4D328E3A2C09AEDA0030C948 /* Network in Frameworks */,
 				4D90DE342BFB5E7F004E40A2 /* Resolver in Frameworks */,
-				4D90DE212BFB4928004E40A2 /* Network in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +246,6 @@
 		4D802E7A2C07435300B3F919 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				4D4D70612C04734F00BE2A59 /* ApiModels */,
 				4D4D706B2C048E8300BE2A59 /* HelperPlayground.playground */,
 				4D4D70692C048E0800BE2A59 /* EpisodeHelper.swift */,
 				4D802E7B2C07436700B3F919 /* CharacterHelper.swift */,
@@ -328,6 +325,7 @@
 		4D90DE262BFB53CD004E40A2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4D4D70612C04734F00BE2A59 /* ApiModels */,
 				4D7057872C104138009E6A35 /* Mock */,
 				4D802E7A2C07435300B3F919 /* Helpers */,
 				4D90DE272BFB540B004E40A2 /* ApiConfig.swift */,
@@ -387,7 +385,6 @@
 			);
 			name = Benchtime;
 			packageProductDependencies = (
-				4D90DE202BFB4928004E40A2 /* Network */,
 				4D90DE332BFB5E7F004E40A2 /* Resolver */,
 				4D328E392C09AEDA0030C948 /* Network */,
 			);
@@ -913,10 +910,6 @@
 		4D328E392C09AEDA0030C948 /* Network */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4D328E382C09AEDA0030C948 /* XCRemoteSwiftPackageReference "Network" */;
-			productName = Network;
-		};
-		4D90DE202BFB4928004E40A2 /* Network */ = {
-			isa = XCSwiftPackageProductDependency;
 			productName = Network;
 		};
 		4D90DE332BFB5E7F004E40A2 /* Resolver */ = {
