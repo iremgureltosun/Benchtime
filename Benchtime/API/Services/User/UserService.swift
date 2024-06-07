@@ -11,13 +11,13 @@ import Network
 
 @available(iOS 13.0, *)
 protocol UserService { 
-    func getAll() throws -> AnyPublisher<[UserResponse], Error>
+    func getAll() throws -> AnyPublisher<[UserModel], Error>
 }
 
 @available(iOS 13.0, *)
-final class UserServiceImpl: CoreNetworkService<UserResponse>, UserService {
+final class UserServiceImpl: CoreNetworkService<UserModel>, UserService {
     
-    func getAll() throws -> AnyPublisher<[UserResponse], Error> {
+    func getAll() throws -> AnyPublisher<[UserModel], Error> {
         guard let url = URL(string: User.ApiConfig.all.url) else {
             throw HTTPError.invalidRequest
         }

@@ -13,8 +13,8 @@ enum UserType: String, Codable {
     case staff
 }
 
-struct UserResponse: HTTPResponseProtocol {
-    typealias HTTPEntityType = User.Type
+struct UserModel: HTTPResponseProtocol {
+    typealias HTTPEntityType = UserModel.Type
 
     let userId: String
     let companyId: String

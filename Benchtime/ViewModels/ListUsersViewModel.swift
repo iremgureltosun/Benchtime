@@ -13,7 +13,7 @@ import Observation
     @ObservationIgnored private var service: UserService?
     @ObservationIgnored private var cancellables = Set<AnyCancellable>()
 
-    var users: [UserResponse] = []
+    var users: [UserModel] = []
 
     func setup(with service: UserService) {
         self.service = service
