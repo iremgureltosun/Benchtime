@@ -14,7 +14,8 @@ import Observation
     @ObservationIgnored private var cancellables = Set<AnyCancellable>()
 
     var users: [UserModel] = []
-
+    var selectedUser: UserModel? = nil
+    
     func setup(with service: UserService) {
         self.service = service
     }

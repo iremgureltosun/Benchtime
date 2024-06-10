@@ -35,7 +35,7 @@ import Foundation
         try? characterService.get(by: id)
             .tryMap { character -> AnyPublisher<[Episode], Error> in
                 self.characterDetails = character
-                let listOfEpisodes = EpisodeHelper().getListOfEpisodeIds(character.episode)
+                let listOfEpisodes = EpisodeHelper().getListOfEpisodeIds(character.episode ?? []) 
                 if listOfEpisodes.count > 1 {
                     return try episodeService.getMultiple(by: listOfEpisodes)
                 } else if let singleEpisodeId = listOfEpisodes.first {

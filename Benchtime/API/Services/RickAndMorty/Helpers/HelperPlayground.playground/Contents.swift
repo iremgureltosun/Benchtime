@@ -9,7 +9,7 @@ let input = ["https://rickandmortyapi.com/api/episode/147",
 let result = helper.getListOfEpisodeIds(input)
 
 
-let test = ApiConfig.episodes.getMultiple(by: result)
+let test = RickAndMorty.ApiConfig.episodes.getMultiple(by: result)
 
 let list = [CharacterFilterCriteria.name(text: "jessie"),
             CharacterFilterCriteria.status(status: CharacterStatus.alive),
@@ -21,4 +21,4 @@ let getAllUrlString = queryHelper.makeUrlString(with: [])
 
 let detail: Figure = MockDataProvider.load(resourceName: "characterDetail")
 
-
+let date: String = Date().ISO8601Format()

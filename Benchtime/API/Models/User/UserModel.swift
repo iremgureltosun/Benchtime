@@ -26,3 +26,9 @@ struct UserModel: HTTPResponseProtocol {
         case userId, companyId, userType, userName, jobTitle
     }
 }
+
+extension UserModel: Identifiable {
+    var id: String {
+        return userId
+    }
+}

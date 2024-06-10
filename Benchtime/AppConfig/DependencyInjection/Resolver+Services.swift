@@ -14,6 +14,7 @@ extension Resolver: ResolverRegistering {
         register(EpisodeService.self) { EpisodeServiceImpl() }
         
         register(UserService.self) { UserServiceImpl() }
+        register(AppointmentsService.self) { AppointmentsServiceImpl() }
     }
 
     public static func registerAllServices() {
