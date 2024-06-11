@@ -9,9 +9,13 @@ import SwiftUI
 
 struct ExtraLargeCharacterDetailView: View {
     @Environment(\.sizeCategory) var sizeCategory
-    @Bindable var viewModel: CharacterDetailViewModel
     @State private var selectedTab = 1
     @State private var selectedEpisode = 0
+    var viewModel: CharacterDetailsState
+
+    init(_ viewModel: CharacterDetailsState) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         if let figure = viewModel.characterDetails {

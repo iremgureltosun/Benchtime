@@ -10,12 +10,9 @@ import Resolver
 import SwiftUI
 
 struct CharacterListView: View {
-    // MARK: View related storables
-
     let listItems: [GridItem] = Array(repeating: .init(.fixed(CGFloat(100))), count: 3)
 
     @State var viewModel = CharacterListViewModel()
-    @Injected var service: CharacterService
     @Environment(\.appManager) private var applicationManager
 
     var body: some View {
@@ -30,25 +27,26 @@ struct CharacterListView: View {
         }
         .ignoresSafeArea(edges: [.top])
         .onAppear {
-            viewModel.setup(with: service)
             if !viewModel.hasAppeared {
-                try? viewModel.fetchAll()
-                viewModel.hasAppeared = true
+                Task {
+                    try await viewModel.fetchAll()
+                    viewModel.hasAppeared = true
+                }
             }
         }
         .onChange(of: viewModel.searchText, initial: false, { _, _ in
             Task {
-                await viewModel.onSearchTextChanged()
+                try await viewModel.onSearchTextChanged()
             }
         })
         .onChange(of: viewModel.gender, initial: false, { _, _ in
             Task {
-                await viewModel.onSearchTextChanged()
+                try await viewModel.onSearchTextChanged()
             }
         })
         .onChange(of: viewModel.status, initial: false, { _, _ in
             Task {
-                await viewModel.onSearchTextChanged()
+                try await viewModel.onSearchTextChanged()
             }
         })
     }
@@ -132,8 +130,10 @@ struct CharacterListView: View {
         }
         .coordinateSpace(name: RefreshablePresentModel.homeScrollView)
         .refreshable {
-            viewModel.page += 1
-            try? viewModel.fetchAll()
+            Task {
+                viewModel.page += 1
+                try await viewModel.fetchAll()
+            }
         }
         .onAppear {
             UIRefreshControl.appearance().tintColor = .clear

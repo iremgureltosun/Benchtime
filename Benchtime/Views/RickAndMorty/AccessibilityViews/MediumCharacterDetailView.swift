@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct MediumCharacterDetailView: View {
-    @Bindable var viewModel: CharacterDetailViewModel
+    var viewModel: CharacterDetailsState
+    
+    init(_ viewModel: CharacterDetailsState) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         if let figure = viewModel.characterDetails {

@@ -12,9 +12,10 @@ extension EnvironmentValues {
         get { self[AppKey.self] }
         set { self[AppKey.self] = newValue }
     }
-    var detailService: CharacterDetailService {
-        get { self[CharacterDetailKey.self] }
-        set { self[CharacterDetailKey.self] = newValue }
+    
+    var detailState: CharacterDetailsState {
+        get { self[CharacterDetailsStateKey.self] }
+        set { self[CharacterDetailsStateKey.self] = newValue }
     }
 }
 
@@ -22,6 +23,7 @@ private struct AppKey: EnvironmentKey {
     static var defaultValue: ApplicationManager = ApplicationManager.shared
 }
 
-private struct CharacterDetailKey: EnvironmentKey {
-    static var defaultValue: CharacterDetailService = CharacterDetailServiceImpl.init()
+
+private struct CharacterDetailsStateKey: EnvironmentKey {
+    static var defaultValue: CharacterDetailsState = .init(characterService: CharacterDetailServiceImpl.init(), episodeService: EpisodeServiceImpl.init())
 }

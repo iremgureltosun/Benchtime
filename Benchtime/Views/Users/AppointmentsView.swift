@@ -4,14 +4,12 @@
 //
 //  Created by Tosun, Irem on 10.06.2024.
 //
-
 import Resolver
 import SwiftUI
 
 struct AppointmentsView: View {
-    @State var viewModel = AppointmentsViewModel()
     @Injected var service: AppointmentsService
-
+    
     let userId: String
     init(userId: String) {
         self.userId = userId
@@ -22,7 +20,7 @@ struct AppointmentsView: View {
             Text("Appointments")
                 .font(/*@START_MENU_TOKEN@*/ .title/*@END_MENU_TOKEN@*/)
 
-            List(viewModel.appointments, id: \.id) { user in
+            List(service.appointments, id: \.id) { user in
                 HStack {
                     Text(user.customerName)
                     Spacer()
@@ -38,8 +36,9 @@ struct AppointmentsView: View {
         }
         .padding(.top, 45)
         .onAppear {
-            viewModel.setup(userId: userId, service: service)
-            viewModel.fetchAppointments()
+            Task {
+                try await service.fetchAppointments(of: userId)
+            }
         }
     }
 }

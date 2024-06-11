@@ -38,8 +38,6 @@ struct MainView: View {
                 switch route {
                 case let .characterDetail(id):
                     CharacterDetailView(id: id)
-                case let .appointments(userId):
-                    AppointmentsView(userId: userId)
                 }
             }
         }

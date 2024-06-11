@@ -10,33 +10,31 @@ import SwiftUI
 
 struct CharacterDetailView: View {
     @Environment(\.sizeCategory) var sizeCategory
-    @State private var viewModel: CharacterDetailViewModel
-    @Environment(\.detailService) private var characterService: CharacterDetailService // Method 2
-
-    // @Injected private var characterService: CharacterDetailService // Method 1
-    @Injected private var episodeService: EpisodeService
-
+    @Environment(\.detailState) var characterDetailsState: CharacterDetailsState
+    let id: String
+    
     init(id: String) {
-        viewModel = .init(id: id)
+        self.id = id
     }
 
     var body: some View {
         VStack {
             if sizeCategory < ConstantSizeCategory.limit {
-                MediumCharacterDetailView(viewModel: viewModel)
+                MediumCharacterDetailView(characterDetailsState)
             } else {
-                ExtraLargeCharacterDetailView(viewModel: viewModel)
+                ExtraLargeCharacterDetailView(characterDetailsState)
             }
         }
         .background(Color.white)
         .onAppear {
-            viewModel.setup(characterService: characterService, episodeService: episodeService)
-            viewModel.getCharacter()
+            Task {
+                try await characterDetailsState.getCharacter(id: id)
+            }
         }
     }
 }
 
 #Preview {
     CharacterDetailView(id: "3")
-        .environment(\.detailService, MockCharacterDetailService())// Method 2
+       // .environment(\.detailState, MockCharacterDetailService()) // Method 2
 }

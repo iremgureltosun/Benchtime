@@ -5,15 +5,14 @@
 //  Created by Tosun, Irem on 20.05.2024.
 //
 import Foundation
-import Combine
-import Observation
+import Resolver
 
-@Observable final class CharacterListViewModel {
-    @ObservationIgnored private let debouncer = Debouncer(duration: .seconds(0.5))
-    @ObservationIgnored private var service: CharacterService?
-    @ObservationIgnored private var cancellables = Set<AnyCancellable>()
-    @ObservationIgnored var hasAppeared: Bool = false
-    @ObservationIgnored var page: Int = 1
+struct CharacterListViewModel {
+    private let debouncer = Debouncer(duration: .seconds(0.5))
+    @Injected var service: CharacterService
+
+    var hasAppeared: Bool = false
+    var page: Int = 1
     let genderOptions = CharacterGender.allCases
     let statusOptions = CharacterStatus.allCases
 
@@ -28,11 +27,7 @@ import Observation
         figureList.count
     }
 
-    func setup(with service: CharacterService) {
-        self.service = service
-    }
-
-    func search() throws {
+    mutating func search() async throws {
         var filterList: [CharacterFilterCriteria] = []
         let filterName = CharacterFilterCriteria.name(text: searchText)
         filterList.append(filterName)
@@ -45,51 +40,23 @@ import Observation
         }
 
         figureList = []
-        try service?.search(by: filterList)
-            .receive(on: DispatchQueue.main)
-            .sink { completion in
-                switch completion {
-                case .finished:
-                    // Handle successful completion
-                    break
-                case let .failure(error):
-                    // Handle failure
-                    print("Error: \(error)")
-                }
-            } receiveValue: { response in
-                self.figureList = response.results
-            }
-            .store(in: &cancellables)
+        figureList = try await service.search(by: filterList).results
     }
 
-    func onSearchTextChanged() async {
+    mutating func onSearchTextChanged() async throws {
         guard await debouncer.sleep() else { return }
 
         if searchText.isEmpty, gender == nil, status == nil {
-            try? fetchAll()
+            try await fetchAll()
         } else {
             figureList = []
-            try? search()
+            try await search()
         }
     }
 
-    func fetchAll() throws {
-        try service?.search(by: [], page: page)
-            .receive(on: DispatchQueue.main)
-            .sink { completion in
-                switch completion {
-                case .finished:
-                    // Handle successful completion
-                    break
-                case let .failure(error):
-                    self.figureList = []
-                    // Handle failure
-                    print("Error: \(error)")
-                }
-            } receiveValue: { response in
-                self.figureList.insert(contentsOf: response.results, at: 0)
-            }
-            .store(in: &cancellables)
+    mutating func fetchAll() async throws {
+        let response = try await service.search(by: [], page: page)
+        self.figureList.insert(contentsOf: response.results, at: 0)
     }
 }
 

@@ -18,7 +18,6 @@ enum LoadingState: Hashable, Identifiable {
 
 enum Route: Hashable {
     case characterDetail(id: String)
-    case appointments(userId: String)
 }
 
 @Observable class ApplicationManager {

@@ -5,18 +5,18 @@
 //  Created by Tosun, Irem on 7.06.2024.
 //
 
-import Resolver
 import SwiftUI
+import Resolver
 
 struct ListUsersView: View {
-    @State var viewModel = ListUsersViewModel()
     @Injected var service: UserService
+    @State var selectedUser: UserModel?
 
     var body: some View {
         VStack {
             HeaderView(themeStyle: .desert, title: "Users", subtitle: "Select user to see their appointments.")
 
-            List(viewModel.users, id: \.userId) { user in
+            List(service.users, id: \.userId) { user in
                 HStack {
                     Image(systemName: "person.crop.circle.fill")
                         .resizable()
@@ -27,24 +27,24 @@ struct ListUsersView: View {
                     Text(user.jobTitle)
                 }
                 .onTapGesture {
-                    viewModel.selectedUser = user
+                    selectedUser = user
                 }
             }
             .scrollContentBackground(.hidden)
         }
         .ignoresSafeArea(edges: [.top])
         .onAppear {
-            viewModel.setup(with: service)
-            viewModel.fetchAll()
+            Task {
+                try await service.getAll()
+            }
         }
-        .sheet(item: $viewModel.selectedUser,
+        .sheet(item: $selectedUser,
                onDismiss: {
-                   viewModel.selectedUser = nil
+                   selectedUser = nil
                }, content: { user in
                    AppointmentsView(userId: user.userId)
                        .presentationDetents([.medium, .large])
                })
-        
     }
 }
 

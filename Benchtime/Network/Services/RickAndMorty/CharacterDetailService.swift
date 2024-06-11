@@ -5,22 +5,18 @@
 //  Created by Tosun, Irem on 22.05.2024.
 //
 
-import Combine
 import Foundation
-import Network
 
-@available(iOS 13.0, *)
 protocol CharacterDetailService {
-    func get(by id: String) throws -> AnyPublisher<Figure, Error>
+    func get(by id: String) async throws -> Figure
 }
 
-@available(iOS 13.0, *)
 final class CharacterDetailServiceImpl: CoreNetworkService<Figure>, CharacterDetailService {
 
-    func get(by id: String) throws -> AnyPublisher<Figure, Error> {
+    func get(by id: String) async throws -> Figure {
         guard let charactersUrl = RickAndMorty.ApiConfig.characters.get(by: id) else {
             throw HTTPError.invalidRequest
         }
-        return try performRequest(urlRequest: URLRequest(url: charactersUrl))
+        return try await callAPI(URLRequest(url: charactersUrl))
     }
 }

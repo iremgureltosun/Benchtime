@@ -9,13 +9,13 @@ import Combine
 import Foundation
 
 final class MockCharacterDetailService: Observable, CharacterDetailService {
-    func get(by id: String) throws -> AnyPublisher<Figure, any Error> {
-        return Future<Figure, Error> { promise in
+    func get(by id: String) async throws -> Figure {
+        let figure: Figure = try await withCheckedThrowingContinuation { continuation in
             Task {
                 let figure: Figure = MockDataProvider.load(resourceName: "characterDetail")
-                promise(.success(figure))
+                continuation.resume(returning: figure)
             }
         }
-        .eraseToAnyPublisher()
+        return figure
     }
 }

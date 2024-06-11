@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D328E3A2C09AEDA0030C948 /* Network in Frameworks */ = {isa = PBXBuildFile; productRef = 4D328E392C09AEDA0030C948 /* Network */; };
+		4D0E6DFE2C184AB000E1DA0B /* CoreNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E6DFD2C184AB000E1DA0B /* CoreNetworkService.swift */; };
+		4D0E6E012C18786D00E1DA0B /* CharacterDetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E6E002C18786D00E1DA0B /* CharacterDetailsState.swift */; };
+		4D0E6E042C187BCD00E1DA0B /* MockCharacterDetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E6E032C187BCD00E1DA0B /* MockCharacterDetailsState.swift */; };
 		4D3D1D992C11CE0D004A32E0 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D1D982C11CE0D004A32E0 /* CardInfo.swift */; };
 		4D3D1D9B2C11E2ED004A32E0 /* MockPaymentProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D1D9A2C11E2ED004A32E0 /* MockPaymentProcessor.swift */; };
 		4D4D705E2C04720F00BE2A59 /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D705D2C04720F00BE2A59 /* EpisodesView.swift */; };
@@ -40,7 +42,6 @@
 		4D7DA63B2BFDD506007948BF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DA63A2BFDD506007948BF /* Person.swift */; };
 		4D7DA63D2BFDE232007948BF /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DA63C2BFDE232007948BF /* ApplicationManager.swift */; };
 		4D7DA63F2BFDE2F6007948BF /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DA63E2BFDE2F6007948BF /* CharacterDetailView.swift */; };
-		4D7DA6432BFDE34F007948BF /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DA6422BFDE34F007948BF /* CharacterDetailViewModel.swift */; };
 		4D7DA6452BFDE797007948BF /* CharacterDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DA6442BFDE797007948BF /* CharacterDetailService.swift */; };
 		4D7DA6482BFE0035007948BF /* EnvironmentVales+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7DA6472BFE0035007948BF /* EnvironmentVales+.swift */; };
 		4D802E792C073F7E00B3F919 /* CharacterFilterCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D802E782C073F7E00B3F919 /* CharacterFilterCriteria.swift */; };
@@ -62,7 +63,6 @@
 		4DC352532C171F9B0091A96E /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC352522C171F9B0091A96E /* AppointmentModel.swift */; };
 		4DC352552C1720690091A96E /* AppointmentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC352542C1720690091A96E /* AppointmentsService.swift */; };
 		4DC352592C17223D0091A96E /* AppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC352582C17223D0091A96E /* AppointmentsView.swift */; };
-		4DC3525B2C1722640091A96E /* AppointmentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3525A2C1722640091A96E /* AppointmentsViewModel.swift */; };
 		4DC3525D2C1727E10091A96E /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3525C2C1727E10091A96E /* Date+.swift */; };
 		4DC3525F2C1729BA0091A96E /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3525E2C1729BA0091A96E /* String+.swift */; };
 		4DEB7FA72C1313850055C12C /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FA62C1313850055C12C /* Hobby.swift */; };
@@ -73,10 +73,12 @@
 		4DEB7FB62C1340480055C12C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FB52C1340480055C12C /* UserService.swift */; };
 		4DEB7FB82C1340CE0055C12C /* UserApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FB72C1340CE0055C12C /* UserApiConfig.swift */; };
 		4DEB7FBA2C1341E50055C12C /* ListUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FB92C1341E50055C12C /* ListUsersView.swift */; };
-		4DEB7FBC2C1342020055C12C /* ListUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FBB2C1342020055C12C /* ListUsersViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0E6DFD2C184AB000E1DA0B /* CoreNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreNetworkService.swift; sourceTree = "<group>"; };
+		4D0E6E002C18786D00E1DA0B /* CharacterDetailsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsState.swift; sourceTree = "<group>"; };
+		4D0E6E032C187BCD00E1DA0B /* MockCharacterDetailsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterDetailsState.swift; sourceTree = "<group>"; };
 		4D3D1D982C11CE0D004A32E0 /* CardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		4D3D1D9A2C11E2ED004A32E0 /* MockPaymentProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaymentProcessor.swift; sourceTree = "<group>"; };
 		4D4D705D2C04720F00BE2A59 /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
@@ -111,7 +113,6 @@
 		4D7DA63A2BFDD506007948BF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		4D7DA63C2BFDE232007948BF /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		4D7DA63E2BFDE2F6007948BF /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
-		4D7DA6422BFDE34F007948BF /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		4D7DA6442BFDE797007948BF /* CharacterDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailService.swift; sourceTree = "<group>"; };
 		4D7DA6472BFE0035007948BF /* EnvironmentVales+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentVales+.swift"; sourceTree = "<group>"; };
 		4D802E782C073F7E00B3F919 /* CharacterFilterCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterFilterCriteria.swift; sourceTree = "<group>"; };
@@ -133,7 +134,6 @@
 		4DC352522C171F9B0091A96E /* AppointmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
 		4DC352542C1720690091A96E /* AppointmentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsService.swift; sourceTree = "<group>"; };
 		4DC352582C17223D0091A96E /* AppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsView.swift; sourceTree = "<group>"; };
-		4DC3525A2C1722640091A96E /* AppointmentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewModel.swift; sourceTree = "<group>"; };
 		4DC3525C2C1727E10091A96E /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		4DC3525E2C1729BA0091A96E /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		4DEB7FA62C1313850055C12C /* Hobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobby.swift; sourceTree = "<group>"; };
@@ -144,7 +144,6 @@
 		4DEB7FB52C1340480055C12C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		4DEB7FB72C1340CE0055C12C /* UserApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiConfig.swift; sourceTree = "<group>"; };
 		4DEB7FB92C1341E50055C12C /* ListUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersView.swift; sourceTree = "<group>"; };
-		4DEB7FBB2C1342020055C12C /* ListUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +151,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D328E3A2C09AEDA0030C948 /* Network in Frameworks */,
 				4D90DE342BFB5E7F004E40A2 /* Resolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +158,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D0E6DE22C18476B00E1DA0B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4D90DE262BFB53CD004E40A2 /* Services */,
+				4D4D70612C04734F00BE2A59 /* Models */,
+				4D0E6DFD2C184AB000E1DA0B /* CoreNetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4D0E6E022C187B9E00E1DA0B /* States */ = {
+			isa = PBXGroup;
+			children = (
+				4D0E6E002C18786D00E1DA0B /* CharacterDetailsState.swift */,
+				4D0E6E032C187BCD00E1DA0B /* MockCharacterDetailsState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
 		4D4D70612C04734F00BE2A59 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,8 +280,9 @@
 		4D90DDF22BFB460D004E40A2 /* Benchtime */ = {
 			isa = PBXGroup;
 			children = (
+				4D0E6E022C187B9E00E1DA0B /* States */,
+				4D0E6DE22C18476B00E1DA0B /* Network */,
 				4D7DA6462BFDE7CD007948BF /* AppConfig */,
-				4DEB7FAE2C133E040055C12C /* API */,
 				4D70578C2C1043F0009E6A35 /* TestDoubles */,
 				4D6C79422C0065C70059BE83 /* Extensions */,
 				4D90DE3D2BFB736A004E40A2 /* Theme */,
@@ -302,10 +320,7 @@
 			children = (
 				4D90DE302BFB5D17004E40A2 /* CharacterListViewModel.swift */,
 				4D7DA6372BFDD4D2007948BF /* TitlePlaygroundViewModel.swift */,
-				4D7DA6422BFDE34F007948BF /* CharacterDetailViewModel.swift */,
 				4D6C79402BFF5C110059BE83 /* AnimationClockViewModel.swift */,
-				4DEB7FBB2C1342020055C12C /* ListUsersViewModel.swift */,
-				4DC3525A2C1722640091A96E /* AppointmentsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -403,15 +418,6 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		4DEB7FAE2C133E040055C12C /* API */ = {
-			isa = PBXGroup;
-			children = (
-				4D4D70612C04734F00BE2A59 /* Models */,
-				4D90DE262BFB53CD004E40A2 /* Services */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
 		4DEB7FAF2C133E650055C12C /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,8 +433,8 @@
 		4DEB7FB02C133E820055C12C /* User */ = {
 			isa = PBXGroup;
 			children = (
-				4DEB7FB52C1340480055C12C /* UserService.swift */,
 				4DEB7FB72C1340CE0055C12C /* UserApiConfig.swift */,
+				4DEB7FB52C1340480055C12C /* UserService.swift */,
 				4DC352542C1720690091A96E /* AppointmentsService.swift */,
 			);
 			path = User;
@@ -452,7 +458,6 @@
 			name = Benchtime;
 			packageProductDependencies = (
 				4D90DE332BFB5E7F004E40A2 /* Resolver */,
-				4D328E392C09AEDA0030C948 /* Network */,
 			);
 			productName = Benchtime;
 			productReference = 4D90DDF02BFB460D004E40A2 /* Benchtime.app */;
@@ -484,7 +489,6 @@
 			mainGroup = 4D90DDE72BFB460D004E40A2;
 			packageReferences = (
 				4D90DE322BFB5E7F004E40A2 /* XCRemoteSwiftPackageReference "Resolver" */,
-				4D328E382C09AEDA0030C948 /* XCRemoteSwiftPackageReference "Network" */,
 			);
 			productRefGroup = 4D90DDF12BFB460D004E40A2 /* Products */;
 			projectDirPath = "";
@@ -520,7 +524,6 @@
 				4D4D70672C0473F600BE2A59 /* EpisodeService.swift in Sources */,
 				4D6C79462C0066130059BE83 /* View+.swift in Sources */,
 				4DEB7FB82C1340CE0055C12C /* UserApiConfig.swift in Sources */,
-				4DEB7FBC2C1342020055C12C /* ListUsersViewModel.swift in Sources */,
 				4D78B2092BFC75AA00BD56B0 /* ShowMorelndicatorView.swift in Sources */,
 				4DEB7FBA2C1341E50055C12C /* ListUsersView.swift in Sources */,
 				4D7DA63D2BFDE232007948BF /* ApplicationManager.swift in Sources */,
@@ -541,6 +544,7 @@
 				4D90DE232BFB537A004E40A2 /* MainView.swift in Sources */,
 				4D78B2072BFC747A00BD56B0 /* RefreshableContentView.swift in Sources */,
 				4D90DE3C2BFB7343004E40A2 /* HeaderView.swift in Sources */,
+				4D0E6E012C18786D00E1DA0B /* CharacterDetailsState.swift in Sources */,
 				4DC3525D2C1727E10091A96E /* Date+.swift in Sources */,
 				4D4D70602C04733F00BE2A59 /* Episode.swift in Sources */,
 				4DEB7FA92C1316650055C12C /* Figure.swift in Sources */,
@@ -552,14 +556,14 @@
 				4D802E792C073F7E00B3F919 /* CharacterFilterCriteria.swift in Sources */,
 				4D7DA6452BFDE797007948BF /* CharacterDetailService.swift in Sources */,
 				4D7057932C10605E009E6A35 /* MockDataProvider.swift in Sources */,
-				4DC3525B2C1722640091A96E /* AppointmentsViewModel.swift in Sources */,
+				4D0E6DFE2C184AB000E1DA0B /* CoreNetworkService.swift in Sources */,
 				4DEB7FB62C1340480055C12C /* UserService.swift in Sources */,
 				4D4D706D2C04AF3B00BE2A59 /* AnimatedTextView.swift in Sources */,
 				4D4D706A2C048E0800BE2A59 /* EpisodeHelper.swift in Sources */,
 				4D78B20D2BFC9BF500BD56B0 /* CharacterStatus.swift in Sources */,
 				4D7DA63B2BFDD506007948BF /* Person.swift in Sources */,
-				4D7DA6432BFDE34F007948BF /* CharacterDetailViewModel.swift in Sources */,
 				4D6FE0F42C05B427005BC361 /* MediumCharacterDetailView.swift in Sources */,
+				4D0E6E042C187BCD00E1DA0B /* MockCharacterDetailsState.swift in Sources */,
 				4DC3525F2C1729BA0091A96E /* String+.swift in Sources */,
 				4D78B20B2BFC7CB100BD56B0 /* LoadingAnimationView.swift in Sources */,
 				4D90DE282BFB540B004E40A2 /* RickAndMortyApiConfig.swift in Sources */,
@@ -782,14 +786,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4D328E382C09AEDA0030C948 /* XCRemoteSwiftPackageReference "Network" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/iremgureltosun/Network";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		4D90DE322BFB5E7F004E40A2 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Resolver";
@@ -801,11 +797,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4D328E392C09AEDA0030C948 /* Network */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4D328E382C09AEDA0030C948 /* XCRemoteSwiftPackageReference "Network" */;
-			productName = Network;
-		};
 		4D90DE332BFB5E7F004E40A2 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4D90DE322BFB5E7F004E40A2 /* XCRemoteSwiftPackageReference "Resolver" */;
