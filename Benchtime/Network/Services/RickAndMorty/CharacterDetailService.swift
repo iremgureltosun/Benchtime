@@ -12,7 +12,6 @@ protocol CharacterDetailService {
 }
 
 final class CharacterDetailServiceImpl: CoreNetworkService<Figure>, CharacterDetailService {
-
     func get(by id: String) async throws -> Figure {
         guard let charactersUrl = RickAndMorty.ApiConfig.characters.get(by: id) else {
             throw HTTPError.invalidRequest

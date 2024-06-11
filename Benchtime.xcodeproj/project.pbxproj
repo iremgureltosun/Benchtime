@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		4D0E6DFE2C184AB000E1DA0B /* CoreNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E6DFD2C184AB000E1DA0B /* CoreNetworkService.swift */; };
 		4D0E6E012C18786D00E1DA0B /* CharacterDetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E6E002C18786D00E1DA0B /* CharacterDetailsState.swift */; };
-		4D0E6E042C187BCD00E1DA0B /* MockCharacterDetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E6E032C187BCD00E1DA0B /* MockCharacterDetailsState.swift */; };
+		4D0E6E0A2C187E8600E1DA0B /* MockEpisodesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0E6E092C187E8600E1DA0B /* MockEpisodesService.swift */; };
+		4D0E6E0F2C187FD000E1DA0B /* episode.json in Resources */ = {isa = PBXBuildFile; fileRef = 4D0E6E0E2C187FD000E1DA0B /* episode.json */; };
 		4D3D1D992C11CE0D004A32E0 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D1D982C11CE0D004A32E0 /* CardInfo.swift */; };
 		4D3D1D9B2C11E2ED004A32E0 /* MockPaymentProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D1D9A2C11E2ED004A32E0 /* MockPaymentProcessor.swift */; };
 		4D4D705E2C04720F00BE2A59 /* EpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D705D2C04720F00BE2A59 /* EpisodesView.swift */; };
@@ -54,7 +55,7 @@
 		4D90DE2B2BFB572F004E40A2 /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE2A2BFB572F004E40A2 /* CharacterResponse.swift */; };
 		4D90DE2D2BFB582A004E40A2 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE2C2BFB582A004E40A2 /* CharacterService.swift */; };
 		4D90DE2F2BFB5D07004E40A2 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE2E2BFB5D07004E40A2 /* CharacterListView.swift */; };
-		4D90DE312BFB5D18004E40A2 /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE302BFB5D17004E40A2 /* CharacterListViewModel.swift */; };
+		4D90DE312BFB5D18004E40A2 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE302BFB5D17004E40A2 /* Debouncer.swift */; };
 		4D90DE342BFB5E7F004E40A2 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 4D90DE332BFB5E7F004E40A2 /* Resolver */; };
 		4D90DE372BFB66DA004E40A2 /* Resolver+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE362BFB66DA004E40A2 /* Resolver+Services.swift */; };
 		4D90DE3A2BFB6EFE004E40A2 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE392BFB6EFE004E40A2 /* RemoteImageView.swift */; };
@@ -78,7 +79,8 @@
 /* Begin PBXFileReference section */
 		4D0E6DFD2C184AB000E1DA0B /* CoreNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreNetworkService.swift; sourceTree = "<group>"; };
 		4D0E6E002C18786D00E1DA0B /* CharacterDetailsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsState.swift; sourceTree = "<group>"; };
-		4D0E6E032C187BCD00E1DA0B /* MockCharacterDetailsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterDetailsState.swift; sourceTree = "<group>"; };
+		4D0E6E092C187E8600E1DA0B /* MockEpisodesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEpisodesService.swift; sourceTree = "<group>"; };
+		4D0E6E0E2C187FD000E1DA0B /* episode.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = episode.json; sourceTree = "<group>"; };
 		4D3D1D982C11CE0D004A32E0 /* CardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		4D3D1D9A2C11E2ED004A32E0 /* MockPaymentProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaymentProcessor.swift; sourceTree = "<group>"; };
 		4D4D705D2C04720F00BE2A59 /* EpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesView.swift; sourceTree = "<group>"; };
@@ -126,7 +128,7 @@
 		4D90DE2A2BFB572F004E40A2 /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
 		4D90DE2C2BFB582A004E40A2 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		4D90DE2E2BFB5D07004E40A2 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
-		4D90DE302BFB5D17004E40A2 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
+		4D90DE302BFB5D17004E40A2 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		4D90DE362BFB66DA004E40A2 /* Resolver+Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Services.swift"; sourceTree = "<group>"; };
 		4D90DE392BFB6EFE004E40A2 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		4D90DE3B2BFB7343004E40A2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -172,9 +174,44 @@
 			isa = PBXGroup;
 			children = (
 				4D0E6E002C18786D00E1DA0B /* CharacterDetailsState.swift */,
-				4D0E6E032C187BCD00E1DA0B /* MockCharacterDetailsState.swift */,
 			);
 			path = States;
+			sourceTree = "<group>";
+		};
+		4D0E6E052C187CAE00E1DA0B /* CharacterList */ = {
+			isa = PBXGroup;
+			children = (
+				4D90DE302BFB5D17004E40A2 /* Debouncer.swift */,
+				4D90DE2E2BFB5D07004E40A2 /* CharacterListView.swift */,
+			);
+			path = CharacterList;
+			sourceTree = "<group>";
+		};
+		4D0E6E062C187CC500E1DA0B /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				4D6FE0F02C05B3C0005BC361 /* AccessibilityViews */,
+				4D7DA63E2BFDE2F6007948BF /* CharacterDetailView.swift */,
+			);
+			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
+		4D0E6E072C187CEC00E1DA0B /* AnimatedClock */ = {
+			isa = PBXGroup;
+			children = (
+				4D6C793E2BFF43500059BE83 /* AnimatedClockView.swift */,
+				4D6C79402BFF5C110059BE83 /* AnimationClockViewModel.swift */,
+			);
+			path = AnimatedClock;
+			sourceTree = "<group>";
+		};
+		4D0E6E082C187CFC00E1DA0B /* PlaygroundView */ = {
+			isa = PBXGroup;
+			children = (
+				4D7DA6352BFDD4AE007948BF /* TitlePlaygroundView.swift */,
+				4D7DA6372BFDD4D2007948BF /* TitlePlaygroundViewModel.swift */,
+			);
+			path = PlaygroundView;
 			sourceTree = "<group>";
 		};
 		4D4D70612C04734F00BE2A59 /* Models */ = {
@@ -214,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				4D7057882C104158009E6A35 /* MockCharacterDetailService.swift */,
+				4D0E6E092C187E8600E1DA0B /* MockEpisodesService.swift */,
 			);
 			path = Stub;
 			sourceTree = "<group>";
@@ -221,6 +259,7 @@
 		4D70578C2C1043F0009E6A35 /* TestDoubles */ = {
 			isa = PBXGroup;
 			children = (
+				4D0E6E0E2C187FD000E1DA0B /* episode.json */,
 				4D70578D2C1043F5009E6A35 /* characters.json */,
 				4DEB7FB32C133F7D0055C12C /* characterDetail.json */,
 				4DEB7FB12C133F750055C12C /* episodes.json */,
@@ -245,7 +284,6 @@
 			children = (
 				4D90DE352BFB66C4004E40A2 /* DependencyInjection */,
 				4D7DA63C2BFDE232007948BF /* ApplicationManager.swift */,
-				4D7DA6472BFE0035007948BF /* EnvironmentVales+.swift */,
 			);
 			path = AppConfig;
 			sourceTree = "<group>";
@@ -286,7 +324,6 @@
 				4D70578C2C1043F0009E6A35 /* TestDoubles */,
 				4D6C79422C0065C70059BE83 /* Extensions */,
 				4D90DE3D2BFB736A004E40A2 /* Theme */,
-				4D90DE252BFB53C2004E40A2 /* ViewModels */,
 				4D90DE242BFB5380004E40A2 /* Views */,
 				4D90DDF32BFB460D004E40A2 /* BenchtimeApp.swift */,
 				4D90DDF92BFB460F004E40A2 /* Assets.xcassets */,
@@ -315,16 +352,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		4D90DE252BFB53C2004E40A2 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				4D90DE302BFB5D17004E40A2 /* CharacterListViewModel.swift */,
-				4D7DA6372BFDD4D2007948BF /* TitlePlaygroundViewModel.swift */,
-				4D6C79402BFF5C110059BE83 /* AnimationClockViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		4D90DE262BFB53CD004E40A2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +364,7 @@
 		4D90DE352BFB66C4004E40A2 /* DependencyInjection */ = {
 			isa = PBXGroup;
 			children = (
+				4D7DA6472BFE0035007948BF /* EnvironmentVales+.swift */,
 				4D90DE362BFB66DA004E40A2 /* Resolver+Services.swift */,
 			);
 			path = DependencyInjection;
@@ -369,9 +397,8 @@
 		4DC3524F2C17116F0091A96E /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
-				4D7DA63E2BFDE2F6007948BF /* CharacterDetailView.swift */,
-				4D90DE2E2BFB5D07004E40A2 /* CharacterListView.swift */,
-				4D6FE0F02C05B3C0005BC361 /* AccessibilityViews */,
+				4D0E6E062C187CC500E1DA0B /* CharacterDetail */,
+				4D0E6E052C187CAE00E1DA0B /* CharacterList */,
 			);
 			path = RickAndMorty;
 			sourceTree = "<group>";
@@ -379,8 +406,8 @@
 		4DC352502C17118F0091A96E /* Debug */ = {
 			isa = PBXGroup;
 			children = (
-				4D6C793E2BFF43500059BE83 /* AnimatedClockView.swift */,
-				4D7DA6352BFDD4AE007948BF /* TitlePlaygroundView.swift */,
+				4D0E6E082C187CFC00E1DA0B /* PlaygroundView */,
+				4D0E6E072C187CEC00E1DA0B /* AnimatedClock */,
 			);
 			path = Debug;
 			sourceTree = "<group>";
@@ -507,6 +534,7 @@
 				4DEB7FB42C133F7D0055C12C /* characterDetail.json in Resources */,
 				4DEB7FB22C133F750055C12C /* episodes.json in Resources */,
 				4D90DDFD2BFB460F004E40A2 /* Preview Assets.xcassets in Resources */,
+				4D0E6E0F2C187FD000E1DA0B /* episode.json in Resources */,
 				4D90DDFA2BFB460F004E40A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,7 +557,7 @@
 				4D7DA63D2BFDE232007948BF /* ApplicationManager.swift in Sources */,
 				4DC352592C17223D0091A96E /* AppointmentsView.swift in Sources */,
 				4D7DA63F2BFDE2F6007948BF /* CharacterDetailView.swift in Sources */,
-				4D90DE312BFB5D18004E40A2 /* CharacterListViewModel.swift in Sources */,
+				4D90DE312BFB5D18004E40A2 /* Debouncer.swift in Sources */,
 				4D90DE2B2BFB572F004E40A2 /* CharacterResponse.swift in Sources */,
 				4D4D705E2C04720F00BE2A59 /* EpisodesView.swift in Sources */,
 				4D7057892C104158009E6A35 /* MockCharacterDetailService.swift in Sources */,
@@ -554,6 +582,7 @@
 				4D6C793B2BFF35D40059BE83 /* SubheadlineView.swift in Sources */,
 				4D90DDF42BFB460D004E40A2 /* BenchtimeApp.swift in Sources */,
 				4D802E792C073F7E00B3F919 /* CharacterFilterCriteria.swift in Sources */,
+				4D0E6E0A2C187E8600E1DA0B /* MockEpisodesService.swift in Sources */,
 				4D7DA6452BFDE797007948BF /* CharacterDetailService.swift in Sources */,
 				4D7057932C10605E009E6A35 /* MockDataProvider.swift in Sources */,
 				4D0E6DFE2C184AB000E1DA0B /* CoreNetworkService.swift in Sources */,
@@ -563,7 +592,6 @@
 				4D78B20D2BFC9BF500BD56B0 /* CharacterStatus.swift in Sources */,
 				4D7DA63B2BFDD506007948BF /* Person.swift in Sources */,
 				4D6FE0F42C05B427005BC361 /* MediumCharacterDetailView.swift in Sources */,
-				4D0E6E042C187BCD00E1DA0B /* MockCharacterDetailsState.swift in Sources */,
 				4DC3525F2C1729BA0091A96E /* String+.swift in Sources */,
 				4D78B20B2BFC7CB100BD56B0 /* LoadingAnimationView.swift in Sources */,
 				4D90DE282BFB540B004E40A2 /* RickAndMortyApiConfig.swift in Sources */,

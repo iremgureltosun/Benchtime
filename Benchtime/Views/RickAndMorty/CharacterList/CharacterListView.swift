@@ -5,16 +5,29 @@
 //  Created by Tosun, Irem on 20.05.2024.
 //
 
-import Combine
 import Resolver
 import SwiftUI
 
 struct CharacterListView: View {
     let listItems: [GridItem] = Array(repeating: .init(.fixed(CGFloat(100))), count: 3)
-
-    @State var viewModel = CharacterListViewModel()
+    private let debouncer = Debouncer(duration: .seconds(0.5))
+    private let genderOptions = CharacterGender.allCases
+    private let statusOptions = CharacterStatus.allCases
+    @Injected private var characterService: CharacterService
     @Environment(\.appManager) private var applicationManager
 
+    @State private var isLoading: Bool = false
+    @State private var searchText: String = ""
+    @State private var status: CharacterStatus?
+    @State private var gender: CharacterGender?
+    @State private var hasAppeared: Bool = false
+    @State private var page: Int = 1
+    @State private var filterList: [CharacterFilterCriteria] = []
+
+    var recordCount: Int {
+        characterService.figureList.count
+    }
+    
     var body: some View {
         VStack {
             header
@@ -27,26 +40,50 @@ struct CharacterListView: View {
         }
         .ignoresSafeArea(edges: [.top])
         .onAppear {
-            if !viewModel.hasAppeared {
+            if !hasAppeared {
                 Task {
-                    try await viewModel.fetchAll()
-                    viewModel.hasAppeared = true
+                    try await characterService.fetchAll(page: page)
+                    hasAppeared = true
                 }
             }
         }
-        .onChange(of: viewModel.searchText, initial: false, { _, _ in
+        .onChange(of: searchText, initial: false, { _, text in
             Task {
-                try await viewModel.onSearchTextChanged()
+                if !text.isEmpty {
+                    filterList.append(CharacterFilterCriteria.name(text: text))
+                }
+                guard await debouncer.sleep() else { return }
+                if searchText.isEmpty, gender == nil, status == nil {
+                    try await characterService.fetchAll(page: page)
+                } else{
+                    try await characterService.fetchWithCriteria(criteria: filterList)
+                }
             }
         })
-        .onChange(of: viewModel.gender, initial: false, { _, _ in
+        .onChange(of: gender, initial: false, { _, gender in
             Task {
-                try await viewModel.onSearchTextChanged()
+                if let gender = gender {
+                    filterList.append(CharacterFilterCriteria.gender(gender: gender))
+                }
+                guard await debouncer.sleep() else { return }
+                if searchText.isEmpty, gender == nil, status == nil {
+                    try await characterService.fetchAll(page: page)
+                } else{
+                    try await characterService.fetchWithCriteria(criteria: filterList)
+                }
             }
         })
-        .onChange(of: viewModel.status, initial: false, { _, _ in
+        .onChange(of: status, initial: false, { _, status in
             Task {
-                try await viewModel.onSearchTextChanged()
+                if let status = status {
+                    filterList.append(CharacterFilterCriteria.status(status: status))
+                }
+                guard await debouncer.sleep() else { return }
+                if searchText.isEmpty, gender == nil, status == nil {
+                    try await characterService.fetchAll(page: page)
+                } else{
+                    try await characterService.fetchWithCriteria(criteria: filterList)
+                }
             }
         })
     }
@@ -57,7 +94,7 @@ struct CharacterListView: View {
 
     @ViewBuilder private var content: some View {
         LazyVGrid(columns: listItems, spacing: 20) {
-            ForEach(viewModel.figureList, id: \.self) { figure in
+            ForEach(characterService.figureList, id: \.self) { figure in
                 // let _ = print(figure)
                 getCell(for: figure)
             }
@@ -87,18 +124,18 @@ struct CharacterListView: View {
 
     @ViewBuilder private var filteringRow: some View {
         VStack(alignment: .trailing, content: {
-            SearchTextfield(searchText: $viewModel.searchText)
+            SearchTextfield(searchText: $searchText)
 
             HStack {
                 Spacer()
                 Text("Filter by:")
                     .font(.caption)
 
-                Picker("Status", selection: $viewModel.status) {
+                Picker("Status", selection: $status) {
                     Text("status")
                         .tag(CharacterStatus?.none)
 
-                    ForEach(viewModel.statusOptions, id: \.self) { option in
+                    ForEach(statusOptions, id: \.self) { option in
 
                         Text(option.rawValue)
                             .tag(CharacterStatus?.some(option))
@@ -106,10 +143,10 @@ struct CharacterListView: View {
                 }
                 .pickerStyle(MenuPickerStyle())
 
-                Picker("Gender", selection: $viewModel.gender) {
+                Picker("Gender", selection: $gender) {
                     Text("gender").tag(CharacterGender?.none)
 
-                    ForEach(viewModel.genderOptions, id: \.self) { option in
+                    ForEach(genderOptions, id: \.self) { option in
                         Text(option.rawValue)
                             .tag(CharacterGender?.some(option))
                     }
@@ -117,22 +154,22 @@ struct CharacterListView: View {
                 .pickerStyle(MenuPickerStyle())
             }
 
-            Text("\(viewModel.recordCount) records")
+            Text("\(recordCount) records")
                 .font(.caption)
         })
     }
 
     @ViewBuilder private var scrollableContent: some View {
         ScrollView(showsIndicators: false) {
-            RefreshableContentView(isRefreshing: $viewModel.isLoading) {
+            RefreshableContentView(isRefreshing: $isLoading) {
                 content
             }
         }
         .coordinateSpace(name: RefreshablePresentModel.homeScrollView)
         .refreshable {
             Task {
-                viewModel.page += 1
-                try await viewModel.fetchAll()
+                self.page += 1
+                try await characterService.fetchAll(page: page)
             }
         }
         .onAppear {

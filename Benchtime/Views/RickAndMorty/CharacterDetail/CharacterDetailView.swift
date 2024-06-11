@@ -36,5 +36,5 @@ struct CharacterDetailView: View {
 
 #Preview {
     CharacterDetailView(id: "3")
-       // .environment(\.detailState, MockCharacterDetailService()) // Method 2
+        .environment(\.detailState, CharacterDetailsState.init(characterService: MockCharacterDetailService(), episodeService: MockEpisodeService())) // Method 2
 }
