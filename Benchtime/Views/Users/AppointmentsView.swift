@@ -25,25 +25,18 @@ struct AppointmentsView: View {
             List(viewModel.appointments, id: \.id) { user in
                 HStack {
                     Text(user.customerName)
-
                     Spacer()
                     VStack {
                         Text(user.date)
-                        
-                        HStack {
-                            Group {
-                                Text(user.startTime)
-                                Text(user.endTime)
-                            }
+
+                        Text("\(user.startTime) - \(user.endTime)")
                             .font(.caption)
-                        }
                     }
                 }
             }
             .scrollContentBackground(.hidden)
-
         }
-        .padding(.top, 20)
+        .padding(.top, 45)
         .onAppear {
             viewModel.setup(userId: userId, service: service)
             viewModel.fetchAppointments()
