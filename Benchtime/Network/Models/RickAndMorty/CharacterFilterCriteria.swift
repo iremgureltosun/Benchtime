@@ -12,3 +12,8 @@ enum CharacterFilterCriteria {
     case gender(gender: CharacterGender)
     case status(status: CharacterStatus)
 }
+enum FilterKey {
+    case name
+    case gender
+    case status
+}

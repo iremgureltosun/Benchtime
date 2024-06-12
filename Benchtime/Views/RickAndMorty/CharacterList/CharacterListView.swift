@@ -15,19 +15,12 @@ struct CharacterListView: View {
     private let statusOptions = CharacterStatus.allCases
     @Injected private var characterService: CharacterService
     @Environment(\.appManager) private var applicationManager
-
-    @State private var isLoading: Bool = false
-    @State private var searchText: String = ""
-    @State private var status: CharacterStatus?
-    @State private var gender: CharacterGender?
-    @State private var hasAppeared: Bool = false
-    @State private var page: Int = 1
-    @State private var filterList: [CharacterFilterCriteria] = []
+    @State private var state: CharacterListState = .init()
 
     var recordCount: Int {
         characterService.figureList.count
     }
-    
+
     var body: some View {
         VStack {
             header
@@ -40,52 +33,67 @@ struct CharacterListView: View {
         }
         .ignoresSafeArea(edges: [.top])
         .onAppear {
-            if !hasAppeared {
+            if !state.hasAppeared {
                 Task {
-                    try await characterService.fetchAll(page: page)
-                    hasAppeared = true
+                    try await characterService.fetchAll(page: state.page)
+                    state.hasAppeared = true
                 }
             }
         }
-        .onChange(of: searchText, initial: false, { _, text in
+        .onChange(of: state.searchText, initial: false, { _, text in
+            checkFilterOfText(text: text)
+            
             Task {
-                if !text.isEmpty {
-                    filterList.append(CharacterFilterCriteria.name(text: text))
-                }
                 guard await debouncer.sleep() else { return }
-                if searchText.isEmpty, gender == nil, status == nil {
-                    try await characterService.fetchAll(page: page)
-                } else{
-                    try await characterService.fetchWithCriteria(criteria: filterList)
-                }
+                try await searchByCriteria()
             }
         })
-        .onChange(of: gender, initial: false, { _, gender in
+        .onChange(of: state.gender, initial: false, { _, gender in
+            checkFilterOfGender(gender: gender)
             Task {
-                if let gender = gender {
-                    filterList.append(CharacterFilterCriteria.gender(gender: gender))
-                }
-                guard await debouncer.sleep() else { return }
-                if searchText.isEmpty, gender == nil, status == nil {
-                    try await characterService.fetchAll(page: page)
-                } else{
-                    try await characterService.fetchWithCriteria(criteria: filterList)
-                }
+                try await searchByCriteria()
             }
         })
-        .onChange(of: status, initial: false, { _, status in
+        .onChange(of: state.status, initial: false, { _, status in
+            checkFilterOfStatus(status: status)
             Task {
-                if let status = status {
-                    filterList.append(CharacterFilterCriteria.status(status: status))
-                }
-                guard await debouncer.sleep() else { return }
-                if searchText.isEmpty, gender == nil, status == nil {
-                    try await characterService.fetchAll(page: page)
-                } else{
-                    try await characterService.fetchWithCriteria(criteria: filterList)
-                }
+                try await searchByCriteria()
             }
         })
+    }
+
+    func searchByCriteria() async throws {
+        if state.searchText.isEmpty, state.gender == nil, state.status == nil {
+            try await characterService.fetchAll(page: state.page)
+        } else {
+            try await characterService.fetchWithCriteria(criteria: Array(state.filterList.values))
+        }
+    }
+
+    func checkFilterOfText(text: String) {
+        if !text.isEmpty {
+            state.filterList[.name] = CharacterFilterCriteria.name(text: text)
+        } else {
+            state.filterList[.name] = nil
+        }
+    }
+
+    func checkFilterOfGender(gender: CharacterGender?) {
+        if let gender = gender {
+            let genderFilter = CharacterFilterCriteria.gender(gender: gender)
+            state.filterList[.gender] = genderFilter
+        } else {
+            state.filterList[.gender] = nil
+        }
+    }
+
+    func checkFilterOfStatus(status: CharacterStatus?) {
+        if let status = status {
+            let statusFilter = CharacterFilterCriteria.status(status: status)
+            state.filterList[.status] = statusFilter
+        } else {
+            state.filterList[.status] = nil
+        }
     }
 
     @ViewBuilder private var header: some View {
@@ -124,14 +132,14 @@ struct CharacterListView: View {
 
     @ViewBuilder private var filteringRow: some View {
         VStack(alignment: .trailing, content: {
-            SearchTextfield(searchText: $searchText)
+            SearchTextfield(searchText: $state.searchText)
 
             HStack {
                 Spacer()
                 Text("Filter by:")
                     .font(.caption)
 
-                Picker("Status", selection: $status) {
+                Picker("Status", selection: $state.status) {
                     Text("status")
                         .tag(CharacterStatus?.none)
 
@@ -143,7 +151,7 @@ struct CharacterListView: View {
                 }
                 .pickerStyle(MenuPickerStyle())
 
-                Picker("Gender", selection: $gender) {
+                Picker("Gender", selection: $state.gender) {
                     Text("gender").tag(CharacterGender?.none)
 
                     ForEach(genderOptions, id: \.self) { option in
@@ -161,15 +169,15 @@ struct CharacterListView: View {
 
     @ViewBuilder private var scrollableContent: some View {
         ScrollView(showsIndicators: false) {
-            RefreshableContentView(isRefreshing: $isLoading) {
+            RefreshableContentView(isRefreshing: $state.isLoading) {
                 content
             }
         }
         .coordinateSpace(name: RefreshablePresentModel.homeScrollView)
         .refreshable {
             Task {
-                self.page += 1
-                try await characterService.fetchAll(page: page)
+                self.state.page += 1
+                try await characterService.fetchAll(page: state.page)
             }
         }
         .onAppear {
