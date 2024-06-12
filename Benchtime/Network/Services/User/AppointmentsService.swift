@@ -17,7 +17,7 @@ protocol AppointmentsService {
     var appointments: [AppointmentModel] = []
 
     func fetchAppointments(of userId: String) async throws {
-        guard let url = URL(string: User.ApiConfig.appointments(userId: userId).url) else {
+        guard let url = URL(string: UserMockAPI.ApiConfig.appointments(userId: userId).url) else {
             throw HTTPError.invalidRequest
         }
         appointments = try await callAPI(URLRequest(url: url))

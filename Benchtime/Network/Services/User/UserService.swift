@@ -17,7 +17,7 @@ protocol UserService {
     private(set) var users: [UserModel] = []
 
     func getAll() async throws {
-        guard let url = URL(string: User.ApiConfig.all.url) else {
+        guard let url = URL(string: UserMockAPI.ApiConfig.all.url) else {
             throw HTTPError.invalidRequest
         }
         users = try await callAPI(URLRequest(url: url))

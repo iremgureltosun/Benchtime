@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User {
+struct UserMockAPI {
     enum ApiConfig {
         private static let baseURL: String = "https://fdc39d9d-cbf6-4ce2-b0dd-3861a530172a.mock.pstmn.io/"
 
