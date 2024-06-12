@@ -22,3 +22,11 @@ let getAllUrlString = queryHelper.makeUrlString(with: [])
 let detail: Figure = MockDataProvider.load(resourceName: "characterDetail")
 
 let date: String = Date().ISO8601Format()
+
+var filterList: [FilterKey: CharacterFilterCriteria] = [:]
+filterList[FilterKey.status] = CharacterFilterCriteria.status(status: .dead)
+
+let list2 = Array(filterList.values)
+filterList[.status] = nil
+
+let list3 = Array(filterList.values)

@@ -15,7 +15,7 @@ struct CharacterListView: View {
     private let statusOptions = CharacterStatus.allCases
     @Injected private var characterService: CharacterService
     @Environment(\.appManager) private var applicationManager
-    @State private var state: CharacterListState = .init()
+    @State private var state: CharacterListViewState = .init()
 
     var recordCount: Int {
         characterService.figureList.count
@@ -41,21 +41,21 @@ struct CharacterListView: View {
             }
         }
         .onChange(of: state.searchText, initial: false, { _, text in
-            checkFilterOfText(text: text)
-            
+            setFilterOfText(text: text)
+
             Task {
                 guard await debouncer.sleep() else { return }
                 try await searchByCriteria()
             }
         })
         .onChange(of: state.gender, initial: false, { _, gender in
-            checkFilterOfGender(gender: gender)
+            setFilterOfGender(gender: gender)
             Task {
                 try await searchByCriteria()
             }
         })
         .onChange(of: state.status, initial: false, { _, status in
-            checkFilterOfStatus(status: status)
+            setFilterOfStatus(status: status)
             Task {
                 try await searchByCriteria()
             }
@@ -63,36 +63,36 @@ struct CharacterListView: View {
     }
 
     func searchByCriteria() async throws {
-        if state.searchText.isEmpty, state.gender == nil, state.status == nil {
+        if state.filterDictionary.isEmpty {
             try await characterService.fetchAll(page: state.page)
         } else {
-            try await characterService.fetchWithCriteria(criteria: Array(state.filterList.values))
+            try await characterService.fetchWithCriteria(criteria: Array(state.filterDictionary.values))
         }
     }
 
-    func checkFilterOfText(text: String) {
+    func setFilterOfText(text: String) {
         if !text.isEmpty {
-            state.filterList[.name] = CharacterFilterCriteria.name(text: text)
+            state.filterDictionary[.name] = CharacterFilterCriteria.name(text: text)
         } else {
-            state.filterList[.name] = nil
+            state.filterDictionary[.name] = nil
         }
     }
 
-    func checkFilterOfGender(gender: CharacterGender?) {
+    func setFilterOfGender(gender: CharacterGender?) {
         if let gender = gender {
             let genderFilter = CharacterFilterCriteria.gender(gender: gender)
-            state.filterList[.gender] = genderFilter
+            state.filterDictionary[.gender] = genderFilter
         } else {
-            state.filterList[.gender] = nil
+            state.filterDictionary[.gender] = nil
         }
     }
 
-    func checkFilterOfStatus(status: CharacterStatus?) {
+    func setFilterOfStatus(status: CharacterStatus?) {
         if let status = status {
             let statusFilter = CharacterFilterCriteria.status(status: status)
-            state.filterList[.status] = statusFilter
+            state.filterDictionary[.status] = statusFilter
         } else {
-            state.filterList[.status] = nil
+            state.filterDictionary[.status] = nil
         }
     }
 
@@ -177,7 +177,13 @@ struct CharacterListView: View {
         .refreshable {
             Task {
                 self.state.page += 1
-                try await characterService.fetchAll(page: state.page)
+                if !state.filterDictionary.isEmpty {
+                    state.gender = nil
+                    state.status = nil
+                    state.searchText = ""
+                } else {
+                    try await characterService.fetchAll(page: state.page)
+                }
             }
         }
         .onAppear {

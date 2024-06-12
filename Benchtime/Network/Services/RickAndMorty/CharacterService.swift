@@ -6,14 +6,15 @@
 //
 
 import Foundation
+import Observation
 
 protocol CharacterService {
     var figureList: [Figure] { get }
     func fetchAll(page: Int) async throws
-    func fetchWithCriteria( criteria: [CharacterFilterCriteria]) async throws
+    func fetchWithCriteria(criteria: [CharacterFilterCriteria]) async throws
 }
 
-final class CharacterServiceImpl: CoreNetworkService<CharacterResponse>, CharacterService {
+@Observable final class CharacterServiceImpl: CoreNetworkService<CharacterResponse>, CharacterService {
     private (set) var figureList: [Figure] = []
     
     private func search(by criteria: [CharacterFilterCriteria], page: Int? = nil) async throws -> [Figure] {
@@ -25,17 +26,13 @@ final class CharacterServiceImpl: CoreNetworkService<CharacterResponse>, Charact
     
     func fetchAll(page: Int) async throws {
         let list = try await search(by: [], page: page)
-        self.figureList.insert(contentsOf: list, at: 0)
+        let existingFigures = Set(figureList)
+        let newFigures = list.filter { !existingFigures.contains($0) }
+        figureList.insert(contentsOf: newFigures, at: 0)
     }
     
-    func fetchWithCriteria( criteria: [CharacterFilterCriteria]) async throws {
-        let list = try await search(by: criteria)
-        self.figureList = list
+    func fetchWithCriteria(criteria: [CharacterFilterCriteria]) async throws {
+        self.figureList.removeAll()
+        self.figureList = try await search(by: criteria)
     }
 }
-
-//extension CharacterService {
-//    func search(by criteria: [CharacterFilterCriteria]) async throws -> [Figure] {
-//        return try await search(by: criteria, page: nil)
-//    }
-//}

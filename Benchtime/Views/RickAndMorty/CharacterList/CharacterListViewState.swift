@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct CharacterListState {
+struct CharacterListViewState {
     var isLoading: Bool = false
     var searchText: String = ""
     var status: CharacterStatus?
     var gender: CharacterGender?
     var hasAppeared: Bool = false
     var page: Int = 1
-    var filterList: [FilterKey: CharacterFilterCriteria] = [:]
+    var filterDictionary: [FilterKey: CharacterFilterCriteria] = [:]
 
 }
