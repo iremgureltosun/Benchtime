@@ -13,6 +13,4 @@ struct EpisodeHelper {
             return components.last ?? ""
         }
     }
-    
-    
 }

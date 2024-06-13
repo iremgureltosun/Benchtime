@@ -19,7 +19,7 @@ struct MainView: View {
                     .tabItem {
                         Label("Characters", systemImage: "person")
                     }
-               
+
                 ListUsersView()
                     .tabItem {
                         Label("Users", systemImage: "person")
@@ -28,7 +28,7 @@ struct MainView: View {
                     .tabItem {
                         Label("Play", systemImage: "message")
                     }
-                
+
                 AnimatedClockView()
                     .tabItem {
                         Label("Clock", systemImage: "clock")
