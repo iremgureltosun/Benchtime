@@ -15,24 +15,24 @@ protocol CharacterService {
 }
 
 @Observable final class CharacterServiceImpl: CoreNetworkService<CharacterResponse>, CharacterService {
-    private (set) var figureList: [Figure] = []
-    
+    private(set) var figureList: [Figure] = []
+
     private func search(by criteria: [CharacterFilterCriteria], page: Int? = nil) async throws -> [Figure] {
         guard let charactersUrl = RickAndMorty.ApiConfig.getCharacters(by: criteria, page: page) else {
             throw HTTPError.invalidRequest
         }
         return try await callAPI(URLRequest(url: charactersUrl)).results
     }
-    
+
     func fetchAll(page: Int) async throws {
-        let list = try await search(by: [], page: page)
-        let existingFigures = Set(figureList)
-        let newFigures = list.filter { !existingFigures.contains($0) }
-        figureList.insert(contentsOf: newFigures, at: 0)
+        figureList.removeAll() // Cleaned if filter is applied before
+        for i in 1 ... page {
+            let list = try await search(by: [], page: i)
+            figureList.insert(contentsOf: list, at: 0)
+        }
     }
-    
+
     func fetchWithCriteria(criteria: [CharacterFilterCriteria]) async throws {
-        self.figureList.removeAll()
-        self.figureList = try await search(by: criteria)
+        figureList = try await search(by: criteria)
     }
 }

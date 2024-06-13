@@ -12,7 +12,6 @@ struct CharacterListViewState {
     var searchText: String = ""
     var status: CharacterStatus?
     var gender: CharacterGender?
-    var hasAppeared: Bool = false
     var page: Int = 1
     var filterDictionary: [FilterKey: CharacterFilterCriteria] = [:]
 

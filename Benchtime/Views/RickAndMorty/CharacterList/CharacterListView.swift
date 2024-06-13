@@ -33,11 +33,8 @@ struct CharacterListView: View {
         }
         .ignoresSafeArea(edges: [.top])
         .onAppear {
-            if !state.hasAppeared {
-                Task {
-                    try await characterService.fetchAll(page: state.page)
-                    state.hasAppeared = true
-                }
+            Task {
+                try await characterService.fetchAll(page: state.page)
             }
         }
         .onChange(of: state.searchText, initial: false, { _, text in
@@ -62,7 +59,7 @@ struct CharacterListView: View {
         })
     }
 
-    func searchByCriteria() async throws {
+    private func searchByCriteria() async throws {
         if state.filterDictionary.isEmpty {
             try await characterService.fetchAll(page: state.page)
         } else {
@@ -70,7 +67,7 @@ struct CharacterListView: View {
         }
     }
 
-    func setFilterOfText(text: String) {
+    private func setFilterOfText(text: String) {
         if !text.isEmpty {
             state.filterDictionary[.name] = CharacterFilterCriteria.name(text: text)
         } else {
@@ -78,7 +75,7 @@ struct CharacterListView: View {
         }
     }
 
-    func setFilterOfGender(gender: CharacterGender?) {
+    private func setFilterOfGender(gender: CharacterGender?) {
         if let gender = gender {
             let genderFilter = CharacterFilterCriteria.gender(gender: gender)
             state.filterDictionary[.gender] = genderFilter
@@ -87,7 +84,7 @@ struct CharacterListView: View {
         }
     }
 
-    func setFilterOfStatus(status: CharacterStatus?) {
+    private func setFilterOfStatus(status: CharacterStatus?) {
         if let status = status {
             let statusFilter = CharacterFilterCriteria.status(status: status)
             state.filterDictionary[.status] = statusFilter

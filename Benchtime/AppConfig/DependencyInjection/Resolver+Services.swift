@@ -9,7 +9,8 @@ import Resolver
 
 extension Resolver: ResolverRegistering {
     func registerServices() {
-        register(CharacterService.self) { CharacterServiceImpl() }
+        register(CharacterService.self) { CharacterServiceImpl() }.scope(.application)
+        
         // register(CharacterDetailService.self) { MockCharacterDetailService() } // Method1
         register(EpisodeService.self) { EpisodeServiceImpl() }
         
