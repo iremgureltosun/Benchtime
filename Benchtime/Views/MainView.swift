@@ -24,15 +24,21 @@ struct MainView: View {
                     .tabItem {
                         Label("Users", systemImage: "person")
                     }
-                TitlePlaygroundView()
+                
+                StoreView()
                     .tabItem {
-                        Label("Play", systemImage: "message")
+                        Label("Store", systemImage: "person")
                     }
-
-                AnimatedClockView()
-                    .tabItem {
-                        Label("Clock", systemImage: "clock")
-                    }
+                
+//                TitlePlaygroundView()
+//                    .tabItem {
+//                        Label("Play", systemImage: "message")
+//                    }
+//
+//                AnimatedClockView()
+//                    .tabItem {
+//                        Label("Clock", systemImage: "clock")
+//                    }
             }
             .navigationDestination(for: Route.self) { route in
                 switch route {

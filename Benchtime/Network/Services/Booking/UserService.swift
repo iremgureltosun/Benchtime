@@ -17,9 +17,19 @@ protocol UserService {
     private(set) var users: [UserModel] = []
 
     func getAll() async throws {
-        guard let url = URL(string: UserMockAPI.ApiConfig.all.url) else {
+        guard let url = URL(string: BookingMockAPI.Endpoint.users.url) else {
             throw HTTPError.invalidRequest
         }
-        users = try await callAPI(URLRequest(url: url))
+        
+        // Building the url request with builder pattern
+        let apiRequest = APIRequestBuilderImpl<Data>(url)
+            .setMethod(.get)
+            .build()
+        
+        guard let urlRequest = apiRequest.getURLRequest() else {
+            throw HTTPError.invalidRequest
+        }
+        
+        users = try await callAPI(urlRequest)
     }
 }

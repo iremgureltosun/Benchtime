@@ -9,7 +9,7 @@ import Foundation
 
 protocol APIRequestBuilder {
     associatedtype Body
-    init (_ endpoint: URL)
+
     func setMethod(_ method: HttpMethod) -> Self
     func addHeader(key: String, value: String) -> Self
     func addParameter(key: String, value: String) -> Self

@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct UserMockAPI {
-    enum ApiConfig {
+struct BookingMockAPI {
+    enum Endpoint {
         private static let baseURL: String = "https://fdc39d9d-cbf6-4ce2-b0dd-3861a530172a.mock.pstmn.io/"
 
-        case all
+        case users
         case appointments(userId: String)
 
         var url: String {
             switch self {
-            case .all:
+            case .users:
                 return "\(Self.baseURL)getUsers"
             case let .appointments(userId):
                 return "\(Self.baseURL)getAppointments/?userId=\(userId)"

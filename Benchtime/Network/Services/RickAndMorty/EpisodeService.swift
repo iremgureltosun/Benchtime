@@ -24,6 +24,16 @@ final class EpisodeServiceImpl: CoreNetworkService<Episode>, EpisodeService {
         guard let episodeUrl = RickAndMorty.Endpoint.episodes.get(by: id) else {
             throw HTTPError.invalidRequest
         }
-        return try await callAPI(URLRequest(url: episodeUrl))
+        
+        // Building the url request with builder pattern
+        let apiRequest = APIRequestBuilderImpl<Data>(episodeUrl)
+            .setMethod(.get)
+            .build()
+        
+        guard let urlRequest = apiRequest.getURLRequest() else {
+            throw HTTPError.invalidRequest
+        }
+        
+        return try await callAPI(urlRequest)
     }
 }

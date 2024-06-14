@@ -16,6 +16,16 @@ final class CharacterDetailServiceImpl: CoreNetworkService<Figure>, CharacterDet
         guard let charactersUrl = RickAndMorty.Endpoint.characters.get(by: id) else {
             throw HTTPError.invalidRequest
         }
-        return try await callAPI(URLRequest(url: charactersUrl))
+        
+        // Building the url request with builder pattern
+        let apiRequest = APIRequestBuilderImpl<Data>(charactersUrl)
+            .setMethod(.get)
+            .build()
+        
+        guard let urlRequest = apiRequest.getURLRequest() else {
+            throw HTTPError.invalidRequest
+        }
+        
+        return try await callAPI(urlRequest)
     }
 }

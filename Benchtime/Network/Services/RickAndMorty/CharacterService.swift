@@ -21,12 +21,16 @@ protocol CharacterService {
         guard let charactersUrl = RickAndMorty.Endpoint.getCharacters(by: criteria, page: page) else {
             throw HTTPError.invalidRequest
         }
-        let apiRequest = CharactersAPIRequestBuilder<Data>(charactersUrl)
+        
+        // Building the url request with builder pattern
+        let apiRequest = APIRequestBuilderImpl<Data>(charactersUrl)
             .setMethod(.get)
             .build()
+        
         guard let urlRequest = apiRequest.getURLRequest() else {
             throw HTTPError.invalidRequest
         }
+        
         return try await callAPI(urlRequest).results
     }
 

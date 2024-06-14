@@ -23,8 +23,12 @@
 		4D4D706D2C04AF3B00BE2A59 /* AnimatedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D706C2C04AF3B00BE2A59 /* AnimatedTextView.swift */; };
 		4D68482F2C1C4E5600378EE2 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D68482E2C1C4E5600378EE2 /* APIRequest.swift */; };
 		4D6848312C1C523000378EE2 /* APIRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6848302C1C523000378EE2 /* APIRequestBuilder.swift */; };
-		4D6848332C1C52A300378EE2 /* CharactersAPIRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6848322C1C52A300378EE2 /* CharactersAPIRequestBuilder.swift */; };
 		4D6848352C1C5DFD00378EE2 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6848342C1C5DFD00378EE2 /* HttpMethod.swift */; };
+		4D68483C2C1C609400378EE2 /* APIRequestBuilderImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D68483B2C1C609400378EE2 /* APIRequestBuilderImpl.swift */; };
+		4D68483F2C1C6F4F00378EE2 /* StoreEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D68483E2C1C6F4F00378EE2 /* StoreEndpoint.swift */; };
+		4D6848422C1C718600378EE2 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6848412C1C718600378EE2 /* Product.swift */; };
+		4D6848442C1C71AF00378EE2 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6848432C1C71AF00378EE2 /* ProductService.swift */; };
+		4D6848472C1C78A200378EE2 /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6848462C1C78A200378EE2 /* StoreView.swift */; };
 		4D6C793B2BFF35D40059BE83 /* SubheadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C793A2BFF35D40059BE83 /* SubheadlineView.swift */; };
 		4D6C793D2BFF36370059BE83 /* PlaygroundRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C793C2BFF36370059BE83 /* PlaygroundRowView.swift */; };
 		4D6C793F2BFF43500059BE83 /* AnimatedClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C793E2BFF43500059BE83 /* AnimatedClockView.swift */; };
@@ -56,7 +60,7 @@
 		4D90DDFA2BFB460F004E40A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D90DDF92BFB460F004E40A2 /* Assets.xcassets */; };
 		4D90DDFD2BFB460F004E40A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D90DDFC2BFB460F004E40A2 /* Preview Assets.xcassets */; };
 		4D90DE232BFB537A004E40A2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE222BFB537A004E40A2 /* MainView.swift */; };
-		4D90DE282BFB540B004E40A2 /* RickAndMortyApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE272BFB540B004E40A2 /* RickAndMortyApiConfig.swift */; };
+		4D90DE282BFB540B004E40A2 /* RickAndMortyEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE272BFB540B004E40A2 /* RickAndMortyEndpoints.swift */; };
 		4D90DE2B2BFB572F004E40A2 /* CharacterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE2A2BFB572F004E40A2 /* CharacterResponse.swift */; };
 		4D90DE2D2BFB582A004E40A2 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE2C2BFB582A004E40A2 /* CharacterService.swift */; };
 		4D90DE2F2BFB5D07004E40A2 /* CharacterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D90DE2E2BFB5D07004E40A2 /* CharacterListView.swift */; };
@@ -77,7 +81,7 @@
 		4DEB7FB22C133F750055C12C /* episodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DEB7FB12C133F750055C12C /* episodes.json */; };
 		4DEB7FB42C133F7D0055C12C /* characterDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 4DEB7FB32C133F7D0055C12C /* characterDetail.json */; };
 		4DEB7FB62C1340480055C12C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FB52C1340480055C12C /* UserService.swift */; };
-		4DEB7FB82C1340CE0055C12C /* UserApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FB72C1340CE0055C12C /* UserApiConfig.swift */; };
+		4DEB7FB82C1340CE0055C12C /* BookingEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FB72C1340CE0055C12C /* BookingEndpoint.swift */; };
 		4DEB7FBA2C1341E50055C12C /* ListUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FB92C1341E50055C12C /* ListUsersView.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,8 +103,12 @@
 		4D4D706C2C04AF3B00BE2A59 /* AnimatedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextView.swift; sourceTree = "<group>"; };
 		4D68482E2C1C4E5600378EE2 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		4D6848302C1C523000378EE2 /* APIRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBuilder.swift; sourceTree = "<group>"; };
-		4D6848322C1C52A300378EE2 /* CharactersAPIRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersAPIRequestBuilder.swift; sourceTree = "<group>"; };
 		4D6848342C1C5DFD00378EE2 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		4D68483B2C1C609400378EE2 /* APIRequestBuilderImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBuilderImpl.swift; sourceTree = "<group>"; };
+		4D68483E2C1C6F4F00378EE2 /* StoreEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreEndpoint.swift; sourceTree = "<group>"; };
+		4D6848412C1C718600378EE2 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		4D6848432C1C71AF00378EE2 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		4D6848462C1C78A200378EE2 /* StoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		4D6C793A2BFF35D40059BE83 /* SubheadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubheadlineView.swift; sourceTree = "<group>"; };
 		4D6C793C2BFF36370059BE83 /* PlaygroundRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundRowView.swift; sourceTree = "<group>"; };
 		4D6C793E2BFF43500059BE83 /* AnimatedClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedClockView.swift; sourceTree = "<group>"; };
@@ -134,7 +142,7 @@
 		4D90DDF92BFB460F004E40A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D90DDFC2BFB460F004E40A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D90DE222BFB537A004E40A2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		4D90DE272BFB540B004E40A2 /* RickAndMortyApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyApiConfig.swift; sourceTree = "<group>"; };
+		4D90DE272BFB540B004E40A2 /* RickAndMortyEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyEndpoints.swift; sourceTree = "<group>"; };
 		4D90DE2A2BFB572F004E40A2 /* CharacterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResponse.swift; sourceTree = "<group>"; };
 		4D90DE2C2BFB582A004E40A2 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		4D90DE2E2BFB5D07004E40A2 /* CharacterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListView.swift; sourceTree = "<group>"; };
@@ -154,7 +162,7 @@
 		4DEB7FB12C133F750055C12C /* episodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = episodes.json; sourceTree = "<group>"; };
 		4DEB7FB32C133F7D0055C12C /* characterDetail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characterDetail.json; sourceTree = "<group>"; };
 		4DEB7FB52C1340480055C12C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		4DEB7FB72C1340CE0055C12C /* UserApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiConfig.swift; sourceTree = "<group>"; };
+		4DEB7FB72C1340CE0055C12C /* BookingEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingEndpoint.swift; sourceTree = "<group>"; };
 		4DEB7FB92C1341E50055C12C /* ListUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,9 +181,7 @@
 		4D0E6DE22C18476B00E1DA0B /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				4D6848302C1C523000378EE2 /* APIRequestBuilder.swift */,
-				4D68482E2C1C4E5600378EE2 /* APIRequest.swift */,
-				4D6848322C1C52A300378EE2 /* CharactersAPIRequestBuilder.swift */,
+				4D6848362C1C601A00378EE2 /* APIRequests */,
 				4D90DE262BFB53CD004E40A2 /* Services */,
 				4D4D70612C04734F00BE2A59 /* Models */,
 				4D0E6DFD2C184AB000E1DA0B /* CoreNetworkService.swift */,
@@ -232,10 +238,46 @@
 		4D4D70612C04734F00BE2A59 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4DEB7FAB2C13328D0055C12C /* User */,
+				4D6848402C1C717A00378EE2 /* Store */,
+				4DEB7FAB2C13328D0055C12C /* Booking */,
 				4DEB7FAA2C13327E0055C12C /* RickAndMorty */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4D6848362C1C601A00378EE2 /* APIRequests */ = {
+			isa = PBXGroup;
+			children = (
+				4D68482E2C1C4E5600378EE2 /* APIRequest.swift */,
+				4D6848302C1C523000378EE2 /* APIRequestBuilder.swift */,
+				4D68483B2C1C609400378EE2 /* APIRequestBuilderImpl.swift */,
+			);
+			path = APIRequests;
+			sourceTree = "<group>";
+		};
+		4D68483D2C1C6F3200378EE2 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				4D68483E2C1C6F4F00378EE2 /* StoreEndpoint.swift */,
+				4D6848432C1C71AF00378EE2 /* ProductService.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		4D6848402C1C717A00378EE2 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				4D6848412C1C718600378EE2 /* Product.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		4D6848452C1C788A00378EE2 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				4D6848462C1C78A200378EE2 /* StoreView.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		4D6C79422C0065C70059BE83 /* Extensions */ = {
@@ -361,7 +403,8 @@
 			isa = PBXGroup;
 			children = (
 				4D90DE222BFB537A004E40A2 /* MainView.swift */,
-				4DC352512C1711A10091A96E /* Users */,
+				4D6848452C1C788A00378EE2 /* Store */,
+				4DC352512C1711A10091A96E /* Booking */,
 				4DC352502C17118F0091A96E /* Debug */,
 				4D90DE382BFB6EE1004E40A2 /* ComponentViews */,
 				4DC3524F2C17116F0091A96E /* RickAndMorty */,
@@ -372,7 +415,8 @@
 		4D90DE262BFB53CD004E40A2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4DEB7FB02C133E820055C12C /* User */,
+				4D68483D2C1C6F3200378EE2 /* Store */,
+				4DEB7FB02C133E820055C12C /* Booking */,
 				4DEB7FAF2C133E650055C12C /* RickAndMorty */,
 			);
 			path = Services;
@@ -429,13 +473,13 @@
 			path = Debug;
 			sourceTree = "<group>";
 		};
-		4DC352512C1711A10091A96E /* Users */ = {
+		4DC352512C1711A10091A96E /* Booking */ = {
 			isa = PBXGroup;
 			children = (
 				4DEB7FB92C1341E50055C12C /* ListUsersView.swift */,
 				4DC352582C17223D0091A96E /* AppointmentsView.swift */,
 			);
-			path = Users;
+			path = Booking;
 			sourceTree = "<group>";
 		};
 		4DEB7FAA2C13327E0055C12C /* RickAndMorty */ = {
@@ -452,34 +496,34 @@
 			path = RickAndMorty;
 			sourceTree = "<group>";
 		};
-		4DEB7FAB2C13328D0055C12C /* User */ = {
+		4DEB7FAB2C13328D0055C12C /* Booking */ = {
 			isa = PBXGroup;
 			children = (
 				4DEB7FAC2C1332A30055C12C /* UserModel.swift */,
 				4DC352522C171F9B0091A96E /* AppointmentModel.swift */,
 			);
-			path = User;
+			path = Booking;
 			sourceTree = "<group>";
 		};
 		4DEB7FAF2C133E650055C12C /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				4D90DE272BFB540B004E40A2 /* RickAndMortyEndpoints.swift */,
 				4D4D70662C0473F600BE2A59 /* EpisodeService.swift */,
-				4D90DE272BFB540B004E40A2 /* RickAndMortyApiConfig.swift */,
 				4D90DE2C2BFB582A004E40A2 /* CharacterService.swift */,
 				4D7DA6442BFDE797007948BF /* CharacterDetailService.swift */,
 			);
 			path = RickAndMorty;
 			sourceTree = "<group>";
 		};
-		4DEB7FB02C133E820055C12C /* User */ = {
+		4DEB7FB02C133E820055C12C /* Booking */ = {
 			isa = PBXGroup;
 			children = (
-				4DEB7FB72C1340CE0055C12C /* UserApiConfig.swift */,
+				4DEB7FB72C1340CE0055C12C /* BookingEndpoint.swift */,
 				4DEB7FB52C1340480055C12C /* UserService.swift */,
 				4DC352542C1720690091A96E /* AppointmentsService.swift */,
 			);
-			path = User;
+			path = Booking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,8 +610,9 @@
 				4D6C79412BFF5C110059BE83 /* AnimationClockViewModel.swift in Sources */,
 				4D4D70672C0473F600BE2A59 /* EpisodeService.swift in Sources */,
 				4D6848352C1C5DFD00378EE2 /* HttpMethod.swift in Sources */,
+				4D6848422C1C718600378EE2 /* Product.swift in Sources */,
 				4D6C79462C0066130059BE83 /* View+.swift in Sources */,
-				4DEB7FB82C1340CE0055C12C /* UserApiConfig.swift in Sources */,
+				4DEB7FB82C1340CE0055C12C /* BookingEndpoint.swift in Sources */,
 				4D78B2092BFC75AA00BD56B0 /* ShowMorelndicatorView.swift in Sources */,
 				4DEB7FBA2C1341E50055C12C /* ListUsersView.swift in Sources */,
 				4D7DA63D2BFDE232007948BF /* ApplicationManager.swift in Sources */,
@@ -596,6 +641,7 @@
 				4D90DE372BFB66DA004E40A2 /* Resolver+Services.swift in Sources */,
 				4D7DA6362BFDD4AE007948BF /* TitlePlaygroundView.swift in Sources */,
 				4D6C793F2BFF43500059BE83 /* AnimatedClockView.swift in Sources */,
+				4D68483C2C1C609400378EE2 /* APIRequestBuilderImpl.swift in Sources */,
 				4D6C793B2BFF35D40059BE83 /* SubheadlineView.swift in Sources */,
 				4D90DDF42BFB460D004E40A2 /* BenchtimeApp.swift in Sources */,
 				4D802E792C073F7E00B3F919 /* CharacterFilterCriteria.swift in Sources */,
@@ -607,13 +653,15 @@
 				4D4D706D2C04AF3B00BE2A59 /* AnimatedTextView.swift in Sources */,
 				4D68482F2C1C4E5600378EE2 /* APIRequest.swift in Sources */,
 				4D4D706A2C048E0800BE2A59 /* EpisodeHelper.swift in Sources */,
+				4D68483F2C1C6F4F00378EE2 /* StoreEndpoint.swift in Sources */,
 				4D78B20D2BFC9BF500BD56B0 /* CharacterStatus.swift in Sources */,
 				4D7DA63B2BFDD506007948BF /* Person.swift in Sources */,
 				4D6FE0F42C05B427005BC361 /* MediumCharacterDetailView.swift in Sources */,
 				4DC3525F2C1729BA0091A96E /* String+.swift in Sources */,
 				4D78B20B2BFC7CB100BD56B0 /* LoadingAnimationView.swift in Sources */,
-				4D90DE282BFB540B004E40A2 /* RickAndMortyApiConfig.swift in Sources */,
+				4D90DE282BFB540B004E40A2 /* RickAndMortyEndpoints.swift in Sources */,
 				4D802E7C2C07436700B3F919 /* CharacterHelper.swift in Sources */,
+				4D6848442C1C71AF00378EE2 /* ProductService.swift in Sources */,
 				4DEB7FAD2C1332A30055C12C /* UserModel.swift in Sources */,
 				4D6FE0F62C05B4ED005BC361 /* ProfileRowView.swift in Sources */,
 				4D7DA6482BFE0035007948BF /* EnvironmentVales+.swift in Sources */,
@@ -623,9 +671,9 @@
 				4DEB7FA72C1313850055C12C /* Hobby.swift in Sources */,
 				4D6FE0FA2C05C0F0005BC361 /* ConstantSizeCategory.swift in Sources */,
 				4D6848312C1C523000378EE2 /* APIRequestBuilder.swift in Sources */,
-				4D6848332C1C52A300378EE2 /* CharactersAPIRequestBuilder.swift in Sources */,
 				4D3D1D9B2C11E2ED004A32E0 /* MockPaymentProcessor.swift in Sources */,
 				4D7DA6382BFDD4D2007948BF /* TitlePlaygroundViewModel.swift in Sources */,
+				4D6848472C1C78A200378EE2 /* StoreView.swift in Sources */,
 				4D3D1D992C11CE0D004A32E0 /* CardInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

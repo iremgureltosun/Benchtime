@@ -1,5 +1,5 @@
 //
-//  RickAndMortyRequestBuilder.swift
+//  BaseAPIRequestBuilder.swift
 //  Benchtime
 //
 //  Created by Tosun, Irem on 14.06.2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CharactersAPIRequestBuilder<T>: APIRequestBuilder {
+class APIRequestBuilderImpl<T>: APIRequestBuilder {
     private var endpoint: URL
     private var method: HttpMethod = .get
     private var headers: [String: String] = [:]

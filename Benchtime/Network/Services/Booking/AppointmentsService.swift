@@ -17,9 +17,19 @@ protocol AppointmentsService {
     var appointments: [AppointmentModel] = []
 
     func fetchAppointments(of userId: String) async throws {
-        guard let url = URL(string: UserMockAPI.ApiConfig.appointments(userId: userId).url) else {
+        guard let url = URL(string: BookingMockAPI.Endpoint.appointments(userId: userId).url) else {
             throw HTTPError.invalidRequest
         }
-        appointments = try await callAPI(URLRequest(url: url))
+        
+        // Building the url request with builder pattern
+        let apiRequest = APIRequestBuilderImpl<Data>(url)
+            .setMethod(.get)
+            .build()
+        
+        guard let urlRequest = apiRequest.getURLRequest() else {
+            throw HTTPError.invalidRequest
+        }
+        
+        appointments = try await callAPI(urlRequest)
     }
 }
