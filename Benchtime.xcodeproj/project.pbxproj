@@ -21,6 +21,10 @@
 		4D4D70672C0473F600BE2A59 /* EpisodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D70662C0473F600BE2A59 /* EpisodeService.swift */; };
 		4D4D706A2C048E0800BE2A59 /* EpisodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D70692C048E0800BE2A59 /* EpisodeHelper.swift */; };
 		4D4D706D2C04AF3B00BE2A59 /* AnimatedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D706C2C04AF3B00BE2A59 /* AnimatedTextView.swift */; };
+		4D68482F2C1C4E5600378EE2 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D68482E2C1C4E5600378EE2 /* APIRequest.swift */; };
+		4D6848312C1C523000378EE2 /* APIRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6848302C1C523000378EE2 /* APIRequestBuilder.swift */; };
+		4D6848332C1C52A300378EE2 /* CharactersAPIRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6848322C1C52A300378EE2 /* CharactersAPIRequestBuilder.swift */; };
+		4D6848352C1C5DFD00378EE2 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6848342C1C5DFD00378EE2 /* HttpMethod.swift */; };
 		4D6C793B2BFF35D40059BE83 /* SubheadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C793A2BFF35D40059BE83 /* SubheadlineView.swift */; };
 		4D6C793D2BFF36370059BE83 /* PlaygroundRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C793C2BFF36370059BE83 /* PlaygroundRowView.swift */; };
 		4D6C793F2BFF43500059BE83 /* AnimatedClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6C793E2BFF43500059BE83 /* AnimatedClockView.swift */; };
@@ -93,6 +97,10 @@
 		4D4D70692C048E0800BE2A59 /* EpisodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeHelper.swift; sourceTree = "<group>"; };
 		4D4D706B2C048E8300BE2A59 /* HelperPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HelperPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4D4D706C2C04AF3B00BE2A59 /* AnimatedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextView.swift; sourceTree = "<group>"; };
+		4D68482E2C1C4E5600378EE2 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		4D6848302C1C523000378EE2 /* APIRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBuilder.swift; sourceTree = "<group>"; };
+		4D6848322C1C52A300378EE2 /* CharactersAPIRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersAPIRequestBuilder.swift; sourceTree = "<group>"; };
+		4D6848342C1C5DFD00378EE2 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		4D6C793A2BFF35D40059BE83 /* SubheadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubheadlineView.swift; sourceTree = "<group>"; };
 		4D6C793C2BFF36370059BE83 /* PlaygroundRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundRowView.swift; sourceTree = "<group>"; };
 		4D6C793E2BFF43500059BE83 /* AnimatedClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedClockView.swift; sourceTree = "<group>"; };
@@ -165,9 +173,13 @@
 		4D0E6DE22C18476B00E1DA0B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				4D6848302C1C523000378EE2 /* APIRequestBuilder.swift */,
+				4D68482E2C1C4E5600378EE2 /* APIRequest.swift */,
+				4D6848322C1C52A300378EE2 /* CharactersAPIRequestBuilder.swift */,
 				4D90DE262BFB53CD004E40A2 /* Services */,
 				4D4D70612C04734F00BE2A59 /* Models */,
 				4D0E6DFD2C184AB000E1DA0B /* CoreNetworkService.swift */,
+				4D6848342C1C5DFD00378EE2 /* HttpMethod.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -553,6 +565,7 @@
 				4D4D70632C04736B00BE2A59 /* Location.swift in Sources */,
 				4D6C79412BFF5C110059BE83 /* AnimationClockViewModel.swift in Sources */,
 				4D4D70672C0473F600BE2A59 /* EpisodeService.swift in Sources */,
+				4D6848352C1C5DFD00378EE2 /* HttpMethod.swift in Sources */,
 				4D6C79462C0066130059BE83 /* View+.swift in Sources */,
 				4DEB7FB82C1340CE0055C12C /* UserApiConfig.swift in Sources */,
 				4D78B2092BFC75AA00BD56B0 /* ShowMorelndicatorView.swift in Sources */,
@@ -592,6 +605,7 @@
 				4D0E6DFE2C184AB000E1DA0B /* CoreNetworkService.swift in Sources */,
 				4DEB7FB62C1340480055C12C /* UserService.swift in Sources */,
 				4D4D706D2C04AF3B00BE2A59 /* AnimatedTextView.swift in Sources */,
+				4D68482F2C1C4E5600378EE2 /* APIRequest.swift in Sources */,
 				4D4D706A2C048E0800BE2A59 /* EpisodeHelper.swift in Sources */,
 				4D78B20D2BFC9BF500BD56B0 /* CharacterStatus.swift in Sources */,
 				4D7DA63B2BFDD506007948BF /* Person.swift in Sources */,
@@ -608,6 +622,8 @@
 				4D6FE0F22C05B3F7005BC361 /* ExtraLargeCharacterDetailView.swift in Sources */,
 				4DEB7FA72C1313850055C12C /* Hobby.swift in Sources */,
 				4D6FE0FA2C05C0F0005BC361 /* ConstantSizeCategory.swift in Sources */,
+				4D6848312C1C523000378EE2 /* APIRequestBuilder.swift in Sources */,
+				4D6848332C1C52A300378EE2 /* CharactersAPIRequestBuilder.swift in Sources */,
 				4D3D1D9B2C11E2ED004A32E0 /* MockPaymentProcessor.swift in Sources */,
 				4D7DA6382BFDD4D2007948BF /* TitlePlaygroundViewModel.swift in Sources */,
 				4D3D1D992C11CE0D004A32E0 /* CardInfo.swift in Sources */,

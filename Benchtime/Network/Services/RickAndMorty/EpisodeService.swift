@@ -14,14 +14,14 @@ protocol EpisodeService {
 
 final class EpisodeServiceImpl: CoreNetworkService<Episode>, EpisodeService {
     func getMultiple(by list: [String]) async throws -> [Episode] {
-        guard let url = RickAndMorty.ApiConfig.episodes.getMultiple(by: list) else {
+        guard let url = RickAndMorty.Endpoint.episodes.getMultiple(by: list) else {
             throw HTTPError.invalidRequest
         }
         return try await callAPI(URLRequest(url: url))
     }
     
     func get(by id: String) async throws -> Episode {
-        guard let episodeUrl = RickAndMorty.ApiConfig.episodes.get(by: id) else {
+        guard let episodeUrl = RickAndMorty.Endpoint.episodes.get(by: id) else {
             throw HTTPError.invalidRequest
         }
         return try await callAPI(URLRequest(url: episodeUrl))

@@ -18,10 +18,16 @@ protocol CharacterService {
     private(set) var figureList: [Figure] = []
 
     private func search(by criteria: [CharacterFilterCriteria], page: Int? = nil) async throws -> [Figure] {
-        guard let charactersUrl = RickAndMorty.ApiConfig.getCharacters(by: criteria, page: page) else {
+        guard let charactersUrl = RickAndMorty.Endpoint.getCharacters(by: criteria, page: page) else {
             throw HTTPError.invalidRequest
         }
-        return try await callAPI(URLRequest(url: charactersUrl)).results
+        let apiRequest = CharactersAPIRequestBuilder<Data>(charactersUrl)
+            .setMethod(.get)
+            .build()
+        guard let urlRequest = apiRequest.getURLRequest() else {
+            throw HTTPError.invalidRequest
+        }
+        return try await callAPI(urlRequest).results
     }
 
     func fetchAll(page: Int) async throws {

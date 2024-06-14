@@ -28,7 +28,7 @@ struct Episode: HTTPResponseProtocol {
     }
 }
 
-extension RickAndMorty.ApiConfig {
+extension RickAndMorty.Endpoint {
     private func makeIdDefinition(from array: [String]) -> String? {
         guard !array.isEmpty else {
             return nil

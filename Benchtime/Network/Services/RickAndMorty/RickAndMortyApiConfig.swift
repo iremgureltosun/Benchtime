@@ -8,7 +8,7 @@
 import Foundation
 
 struct RickAndMorty {
-    enum ApiConfig {
+    enum Endpoint {
         private static let baseURL: String = "https://rickandmortyapi.com/api/"
         case characters
         case locations
@@ -36,7 +36,7 @@ struct RickAndMorty {
     }
 }
 
-extension RickAndMorty.ApiConfig {
+extension RickAndMorty.Endpoint {
     func get(by id: String) -> URL? {
         switch self {
         case .characters, .episodes:
