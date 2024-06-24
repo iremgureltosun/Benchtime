@@ -11,14 +11,14 @@ struct StoreFakeAPI {
     enum Endpoint {
         private static let baseURL: String = "https://fakestoreapi.com/"
 
-        case allProducts
+        case allProducts(limit: Int)
         case addProduct
         case updateProduct(id: String), deleteProduct(id: String)
 
         var url: String {
             switch self {
-            case .allProducts:
-                return "\(Self.baseURL)products?limit=10"
+            case .allProducts(let limit):
+                return "\(Self.baseURL)products?limit=\(limit)"
             case .addProduct:
                 return "\(Self.baseURL)products"
             case let .updateProduct(id), let .deleteProduct(id):

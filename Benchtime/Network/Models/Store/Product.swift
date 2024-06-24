@@ -26,8 +26,8 @@ struct Product: HTTPResponseProtocol {
 enum Category: String, Codable {
     case electronics
     case jewelery
-    case menSClothing
-    case womenSClothing
+    case menSClothing = "men's clothing"
+    case womenSClothing = "women's clothing"
 }
 
 // MARK: - Rating
