@@ -41,6 +41,9 @@ struct MainView: View {
                         Button("Playground View") {
                             appManager.navigate(to: .titlePlayground)
                         }
+                        Button("Faceted Builders View") {
+                            appManager.navigate(to: .facetedBuilder)
+                        }
                     } label: {
                         Image(systemName: "ellipsis.circle")
                             .imageScale(.large)
@@ -57,8 +60,10 @@ struct MainView: View {
                     AddProductView()
                 case .animatedClock:
                     AnimatedClockView()
-                case.titlePlayground:
+                case .titlePlayground:
                     TitlePlaygroundView()
+                case .facetedBuilder:
+                    FacetedBuilderView()
                 }
             }
         }

@@ -21,6 +21,7 @@ enum Route: Hashable {
     case addProduct
     case animatedClock
     case titlePlayground
+    case facetedBuilder
 }
 
 @Observable class ApplicationManager {

@@ -75,7 +75,7 @@ struct AddProductView: View {
             .padding(.horizontal, Constants.Spaces.mediumSpace)
             Spacer()
         }
-        .ignoresSafeArea()
+        .ignoresSafeArea(edges: [.top])
     }
 }
 
