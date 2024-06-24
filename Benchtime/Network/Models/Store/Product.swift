@@ -11,12 +11,12 @@ struct Product: HTTPResponseProtocol {
     typealias HTTPEntityType = Product.Type
 
     let id: Int
-    let title: String?
-    let price: Double?
-    let description: String?
-    let category: Category?
-    let image: String?
-    let rating: Rating?
+    let title: String
+    let price: Double
+    let description: String
+    let category: Category
+    let image: String
+    let rating: Rating
 
     enum CodingKeys: String, CodingKey {
         case id, title, price, description, category, image, rating

@@ -9,7 +9,7 @@ import Foundation
 
 
 struct ProductViewState {
-    var selectedCategory: Category
+    var selectedCategory: Category?
     var title: String
     var price: Double
     var description: String

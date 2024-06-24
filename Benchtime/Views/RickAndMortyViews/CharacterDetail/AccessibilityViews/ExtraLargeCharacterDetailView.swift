@@ -32,7 +32,7 @@ struct ExtraLargeCharacterDetailView: View {
 
                     ProfileRowView(title: "Last known location", field: figure.location.name)
                         .tag(4)
-                }.padding(.bottom, 20)
+                }.padding(.bottom, Constants.Spaces.mediumSpace)
             }
             .tabViewStyle(PageTabViewStyle())
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))

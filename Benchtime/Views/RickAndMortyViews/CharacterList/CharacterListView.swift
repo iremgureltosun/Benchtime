@@ -26,7 +26,7 @@ struct CharacterListView: View {
             header
 
             filteringRow
-                .padding(.horizontal, 20)
+                .padding(.horizontal, Constants.Spaces.mediumSpace)
                 .padding(.top, -40)
 
             scrollableContent

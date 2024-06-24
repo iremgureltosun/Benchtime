@@ -9,58 +9,73 @@ import Resolver
 import SwiftUI
 
 struct AddProductView: View {
-    @State var productViewState: ProductViewState = .init(selectedCategory: .electronics, title: "", price: 0, description: "")
+    @State var productViewState: ProductViewState = .init(selectedCategory: nil, title: "", price: 0, description: "")
 
-    @Injected private var productService: ProductService
+    @Injected private var productService: UpdateProductsService
 
     var body: some View {
         VStack {
-            HeaderView(themeStyle: .ocean, title: "Store", subtitle: "Displaying you the Fake store products")
+            HeaderView(themeStyle: .ocean, title: "Store", subtitle: "This is just a fake insertion, you will receive success if it works.")
 
-            Slider(value: $productViewState.price, in: 0 ... 1000, step: 0.01)
-                .padding()
+            VStack(alignment: .leading) {
+                Text("Product Info")
+                    .font(/*@START_MENU_TOKEN@*/ .title/*@END_MENU_TOKEN@*/)
 
-            Text("Price: \(String(format: "%.2f", productViewState.price)) \(Constants.dollarSign)")
+                Divider()
 
-            HStack {
-                Text("Title:")
-                TextField("title", text: $productViewState.title)
-            }
+                Slider(value: $productViewState.price, in: 0 ... 1000, step: 0.01)
+                    .padding()
 
-            HStack {
-                Text("Description:")
-                TextField("description", text: $productViewState.description)
-            }
+                Text("Price: \(String(format: "%.2f", productViewState.price)) \(Constants.dollarSign)")
 
-            HStack {
-                Text("Image:")
-                Text(productViewState.image)
+                HStack {
+                    Text("Title:")
+                    TextField("title", text: $productViewState.title)
+                }
+
+                HStack {
+                    Text("Description:")
+                    TextField("description", text: $productViewState.description)
+                }
+
+                HStack {
+                    Text("Image:")
+                    Text(productViewState.image)
+                    Spacer()
+                }
+
+                HStack {
+                    Text("Category:")
+                    
+                    Picker("Category", selection: $productViewState.selectedCategory) {
+                        Text("category").tag(Category?.none)
+
+                        ForEach(Category.allCases, id: \.self) { option in
+                            Text(option.rawValue)
+                                .tag(Category?.some(option))
+                        }
+                    }
+                    .tint(.blue)
+                    .pickerStyle(MenuPickerStyle())
+                    Spacer()
+                }
+                
+                Text(productService.message)
+                    .foregroundColor(.gray)
+                
                 Spacer()
-            }
-
-            HStack {
-                Text("Category:")
-
-                Picker("Category", selection: $productViewState.selectedCategory) {
-                    Text("gender").tag(Category?.none)
-
-                    ForEach(Category.allCases, id: \.self) { option in
-                        Text(option.rawValue)
-                            .tag(Category?.some(option))
+                
+                CustomButton(buttonTitle: "Add", themeStyle: .ocean) {
+                    Task {
+                        try await productService.addProduct(product: productViewState.productRequest)
                     }
                 }
-                .tint(.blue)
-                .pickerStyle(MenuPickerStyle())
-                Spacer()
+                .frame(height: 40)
             }
-
-            CustomButton(buttonTitle: "Add", themeStyle: .ocean) {
-                Task {
-                    try await productService.addProduct(product: productViewState.productRequest)
-                }
-            }
-            .frame(height: 40)
+            .padding(.horizontal, Constants.Spaces.mediumSpace)
+            Spacer()
         }
+        .ignoresSafeArea()
     }
 }
 

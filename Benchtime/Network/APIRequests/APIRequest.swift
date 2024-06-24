@@ -13,13 +13,15 @@ final class APIRequest<T> {
     var headers: [String: String]
     var parameters: [String: String]
     var body: T?
+    var contentType: ContentType?
 
-    init(endpoint: URL, method: HttpMethod, headers: [String: String], parameters: [String: String], body: T?) {
+    init(endpoint: URL, method: HttpMethod, headers: [String: String], parameters: [String: String], body: T?, contentType: ContentType?) {
         self.endpoint = endpoint
         self.method = method
         self.headers = headers
         self.parameters = parameters
         self.body = body
+        self.contentType = contentType
     }
 
     func getURLRequest() -> URLRequest? {
@@ -47,6 +49,10 @@ final class APIRequest<T> {
             request.httpBody = data
         }
 
+        if let contentType = contentType {
+            request.setValue(contentType.rawValue, forHTTPHeaderField: "Content-Type")
+        }
+        
         return request
     }
 }

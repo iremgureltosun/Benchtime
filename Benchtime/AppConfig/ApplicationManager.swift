@@ -19,6 +19,8 @@ enum LoadingState: Hashable, Identifiable {
 enum Route: Hashable {
     case characterDetail(id: String)
     case addProduct
+    case animatedClock
+    case titlePlayground
 }
 
 @Observable class ApplicationManager {

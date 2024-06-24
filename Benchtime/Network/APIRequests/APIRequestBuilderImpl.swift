@@ -12,7 +12,8 @@ class APIRequestBuilderImpl<T>: APIRequestBuilder {
     private var method: HttpMethod = .get
     private var headers: [String: String] = [:]
     private var parameters: [String: String] = [:]
-    private var body: T? = nil
+    private var body: T?
+    private var contentType: ContentType?
 
     init(_ endpoint: URL) {
         self.endpoint = endpoint
@@ -24,12 +25,12 @@ class APIRequestBuilderImpl<T>: APIRequestBuilder {
     }
 
     func addHeader(key: String, value: String) -> Self {
-        self.headers[key] = value
+        headers[key] = value
         return self
     }
 
     func addParameter(key: String, value: String) -> Self {
-        self.parameters[key] = value
+        parameters[key] = value
         return self
     }
 
@@ -38,7 +39,20 @@ class APIRequestBuilderImpl<T>: APIRequestBuilder {
         return self
     }
 
-    func build() -> APIRequest<T> {
-        return APIRequest(endpoint: endpoint, method: method, headers: headers, parameters: parameters, body: body)
+    func setContentType(contentType: ContentType) -> Self {
+        self.contentType = contentType
+        return self
     }
+
+    func build() -> APIRequest<T> {
+        return APIRequest(endpoint: endpoint, method: method, headers: headers, parameters: parameters, body: body, contentType: contentType)
+    }
+}
+
+enum ContentType: String {
+    case json = "application/json"
+    case xml = "application/xml"
+    case formURLEncoded = "application/x-www-form-urlencoded"
+    case multipartFormData = "multipart/form-data"
+    case plainText = "text/plain"
 }

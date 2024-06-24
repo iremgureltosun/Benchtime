@@ -12,7 +12,7 @@ struct ProductRequest: Encodable {
     let price: Double
     let description: String
     let image: String
-    let category: Category
+    let category: Category?
     
     enum CodingKeys: String, CodingKey {
         case title, price, description, category, image

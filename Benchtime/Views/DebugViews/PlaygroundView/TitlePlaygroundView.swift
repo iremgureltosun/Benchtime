@@ -52,7 +52,7 @@ struct TitlePlaygroundView: View {
 //                }
             }
         }
-        .padding(.all, 20)
+        .padding(.all, Constants.Spaces.mediumSpace)
     }
 }
 

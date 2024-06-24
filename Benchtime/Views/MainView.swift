@@ -26,19 +26,28 @@ struct MainView: View {
                     }
                 
                 StoreView()
+                    .environment(\.appManager, appManager)
                     .tabItem {
                         Label("Store", systemImage: "person")
                     }
+            }
+            .toolbar {
+                // Menu on the Left
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Menu {
+                        Button("Animated Clock") {
+                            appManager.navigate(to: .animatedClock)
+                        }
+                        Button("Playground View") {
+                            appManager.navigate(to: .titlePlayground)
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                            .imageScale(.large)
+                            .foregroundColor(.black)
+                    }
+                }
                 
-//                TitlePlaygroundView()
-//                    .tabItem {
-//                        Label("Play", systemImage: "message")
-//                    }
-//
-//                AnimatedClockView()
-//                    .tabItem {
-//                        Label("Clock", systemImage: "clock")
-//                    }
             }
             .navigationDestination(for: Route.self) { route in
                 switch route {
@@ -46,6 +55,10 @@ struct MainView: View {
                     CharacterDetailView(id: id)
                 case .addProduct:
                     AddProductView()
+                case .animatedClock:
+                    AnimatedClockView()
+                case.titlePlayground:
+                    TitlePlaygroundView()
                 }
             }
         }

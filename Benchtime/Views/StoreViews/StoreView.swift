@@ -32,7 +32,7 @@ struct StoreView: View {
 
                 Spacer()
             }
-            .padding(.horizontal, 20)
+            .padding(.horizontal, Constants.Spaces.mediumSpace)
 
             ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: listItems) {
@@ -59,19 +59,17 @@ struct StoreView: View {
                 .frame(width: 100, height: 170)
 
             VStack {
-                Text(product.title ?? "")
+                Text(product.title)
                     .lineLimit(2, reservesSpace: true)
                     .font(.caption2)
                     .multilineTextAlignment(.center)
 
-                if let image = product.image {
-                    RemoteImageView(url: image, contentMode: .fit)
-                        .frame(width: 80, height: 80)
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 22))
-                }
+                RemoteImageView(url: product.image, contentMode: .fit)
+                    .frame(width: 80, height: 80)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 22))
 
-                Text("\(String(product.price ?? 0)) \(Constants.dollarSign)")
+                Text("\(String(product.price)) \(Constants.dollarSign)")
                     .font(.caption2)
             }
         }

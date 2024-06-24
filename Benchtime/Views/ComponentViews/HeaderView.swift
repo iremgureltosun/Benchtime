@@ -32,18 +32,24 @@ struct HeaderView: View {
                 Spacer()
                     .frame(height: 10)
                 
-                Text(title)
-                    .font(/*@START_MENU_TOKEN@*/ .title/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(themeStyle.colorPair.foregroundColor)
-
-                Text(subtitle)
-                    .foregroundColor(themeStyle.colorPair.foregroundColor)
+                Group {
+                    Text(title)
+                        .font(.title)
+                        .foregroundColor(themeStyle.colorPair.foregroundColor)
+                    
+                    Text(subtitle)
+                        .font(.subheadline)
+                        .lineLimit(2)
+                        .foregroundColor(themeStyle.colorPair.foregroundColor)
+                }
+                .padding(.horizontal, Constants.Spaces.mediumSpace)
             }
+            .frame(width: UIScreen.main.bounds.width)
         }
         .frame(width: UIScreen.main.bounds.width * 3, height: 200)
     }
 }
 
 #Preview {
-    HeaderView(themeStyle: .desert, title: "Sample header", subtitle: "Sample subtitle")
+    HeaderView(themeStyle: .desert, title: "Sample header", subtitle: "This is just a fake insertion, you will receive success if it works.")
 }

@@ -9,4 +9,8 @@ import Foundation
 
 enum Constants {
     static let dollarSign : String = "$"
+    
+    enum Spaces {
+        static let mediumSpace: CGFloat = 20
+    }
 }
