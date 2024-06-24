@@ -18,6 +18,7 @@ enum LoadingState: Hashable, Identifiable {
 
 enum Route: Hashable {
     case characterDetail(id: String)
+    case addProduct
 }
 
 @Observable class ApplicationManager {

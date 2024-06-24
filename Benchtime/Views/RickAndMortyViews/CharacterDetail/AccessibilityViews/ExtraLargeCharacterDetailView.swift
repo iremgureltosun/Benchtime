@@ -11,14 +11,14 @@ struct ExtraLargeCharacterDetailView: View {
     @Environment(\.sizeCategory) var sizeCategory
     @State private var selectedTab = 1
     @State private var selectedEpisode = 0
-    var viewModel: CharacterDetailsState
+    var viewState: CharacterDetailsViewState
 
-    init(_ viewModel: CharacterDetailsState) {
-        self.viewModel = viewModel
+    init(_ viewState: CharacterDetailsViewState) {
+        self.viewState = viewState
     }
 
     var body: some View {
-        if let figure = viewModel.characterDetails {
+        if let figure = viewState.characterDetails {
             TabView(selection: $selectedTab) {
                 Group {
                     getTab1(for: figure)
@@ -38,9 +38,9 @@ struct ExtraLargeCharacterDetailView: View {
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
 
-        if viewModel.episodes.count > 0 {
+        if viewState.episodes.count > 0 {
             TabView(selection: $selectedEpisode) {
-                ForEach(Array(viewModel.episodes.enumerated()), id: \.1.id) { index, episode in
+                ForEach(Array(viewState.episodes.enumerated()), id: \.1.id) { index, episode in
                     EpisodesView(episode: episode)
                         .tag(index)
                 }

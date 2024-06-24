@@ -13,7 +13,7 @@ extension EnvironmentValues {
         set { self[AppKey.self] = newValue }
     }
     
-    var detailState: CharacterDetailsState {
+    var detailState: CharacterDetailsViewState {
         get { self[CharacterDetailsStateKey.self] }
         set { self[CharacterDetailsStateKey.self] = newValue }
     }
@@ -25,5 +25,5 @@ private struct AppKey: EnvironmentKey {
 
 
 private struct CharacterDetailsStateKey: EnvironmentKey {
-    static var defaultValue: CharacterDetailsState = .init(characterService: CharacterDetailServiceImpl.init(), episodeService: EpisodeServiceImpl.init())
+    static var defaultValue: CharacterDetailsViewState = .init(characterService: CharacterDetailServiceImpl.init(), episodeService: EpisodeServiceImpl.init())
 }

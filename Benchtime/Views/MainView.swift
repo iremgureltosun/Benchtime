@@ -44,6 +44,8 @@ struct MainView: View {
                 switch route {
                 case let .characterDetail(id):
                     CharacterDetailView(id: id)
+                case .addProduct:
+                    AddProductView()
                 }
             }
         }

@@ -11,19 +11,19 @@ struct Product: HTTPResponseProtocol {
     typealias HTTPEntityType = Product.Type
 
     let id: Int
-    let title: String
-    let price: Double
-    let description: String
-    let category: Category
-    let image: String
-    let rating: Rating
+    let title: String?
+    let price: Double?
+    let description: String?
+    let category: Category?
+    let image: String?
+    let rating: Rating?
 
     enum CodingKeys: String, CodingKey {
         case id, title, price, description, category, image, rating
     }
 }
 
-enum Category: String, Codable {
+enum Category: String, Codable, CaseIterable {
     case electronics
     case jewelery
     case menSClothing = "men's clothing"

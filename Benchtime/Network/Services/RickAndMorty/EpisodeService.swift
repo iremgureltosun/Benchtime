@@ -17,7 +17,7 @@ final class EpisodeServiceImpl: CoreNetworkService<Episode>, EpisodeService {
         guard let url = RickAndMorty.Endpoint.episodes.getMultiple(by: list) else {
             throw HTTPError.invalidRequest
         }
-        return try await callAPI(URLRequest(url: url))
+        return try await callAPIForMultipleResults(URLRequest(url: url))
     }
     
     func get(by id: String) async throws -> Episode {

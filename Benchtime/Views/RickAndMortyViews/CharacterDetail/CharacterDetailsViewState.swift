@@ -9,7 +9,7 @@ import Foundation
 import Resolver
 import Observation
 
-@Observable final class CharacterDetailsState {
+@Observable final class CharacterDetailsViewState {
     let characterService: CharacterDetailService
     let episodeService: EpisodeService
     var characterDetails: Figure?

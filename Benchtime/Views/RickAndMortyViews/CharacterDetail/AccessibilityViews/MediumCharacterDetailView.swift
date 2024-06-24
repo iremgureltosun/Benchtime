@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct MediumCharacterDetailView: View {
-    var viewModel: CharacterDetailsState
+    var viewState: CharacterDetailsViewState
     
-    init(_ viewModel: CharacterDetailsState) {
-        self.viewModel = viewModel
+    init(_ viewState: CharacterDetailsViewState) {
+        self.viewState = viewState
     }
 
     var body: some View {
-        if let figure = viewModel.characterDetails {
+        if let figure = viewState.characterDetails {
             HStack {
                 RemoteImageView(url: figure.image, contentMode: .fit)
                     .frame(width: 120, height: 120, alignment: .top)
@@ -39,7 +39,7 @@ struct MediumCharacterDetailView: View {
                 VStack {
                     ScrollView(showsIndicators: false) {
                         VStack(spacing: 13) {
-                            ForEach(viewModel.episodes, id: \.self) { episode in
+                            ForEach(viewState.episodes, id: \.self) { episode in
                                 EpisodesView(episode: episode)
                             }
                         }

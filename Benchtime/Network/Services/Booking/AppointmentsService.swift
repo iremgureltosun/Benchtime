@@ -30,6 +30,6 @@ protocol AppointmentsService {
             throw HTTPError.invalidRequest
         }
         
-        appointments = try await callAPI(urlRequest)
+        appointments = try await callAPIForMultipleResults(urlRequest)
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CharacterDetailView: View {
     @Environment(\.sizeCategory) var sizeCategory
-    @Environment(\.detailState) var characterDetailsState: CharacterDetailsState
+    @Environment(\.detailState) var characterDetailsState: CharacterDetailsViewState
     let id: String
     
     init(id: String) {
@@ -36,5 +36,5 @@ struct CharacterDetailView: View {
 
 #Preview {
     CharacterDetailView(id: "3")
-        .environment(\.detailState, CharacterDetailsState.init(characterService: MockCharacterDetailService(), episodeService: MockEpisodeService())) // Method 2
+        .environment(\.detailState, .init(characterService: MockCharacterDetailService(), episodeService: MockEpisodeService())) // Method 2
 }

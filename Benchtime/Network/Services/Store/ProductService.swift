@@ -11,6 +11,7 @@ import Observation
 protocol ProductService {
     var products: [Product] { get }
     func getAll() async throws
+    func addProduct(product: ProductRequest) async throws
 }
 
 @Observable final class ProductServiceImpl: CoreNetworkService<Product>, ProductService {
@@ -30,7 +31,7 @@ protocol ProductService {
             throw HTTPError.invalidRequest
         }
         do {
-            products = try await callAPI(urlRequest)
+            products = try await callAPIForMultipleResults(urlRequest)
         } catch {
             if let decodingError = error as? DecodingError {
                 // Handle specific decoding errors
@@ -47,6 +48,34 @@ protocol ProductService {
                     print("Unknown decoding error: \(decodingError.localizedDescription).")
                 }
             }
+        }
+    }
+
+    func addProduct(product: ProductRequest) async throws {
+        do {
+            guard let url = URL(string: StoreFakeAPI.Endpoint.addProduct.url) else {
+                throw HTTPError.invalidRequest
+            }
+            // Building the url request with builder pattern
+
+            let data = try JSONEncoder().encode(product)
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print(jsonString)
+            }
+            let apiRequest = APIRequestBuilderImpl<Data>(url)
+                .setMethod(.post)
+                .setBody(data)
+                .build()
+
+            guard let urlRequest = apiRequest.getURLRequest() else {
+                throw HTTPError.invalidRequest
+            }
+
+            let result = try await callAPI(urlRequest)
+
+            print("Product added successfully! \(result)")
+        } catch {
+            print(error)
         }
     }
 }

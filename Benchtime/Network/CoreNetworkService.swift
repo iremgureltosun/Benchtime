@@ -33,7 +33,7 @@ class CoreNetworkService<T> where T: HTTPResponseProtocol {
         return result
     }
     
-    func callAPI(_ urlRequest: URLRequest) async throws -> [T]{
+    func callAPIForMultipleResults(_ urlRequest: URLRequest) async throws -> [T]{
         let (data, response) = try await URLSession.shared.data(for: urlRequest)
         guard let httpResponse = response as? HTTPURLResponse else {
             throw HTTPError.invalidResponse(HttpStatusCode.ClientError.badRequest)

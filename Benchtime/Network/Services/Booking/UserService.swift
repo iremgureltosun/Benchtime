@@ -30,6 +30,6 @@ protocol UserService {
             throw HTTPError.invalidRequest
         }
         
-        users = try await callAPI(urlRequest)
+        users = try await callAPIForMultipleResults(urlRequest)
     }
 }
