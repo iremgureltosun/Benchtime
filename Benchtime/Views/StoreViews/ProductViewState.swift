@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct ProductViewState {
     var selectedCategory: Category?
     var title: String

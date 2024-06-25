@@ -84,6 +84,15 @@
 		4DB90EF72C29AABE00B3977C /* ImageButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90EF62C29AABE00B3977C /* ImageButtonBuilder.swift */; };
 		4DB90EF92C29AAF300B3977C /* CustomButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90EF82C29AAF300B3977C /* CustomButtonBuilder.swift */; };
 		4DB90EFC2C29AB8300B3977C /* FacetedBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90EFB2C29AB8300B3977C /* FacetedBuilderView.swift */; };
+		4DB90EFE2C2A9FB500B3977C /* PillField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90EFD2C2A9FB500B3977C /* PillField.swift */; };
+		4DB90F002C2AA23B00B3977C /* PillFieldBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90EFF2C2AA23B00B3977C /* PillFieldBuilder.swift */; };
+		4DB90F022C2AA2A700B3977C /* PillFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F012C2AA2A700B3977C /* PillFieldType.swift */; };
+		4DB90F052C2AA37900B3977C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F042C2AA37900B3977C /* Route.swift */; };
+		4DB90F082C2AA97900B3977C /* ValidatingPillField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F072C2AA97900B3977C /* ValidatingPillField.swift */; };
+		4DB90F0A2C2AAAD300B3977C /* RegexValidator+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F092C2AAAD300B3977C /* RegexValidator+.swift */; };
+		4DB90F0D2C2ADC5400B3977C /* ValidatingPillFieldBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F0C2C2ADC5400B3977C /* ValidatingPillFieldBuilder.swift */; };
+		4DB90F0F2C2ADE0900B3977C /* SubmissionValidatedPillField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F0E2C2ADE0900B3977C /* SubmissionValidatedPillField.swift */; };
+		4DB90F122C2ADE7400B3977C /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F112C2ADE7400B3977C /* FieldValidator.swift */; };
 		4DC352532C171F9B0091A96E /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC352522C171F9B0091A96E /* AppointmentModel.swift */; };
 		4DC352552C1720690091A96E /* AppointmentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC352542C1720690091A96E /* AppointmentsService.swift */; };
 		4DC352592C17223D0091A96E /* AppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC352582C17223D0091A96E /* AppointmentsView.swift */; };
@@ -179,6 +188,16 @@
 		4DB90EF62C29AABE00B3977C /* ImageButtonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButtonBuilder.swift; sourceTree = "<group>"; };
 		4DB90EF82C29AAF300B3977C /* CustomButtonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonBuilder.swift; sourceTree = "<group>"; };
 		4DB90EFB2C29AB8300B3977C /* FacetedBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetedBuilderView.swift; sourceTree = "<group>"; };
+		4DB90EFD2C2A9FB500B3977C /* PillField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillField.swift; sourceTree = "<group>"; };
+		4DB90EFF2C2AA23B00B3977C /* PillFieldBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillFieldBuilder.swift; sourceTree = "<group>"; };
+		4DB90F012C2AA2A700B3977C /* PillFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillFieldType.swift; sourceTree = "<group>"; };
+		4DB90F042C2AA37900B3977C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		4DB90F072C2AA97900B3977C /* ValidatingPillField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatingPillField.swift; sourceTree = "<group>"; };
+		4DB90F092C2AAAD300B3977C /* RegexValidator+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegexValidator+.swift"; sourceTree = "<group>"; };
+		4DB90F0B2C2AD29500B3977C /* BenchTimePlay.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BenchTimePlay.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4DB90F0C2C2ADC5400B3977C /* ValidatingPillFieldBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatingPillFieldBuilder.swift; sourceTree = "<group>"; };
+		4DB90F0E2C2ADE0900B3977C /* SubmissionValidatedPillField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionValidatedPillField.swift; sourceTree = "<group>"; };
+		4DB90F112C2ADE7400B3977C /* FieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
 		4DC352522C171F9B0091A96E /* AppointmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
 		4DC352542C1720690091A96E /* AppointmentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsService.swift; sourceTree = "<group>"; };
 		4DC352582C17223D0091A96E /* AppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsView.swift; sourceTree = "<group>"; };
@@ -223,7 +242,6 @@
 			children = (
 				4D802E7A2C07435300B3F919 /* Helpers */,
 				4D802E782C073F7E00B3F919 /* CharacterFilterCriteria.swift */,
-				4D90DE302BFB5D17004E40A2 /* Debouncer.swift */,
 				4D90DE2E2BFB5D07004E40A2 /* CharacterListView.swift */,
 				4D44F5582C1970F60028103F /* CharacterListViewState.swift */,
 			);
@@ -315,6 +333,7 @@
 				4D6C79452C0066130059BE83 /* View+.swift */,
 				4DC3525C2C1727E10091A96E /* Date+.swift */,
 				4DC3525E2C1729BA0091A96E /* String+.swift */,
+				4DB90F092C2AAAD300B3977C /* RegexValidator+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -368,7 +387,6 @@
 			isa = PBXGroup;
 			children = (
 				4D90DE362BFB66DA004E40A2 /* Resolver+Services.swift */,
-				4DB90EE12C295A5600B3977C /* Constants.swift */,
 				4D7DA6472BFE0035007948BF /* EnvironmentVales+.swift */,
 				4D7DA63C2BFDE232007948BF /* ApplicationManager.swift */,
 			);
@@ -405,12 +423,14 @@
 		4D90DDF22BFB460D004E40A2 /* Benchtime */ = {
 			isa = PBXGroup;
 			children = (
+				4D90DE302BFB5D17004E40A2 /* Debouncer.swift */,
+				4D7DA6462BFDE7CD007948BF /* AppConfig */,
+				4D90DE382BFB6EE1004E40A2 /* ComponentViews */,
+				4DB90F032C2AA2C300B3977C /* CommonEnums */,
 				4DB90EED2C29A9EC00B3977C /* FacetedBuilders */,
 				4D0E6DE22C18476B00E1DA0B /* Network */,
-				4D7DA6462BFDE7CD007948BF /* AppConfig */,
 				4D70578C2C1043F0009E6A35 /* TestDoubles */,
 				4D6C79422C0065C70059BE83 /* Extensions */,
-				4D90DE3D2BFB736A004E40A2 /* Theme */,
 				4D90DE242BFB5380004E40A2 /* Views */,
 				4D90DDF32BFB460D004E40A2 /* BenchtimeApp.swift */,
 				4D90DDF92BFB460F004E40A2 /* Assets.xcassets */,
@@ -431,7 +451,6 @@
 			isa = PBXGroup;
 			children = (
 				4D90DE222BFB537A004E40A2 /* MainView.swift */,
-				4D90DE382BFB6EE1004E40A2 /* ComponentViews */,
 				4D6848452C1C788A00378EE2 /* StoreViews */,
 				4DC352512C1711A10091A96E /* BookingViews */,
 				4DC352502C17118F0091A96E /* DebugViews */,
@@ -453,6 +472,7 @@
 		4D90DE382BFB6EE1004E40A2 /* ComponentViews */ = {
 			isa = PBXGroup;
 			children = (
+				4DB90F102C2ADE1000B3977C /* Pillfields */,
 				4D90DE392BFB6EFE004E40A2 /* RemoteImageView.swift */,
 				4D90DE3B2BFB7343004E40A2 /* HeaderView.swift */,
 				4D78B2062BFC747A00BD56B0 /* RefreshableContentView.swift */,
@@ -464,21 +484,15 @@
 				4D4D706C2C04AF3B00BE2A59 /* AnimatedTextView.swift */,
 				4DB90EDF2C29593200B3977C /* SliderView.swift */,
 				4DB90EE32C295B6C00B3977C /* CustomButton.swift */,
+				4DB90F0B2C2AD29500B3977C /* BenchTimePlay.playground */,
 			);
 			path = ComponentViews;
-			sourceTree = "<group>";
-		};
-		4D90DE3D2BFB736A004E40A2 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				4D90DE3E2BFB7379004E40A2 /* ThemeStyle.swift */,
-			);
-			path = Theme;
 			sourceTree = "<group>";
 		};
 		4DB90EED2C29A9EC00B3977C /* FacetedBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				4DB90F062C2AA95300B3977C /* PillFieldBuilders */,
 				4DB90EF52C29AA9A00B3977C /* ButtonBuilders */,
 				4DB90EF42C29AA8D00B3977C /* TextFieldBuilders */,
 			);
@@ -510,6 +524,37 @@
 				4DB90EFB2C29AB8300B3977C /* FacetedBuilderView.swift */,
 			);
 			path = FacetedBuilderPatternView;
+			sourceTree = "<group>";
+		};
+		4DB90F032C2AA2C300B3977C /* CommonEnums */ = {
+			isa = PBXGroup;
+			children = (
+				4DB90EE12C295A5600B3977C /* Constants.swift */,
+				4D90DE3E2BFB7379004E40A2 /* ThemeStyle.swift */,
+				4DB90F012C2AA2A700B3977C /* PillFieldType.swift */,
+				4DB90F042C2AA37900B3977C /* Route.swift */,
+			);
+			path = CommonEnums;
+			sourceTree = "<group>";
+		};
+		4DB90F062C2AA95300B3977C /* PillFieldBuilders */ = {
+			isa = PBXGroup;
+			children = (
+				4DB90EFF2C2AA23B00B3977C /* PillFieldBuilder.swift */,
+				4DB90F0C2C2ADC5400B3977C /* ValidatingPillFieldBuilder.swift */,
+			);
+			path = PillFieldBuilders;
+			sourceTree = "<group>";
+		};
+		4DB90F102C2ADE1000B3977C /* Pillfields */ = {
+			isa = PBXGroup;
+			children = (
+				4DB90F072C2AA97900B3977C /* ValidatingPillField.swift */,
+				4DB90EFD2C2A9FB500B3977C /* PillField.swift */,
+				4DB90F0E2C2ADE0900B3977C /* SubmissionValidatedPillField.swift */,
+				4DB90F112C2ADE7400B3977C /* FieldValidator.swift */,
+			);
+			path = Pillfields;
 			sourceTree = "<group>";
 		};
 		4DC3524F2C17116F0091A96E /* RickAndMortyViews */ = {
@@ -676,12 +721,14 @@
 				4DEB7FBA2C1341E50055C12C /* ListUsersView.swift in Sources */,
 				4DB90EF72C29AABE00B3977C /* ImageButtonBuilder.swift in Sources */,
 				4D7DA63D2BFDE232007948BF /* ApplicationManager.swift in Sources */,
+				4DB90F052C2AA37900B3977C /* Route.swift in Sources */,
 				4DC352592C17223D0091A96E /* AppointmentsView.swift in Sources */,
 				4D7DA63F2BFDE2F6007948BF /* CharacterDetailView.swift in Sources */,
 				4DB90EEA2C296F8000B3977C /* UpdateProductsService.swift in Sources */,
 				4D90DE312BFB5D18004E40A2 /* Debouncer.swift in Sources */,
 				4DB90EDE2C29579C00B3977C /* ProductViewState.swift in Sources */,
 				4D90DE2B2BFB572F004E40A2 /* CharacterResponse.swift in Sources */,
+				4DB90F082C2AA97900B3977C /* ValidatingPillField.swift in Sources */,
 				4DB90EEF2C29AA0A00B3977C /* NumericTextFieldBuilder.swift in Sources */,
 				4D44F5592C1970F60028103F /* CharacterListViewState.swift in Sources */,
 				4D4D705E2C04720F00BE2A59 /* EpisodesView.swift in Sources */,
@@ -697,14 +744,17 @@
 				4D90DE3A2BFB6EFE004E40A2 /* RemoteImageView.swift in Sources */,
 				4D90DE232BFB537A004E40A2 /* MainView.swift in Sources */,
 				4D78B2072BFC747A00BD56B0 /* RefreshableContentView.swift in Sources */,
+				4DB90F022C2AA2A700B3977C /* PillFieldType.swift in Sources */,
 				4DB90EE42C295B6C00B3977C /* CustomButton.swift in Sources */,
 				4D90DE3C2BFB7343004E40A2 /* HeaderView.swift in Sources */,
+				4DB90EFE2C2A9FB500B3977C /* PillField.swift in Sources */,
 				4D0E6E012C18786D00E1DA0B /* CharacterDetailsViewState.swift in Sources */,
 				4DC3525D2C1727E10091A96E /* Date+.swift in Sources */,
 				4D4D70602C04733F00BE2A59 /* Episode.swift in Sources */,
 				4DEB7FA92C1316650055C12C /* Figure.swift in Sources */,
 				4D90DE372BFB66DA004E40A2 /* Resolver+Services.swift in Sources */,
 				4DB90EE22C295A5600B3977C /* Constants.swift in Sources */,
+				4DB90F002C2AA23B00B3977C /* PillFieldBuilder.swift in Sources */,
 				4D7DA6362BFDD4AE007948BF /* TitlePlaygroundView.swift in Sources */,
 				4D6C793F2BFF43500059BE83 /* AnimatedClockView.swift in Sources */,
 				4D68483C2C1C609400378EE2 /* APIRequestBuilderImpl.swift in Sources */,
@@ -715,15 +765,18 @@
 				4D7DA6452BFDE797007948BF /* CharacterDetailService.swift in Sources */,
 				4D7057932C10605E009E6A35 /* MockDataProvider.swift in Sources */,
 				4D0E6DFE2C184AB000E1DA0B /* CoreNetworkService.swift in Sources */,
+				4DB90F122C2ADE7400B3977C /* FieldValidator.swift in Sources */,
 				4DEB7FB62C1340480055C12C /* UserService.swift in Sources */,
 				4D4D706D2C04AF3B00BE2A59 /* AnimatedTextView.swift in Sources */,
 				4DB90EDC2C2950B700B3977C /* AddProductView.swift in Sources */,
+				4DB90F0F2C2ADE0900B3977C /* SubmissionValidatedPillField.swift in Sources */,
 				4D68482F2C1C4E5600378EE2 /* APIRequest.swift in Sources */,
 				4D4D706A2C048E0800BE2A59 /* EpisodeHelper.swift in Sources */,
 				4D68483F2C1C6F4F00378EE2 /* StoreEndpoint.swift in Sources */,
 				4D78B20D2BFC9BF500BD56B0 /* CharacterStatus.swift in Sources */,
 				4D7DA63B2BFDD506007948BF /* Person.swift in Sources */,
 				4D6FE0F42C05B427005BC361 /* MediumCharacterDetailView.swift in Sources */,
+				4DB90F0A2C2AAAD300B3977C /* RegexValidator+.swift in Sources */,
 				4DC3525F2C1729BA0091A96E /* String+.swift in Sources */,
 				4DB90EE02C29593200B3977C /* SliderView.swift in Sources */,
 				4DB90EEC2C29703600B3977C /* ProductResponse.swift in Sources */,
@@ -739,6 +792,7 @@
 				4D78B20F2BFCB30600BD56B0 /* SearchTextfield.swift in Sources */,
 				4D6FE0F22C05B3F7005BC361 /* ExtraLargeCharacterDetailView.swift in Sources */,
 				4DB90EF92C29AAF300B3977C /* CustomButtonBuilder.swift in Sources */,
+				4DB90F0D2C2ADC5400B3977C /* ValidatingPillFieldBuilder.swift in Sources */,
 				4DEB7FA72C1313850055C12C /* Hobby.swift in Sources */,
 				4D6FE0FA2C05C0F0005BC361 /* ConstantSizeCategory.swift in Sources */,
 				4D6848312C1C523000378EE2 /* APIRequestBuilder.swift in Sources */,

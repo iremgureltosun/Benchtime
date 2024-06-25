@@ -11,6 +11,10 @@ struct FacetedBuilderView: View {
     @State private var nameSurname: String = ""
     @State private var password: String = ""
     @State private var height: Double = 0
+    @State private var addressText: String = ""
+
+    let field1 = FieldValidator(validator: .fiveDigitsNumber, "")
+    let fieldIban = FieldValidator(validator: .iban, "")
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -26,6 +30,18 @@ struct FacetedBuilderView: View {
             Divider()
 
             textFieldsGenerated
+
+            PillFieldBuilder(text: $addressText, placeholderText: "Enter your address", type: .custom(sfSymbolName: "location"), themeStyle: .ocean)
+                .build()
+
+            PillFieldBuilder(text: $addressText, placeholderText: "Search", type: .custom(sfSymbolName: "location"), themeStyle: .desert)
+                .build()
+
+            ValidatingPillFieldBuilder(field: field1, placeholderText: "Enter a number with max 5 digits", type: .rightArrow, themeStyle: .ocean)
+                .build()
+
+            ValidatingPillFieldBuilder(field: fieldIban, placeholderText: "TR33 0006 1005 1978 6457 8413 26", type: .rightArrow, themeStyle: .desert)
+                .buildWithSubmissionValidation()
         }
         .padding(.horizontal, Constants.Spaces.mediumSpace)
     }

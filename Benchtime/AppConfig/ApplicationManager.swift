@@ -16,14 +16,6 @@ enum LoadingState: Hashable, Identifiable {
     }
 }
 
-enum Route: Hashable {
-    case characterDetail(id: String)
-    case addProduct
-    case animatedClock
-    case titlePlayground
-    case facetedBuilder
-}
-
 @Observable class ApplicationManager {
     var loadingState: LoadingState = .idle
     var routes: [Route]
