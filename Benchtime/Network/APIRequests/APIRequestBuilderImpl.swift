@@ -7,7 +7,7 @@
 
 import Foundation
 
-class APIRequestBuilderImpl<T>: APIRequestBuilder {
+final class APIRequestBuilderImpl<T>: APIRequestBuilder {
     private var endpoint: URL
     private var method: HttpMethod = .get
     private var headers: [String: String] = [:]
