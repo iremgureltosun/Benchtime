@@ -10,10 +10,11 @@ import Foundation
 struct ImageProcessingSetup {
     static func setup() -> ResizeHandler {
         let resizeHandler = ResizeHandler()
-        let filterHandler = FilterHandler()
+        let applyFilterHandler = ApplyFilterHandler()
         let watermarkHandler = WatermarkHandler()
-        resizeHandler.next = filterHandler
-        filterHandler.next = watermarkHandler
+    
+        resizeHandler.next = applyFilterHandler
+        applyFilterHandler.next = watermarkHandler
 
         return resizeHandler
     }

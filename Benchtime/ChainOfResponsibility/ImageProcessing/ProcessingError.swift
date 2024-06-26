@@ -9,6 +9,7 @@ import Foundation
 
 enum ProcessingError: Error {
     case resizeError
+    case ciImageError
     case filterNotFound
     case filterError
     case watermarkError

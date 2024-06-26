@@ -8,13 +8,14 @@
 import UIKit
 
 final class ResizeHandler: HandlerProtocol {
-    typealias T = UIImage
+    typealias T = ImageProcessModel
 
-    var next: FilterHandler?
+    var next: ApplyFilterHandler?
 
-    func handle(_ input: inout UIImage) throws {
+    func handle(_ input: inout ImageProcessModel) throws {
         print("Resizing image...")
-        input = try input.resized(to: CGSize(width: 300, height: 300))
+        let resizedImage = try input.image.resized(to: input.sizes)
+        input.updateImage(image: resizedImage)
         print("Image resized successfully")
         try next?.handle(&input)
     }
