@@ -10,4 +10,5 @@ import Foundation
 extension RegexValidator {
     static let iban = RegexValidator(pattern: "^[A-Z]{2}\\d{2}[A-Z0-9]{1,30}$")
     static let fiveDigitsNumber = RegexValidator(pattern: "^[0-9]{0,5}$")
+    static let phone = RegexValidator(pattern: #"^\(?\d{3}\)?[ -]?\d{3}[ -]?\d{4}$"#)
 }

@@ -15,35 +15,49 @@ struct FacetedBuilderView: View {
 
     let field1 = FieldValidator(validator: .fiveDigitsNumber, "")
     let fieldIban = FieldValidator(validator: .iban, "")
+    let fieldPhone = FieldValidator(validator: .phone, "")
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Buttons")
-                .font(.title)
-            Divider()
-
-            buttonsGenerated
-
-            Text("Text Fields")
-                .font(.title)
-
-            Divider()
-
-            textFieldsGenerated
-
-            PillFieldBuilder(text: $addressText, placeholderText: "Enter your address", type: .custom(sfSymbolName: "location"), themeStyle: .ocean)
-                .build()
-
-            PillFieldBuilder(text: $addressText, placeholderText: "Search", type: .custom(sfSymbolName: "location"), themeStyle: .desert)
-                .build()
-
-            ValidatingPillFieldBuilder(field: field1, placeholderText: "Enter a number with max 5 digits", type: .rightArrow, themeStyle: .ocean)
-                .build()
-
-            ValidatingPillFieldBuilder(field: fieldIban, placeholderText: "TR33 0006 1005 1978 6457 8413 26", type: .rightArrow, themeStyle: .desert)
-                .buildWithSubmissionValidation()
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text("Buttons")
+                    .font(.title)
+                Divider()
+                
+                buttonsGenerated
+                
+                Text("Text Fields")
+                    .font(.title)
+                
+                Divider()
+                
+                textFieldsGenerated
+                
+                Text("Pill Fields")
+                    .font(.title)
+                
+                Divider()
+                
+                PillFieldBuilder(text: $addressText, placeholderText: "Enter your address", type: .custom(sfSymbolName: "location.circle"), themeStyle: .ocean)
+                    .build()
+                
+                PillFieldBuilder(text: $addressText, placeholderText: "Search", type: .custom(sfSymbolName: "location.circle.fill"), themeStyle: .desert)
+                    .build()
+                
+                ValidatingPillFieldBuilder(field: field1, placeholderText: "Enter a number with max 5 digits", type: .rightArrow, themeStyle: .ocean)
+                    .build()
+                
+                ValidatingPillFieldBuilder(field: fieldIban, placeholderText: "TR33 0006 1005 1978 6457 8413 26", type: .rightArrow, themeStyle: .desert)
+                    .buildWithSubmissionValidation()
+                
+                ValidatingPillFieldBuilder(field: fieldIban, placeholderText: "TR33 0006 1005 1978 6457 8413 26", type: .custom(sfSymbolName: "chevron.right.circle.fill"), themeStyle: .desert)
+                    .buildWithSubmissionValidation()
+                
+                ValidatingPillFieldBuilder(field: fieldPhone, placeholderText: "111 222 3333 or 111-222-3333", type: .custom(sfSymbolName: "phone.circle"), themeStyle: .ocean)
+                    .buildWithSubmissionValidation()
+            }
+            .padding(.horizontal, Constants.Spaces.mediumSpace)
         }
-        .padding(.horizontal, Constants.Spaces.mediumSpace)
     }
 
     @ViewBuilder private var buttonsGenerated: some View {
@@ -65,28 +79,25 @@ struct FacetedBuilderView: View {
         }.frame(height: 50)
 
         HStack {
-            VStack {
-                ImageButtonStyleBuilder(themeStyle: .ocean, imageName: "plus", action: {
-                    print("do nothing for now")
-                })
-                .build()
+            ImageButtonStyleBuilder(themeStyle: .ocean, imageName: "plus", action: {
+                print("do nothing for now")
+            })
+            .build()
 
-                ImageButtonStyleBuilder(themeStyle: .ocean, imageName: "minus", action: {
-                    print("do nothing for now")
-                })
-                .build()
-            }
-            VStack {
-                ImageButtonStyleBuilder(themeStyle: .desert, imageName: "plus", action: {
-                    print("do nothing for now")
-                })
-                .build()
+            ImageButtonStyleBuilder(themeStyle: .ocean, imageName: "minus", action: {
+                print("do nothing for now")
+            })
+            .build()
 
-                ImageButtonStyleBuilder(themeStyle: .desert, imageName: "minus", action: {
-                    print("do nothing for now")
-                })
-                .build()
-            }
+            ImageButtonStyleBuilder(themeStyle: .desert, imageName: "plus", action: {
+                print("do nothing for now")
+            })
+            .build()
+
+            ImageButtonStyleBuilder(themeStyle: .desert, imageName: "minus", action: {
+                print("do nothing for now")
+            })
+            .build()
         }
     }
 
