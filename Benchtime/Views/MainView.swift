@@ -44,6 +44,9 @@ struct MainView: View {
                         Button("Faceted Builders View") {
                             appManager.navigate(to: .facetedBuilder)
                         }
+                        Button("Mark Photo View") {
+                            appManager.navigate(to: .markPhoto)
+                        }
                     } label: {
                         Image(systemName: "ellipsis.circle")
                             .imageScale(.large)
@@ -64,6 +67,8 @@ struct MainView: View {
                     TitlePlaygroundView()
                 case .facetedBuilder:
                     FacetedBuilderView()
+                case .markPhoto:
+                    MarkPhotoView()
                 }
             }
         }

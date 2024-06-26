@@ -93,6 +93,19 @@
 		4DB90F0D2C2ADC5400B3977C /* ValidatingPillFieldBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F0C2C2ADC5400B3977C /* ValidatingPillFieldBuilder.swift */; };
 		4DB90F0F2C2ADE0900B3977C /* SubmissionValidatedPillField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F0E2C2ADE0900B3977C /* SubmissionValidatedPillField.swift */; };
 		4DB90F122C2ADE7400B3977C /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F112C2ADE7400B3977C /* FieldValidator.swift */; };
+		4DB90F172C2C027F00B3977C /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F162C2C027F00B3977C /* Order.swift */; };
+		4DB90F192C2C02E700B3977C /* CheckInventoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F182C2C02E700B3977C /* CheckInventoryHandler.swift */; };
+		4DB90F1B2C2C02FA00B3977C /* HandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F1A2C2C02FA00B3977C /* HandlerProtocol.swift */; };
+		4DB90F1D2C2C035A00B3977C /* PaymentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F1C2C2C035A00B3977C /* PaymentHandler.swift */; };
+		4DB90F1F2C2C038700B3977C /* ShippingHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F1E2C2C038700B3977C /* ShippingHandler.swift */; };
+		4DB90F212C2C03C000B3977C /* SetupOrderHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F202C2C03C000B3977C /* SetupOrderHandlers.swift */; };
+		4DB90F282C2C199C00B3977C /* ResizeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F272C2C199C00B3977C /* ResizeHandler.swift */; };
+		4DB90F2A2C2C19FA00B3977C /* FilterHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F292C2C19FA00B3977C /* FilterHandler.swift */; };
+		4DB90F2C2C2C1A1500B3977C /* WatermarkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F2B2C2C1A1500B3977C /* WatermarkHandler.swift */; };
+		4DB90F2F2C2C22CA00B3977C /* MarkPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F2E2C2C22CA00B3977C /* MarkPhotoView.swift */; };
+		4DB90F312C2C233D00B3977C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F302C2C233D00B3977C /* ImagePicker.swift */; };
+		4DB90F332C2C23E100B3977C /* ImageProcessingSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F322C2C23E100B3977C /* ImageProcessingSetup.swift */; };
+		4DB90F352C2C3B9400B3977C /* ProcessingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F342C2C3B9400B3977C /* ProcessingError.swift */; };
 		4DC352532C171F9B0091A96E /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC352522C171F9B0091A96E /* AppointmentModel.swift */; };
 		4DC352552C1720690091A96E /* AppointmentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC352542C1720690091A96E /* AppointmentsService.swift */; };
 		4DC352592C17223D0091A96E /* AppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC352582C17223D0091A96E /* AppointmentsView.swift */; };
@@ -198,6 +211,20 @@
 		4DB90F0C2C2ADC5400B3977C /* ValidatingPillFieldBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatingPillFieldBuilder.swift; sourceTree = "<group>"; };
 		4DB90F0E2C2ADE0900B3977C /* SubmissionValidatedPillField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmissionValidatedPillField.swift; sourceTree = "<group>"; };
 		4DB90F112C2ADE7400B3977C /* FieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
+		4DB90F162C2C027F00B3977C /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		4DB90F182C2C02E700B3977C /* CheckInventoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInventoryHandler.swift; sourceTree = "<group>"; };
+		4DB90F1A2C2C02FA00B3977C /* HandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlerProtocol.swift; sourceTree = "<group>"; };
+		4DB90F1C2C2C035A00B3977C /* PaymentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHandler.swift; sourceTree = "<group>"; };
+		4DB90F1E2C2C038700B3977C /* ShippingHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingHandler.swift; sourceTree = "<group>"; };
+		4DB90F202C2C03C000B3977C /* SetupOrderHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupOrderHandlers.swift; sourceTree = "<group>"; };
+		4DB90F242C2C046400B3977C /* CORPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CORPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4DB90F272C2C199C00B3977C /* ResizeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeHandler.swift; sourceTree = "<group>"; };
+		4DB90F292C2C19FA00B3977C /* FilterHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHandler.swift; sourceTree = "<group>"; };
+		4DB90F2B2C2C1A1500B3977C /* WatermarkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkHandler.swift; sourceTree = "<group>"; };
+		4DB90F2E2C2C22CA00B3977C /* MarkPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkPhotoView.swift; sourceTree = "<group>"; };
+		4DB90F302C2C233D00B3977C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		4DB90F322C2C23E100B3977C /* ImageProcessingSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessingSetup.swift; sourceTree = "<group>"; };
+		4DB90F342C2C3B9400B3977C /* ProcessingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingError.swift; sourceTree = "<group>"; };
 		4DC352522C171F9B0091A96E /* AppointmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
 		4DC352542C1720690091A96E /* AppointmentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsService.swift; sourceTree = "<group>"; };
 		4DC352582C17223D0091A96E /* AppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsView.swift; sourceTree = "<group>"; };
@@ -423,6 +450,7 @@
 		4D90DDF22BFB460D004E40A2 /* Benchtime */ = {
 			isa = PBXGroup;
 			children = (
+				4DB90F132C2C011B00B3977C /* ChainOfResponsibility */,
 				4D90DE302BFB5D17004E40A2 /* Debouncer.swift */,
 				4D7DA6462BFDE7CD007948BF /* AppConfig */,
 				4D90DE382BFB6EE1004E40A2 /* ComponentViews */,
@@ -485,6 +513,7 @@
 				4DB90EDF2C29593200B3977C /* SliderView.swift */,
 				4DB90EE32C295B6C00B3977C /* CustomButton.swift */,
 				4DB90F0B2C2AD29500B3977C /* BenchTimePlay.playground */,
+				4DB90F302C2C233D00B3977C /* ImagePicker.swift */,
 			);
 			path = ComponentViews;
 			sourceTree = "<group>";
@@ -557,6 +586,49 @@
 			path = Pillfields;
 			sourceTree = "<group>";
 		};
+		4DB90F132C2C011B00B3977C /* ChainOfResponsibility */ = {
+			isa = PBXGroup;
+			children = (
+				4DB90F1A2C2C02FA00B3977C /* HandlerProtocol.swift */,
+				4DB90F242C2C046400B3977C /* CORPlayground.playground */,
+				4DB90F152C2C026B00B3977C /* ImageProcessing */,
+				4DB90F142C2C026300B3977C /* Shopping */,
+			);
+			path = ChainOfResponsibility;
+			sourceTree = "<group>";
+		};
+		4DB90F142C2C026300B3977C /* Shopping */ = {
+			isa = PBXGroup;
+			children = (
+				4DB90F162C2C027F00B3977C /* Order.swift */,
+				4DB90F182C2C02E700B3977C /* CheckInventoryHandler.swift */,
+				4DB90F1C2C2C035A00B3977C /* PaymentHandler.swift */,
+				4DB90F1E2C2C038700B3977C /* ShippingHandler.swift */,
+				4DB90F202C2C03C000B3977C /* SetupOrderHandlers.swift */,
+			);
+			path = Shopping;
+			sourceTree = "<group>";
+		};
+		4DB90F152C2C026B00B3977C /* ImageProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				4DB90F272C2C199C00B3977C /* ResizeHandler.swift */,
+				4DB90F292C2C19FA00B3977C /* FilterHandler.swift */,
+				4DB90F2B2C2C1A1500B3977C /* WatermarkHandler.swift */,
+				4DB90F322C2C23E100B3977C /* ImageProcessingSetup.swift */,
+				4DB90F342C2C3B9400B3977C /* ProcessingError.swift */,
+			);
+			path = ImageProcessing;
+			sourceTree = "<group>";
+		};
+		4DB90F2D2C2C22A800B3977C /* ChainOfResponsibilityView */ = {
+			isa = PBXGroup;
+			children = (
+				4DB90F2E2C2C22CA00B3977C /* MarkPhotoView.swift */,
+			);
+			path = ChainOfResponsibilityView;
+			sourceTree = "<group>";
+		};
 		4DC3524F2C17116F0091A96E /* RickAndMortyViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +641,7 @@
 		4DC352502C17118F0091A96E /* DebugViews */ = {
 			isa = PBXGroup;
 			children = (
+				4DB90F2D2C2C22A800B3977C /* ChainOfResponsibilityView */,
 				4DB90EFA2C29AB6200B3977C /* FacetedBuilderPatternView */,
 				4D0E6E082C187CFC00E1DA0B /* PlaygroundView */,
 				4D0E6E072C187CEC00E1DA0B /* AnimatedClock */,
@@ -709,15 +782,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D90DE3F2BFB7379004E40A2 /* ThemeStyle.swift in Sources */,
+				4DB90F332C2C23E100B3977C /* ImageProcessingSetup.swift in Sources */,
 				4DB90EE62C29613300B3977C /* ProductRequest.swift in Sources */,
+				4DB90F192C2C02E700B3977C /* CheckInventoryHandler.swift in Sources */,
+				4DB90F2C2C2C1A1500B3977C /* WatermarkHandler.swift in Sources */,
 				4D4D70632C04736B00BE2A59 /* Location.swift in Sources */,
 				4D6C79412BFF5C110059BE83 /* AnimationClockViewModel.swift in Sources */,
 				4D4D70672C0473F600BE2A59 /* EpisodeService.swift in Sources */,
 				4D6848352C1C5DFD00378EE2 /* HttpMethod.swift in Sources */,
+				4DB90F1B2C2C02FA00B3977C /* HandlerProtocol.swift in Sources */,
 				4D6848422C1C718600378EE2 /* Product.swift in Sources */,
 				4D6C79462C0066130059BE83 /* View+.swift in Sources */,
 				4DEB7FB82C1340CE0055C12C /* BookingEndpoint.swift in Sources */,
 				4D78B2092BFC75AA00BD56B0 /* ShowMorelndicatorView.swift in Sources */,
+				4DB90F312C2C233D00B3977C /* ImagePicker.swift in Sources */,
 				4DEB7FBA2C1341E50055C12C /* ListUsersView.swift in Sources */,
 				4DB90EF72C29AABE00B3977C /* ImageButtonBuilder.swift in Sources */,
 				4D7DA63D2BFDE232007948BF /* ApplicationManager.swift in Sources */,
@@ -731,6 +809,7 @@
 				4DB90F082C2AA97900B3977C /* ValidatingPillField.swift in Sources */,
 				4DB90EEF2C29AA0A00B3977C /* NumericTextFieldBuilder.swift in Sources */,
 				4D44F5592C1970F60028103F /* CharacterListViewState.swift in Sources */,
+				4DB90F212C2C03C000B3977C /* SetupOrderHandlers.swift in Sources */,
 				4D4D705E2C04720F00BE2A59 /* EpisodesView.swift in Sources */,
 				4D7057892C104158009E6A35 /* MockCharacterDetailService.swift in Sources */,
 				4D90DE2F2BFB5D07004E40A2 /* CharacterListView.swift in Sources */,
@@ -740,6 +819,7 @@
 				4DC352532C171F9B0091A96E /* AppointmentModel.swift in Sources */,
 				4D6C79442C0065DF0059BE83 /* Color+.swift in Sources */,
 				4DB90EFC2C29AB8300B3977C /* FacetedBuilderView.swift in Sources */,
+				4DB90F2A2C2C19FA00B3977C /* FilterHandler.swift in Sources */,
 				4D4D70652C04739600BE2A59 /* CharacterGender.swift in Sources */,
 				4D90DE3A2BFB6EFE004E40A2 /* RemoteImageView.swift in Sources */,
 				4D90DE232BFB537A004E40A2 /* MainView.swift in Sources */,
@@ -770,6 +850,8 @@
 				4D4D706D2C04AF3B00BE2A59 /* AnimatedTextView.swift in Sources */,
 				4DB90EDC2C2950B700B3977C /* AddProductView.swift in Sources */,
 				4DB90F0F2C2ADE0900B3977C /* SubmissionValidatedPillField.swift in Sources */,
+				4DB90F172C2C027F00B3977C /* Order.swift in Sources */,
+				4DB90F282C2C199C00B3977C /* ResizeHandler.swift in Sources */,
 				4D68482F2C1C4E5600378EE2 /* APIRequest.swift in Sources */,
 				4D4D706A2C048E0800BE2A59 /* EpisodeHelper.swift in Sources */,
 				4D68483F2C1C6F4F00378EE2 /* StoreEndpoint.swift in Sources */,
@@ -784,6 +866,7 @@
 				4D90DE282BFB540B004E40A2 /* RickAndMortyEndpoints.swift in Sources */,
 				4D802E7C2C07436700B3F919 /* CharacterHelper.swift in Sources */,
 				4D6848442C1C71AF00378EE2 /* ProductService.swift in Sources */,
+				4DB90F352C2C3B9400B3977C /* ProcessingError.swift in Sources */,
 				4DEB7FAD2C1332A30055C12C /* UserModel.swift in Sources */,
 				4D6FE0F62C05B4ED005BC361 /* ProfileRowView.swift in Sources */,
 				4DB90EF32C29AA6600B3977C /* PlainTextFieldBuilder.swift in Sources */,
@@ -791,16 +874,19 @@
 				4DC352552C1720690091A96E /* AppointmentsService.swift in Sources */,
 				4D78B20F2BFCB30600BD56B0 /* SearchTextfield.swift in Sources */,
 				4D6FE0F22C05B3F7005BC361 /* ExtraLargeCharacterDetailView.swift in Sources */,
+				4DB90F1F2C2C038700B3977C /* ShippingHandler.swift in Sources */,
 				4DB90EF92C29AAF300B3977C /* CustomButtonBuilder.swift in Sources */,
 				4DB90F0D2C2ADC5400B3977C /* ValidatingPillFieldBuilder.swift in Sources */,
 				4DEB7FA72C1313850055C12C /* Hobby.swift in Sources */,
 				4D6FE0FA2C05C0F0005BC361 /* ConstantSizeCategory.swift in Sources */,
 				4D6848312C1C523000378EE2 /* APIRequestBuilder.swift in Sources */,
 				4D3D1D9B2C11E2ED004A32E0 /* MockPaymentProcessor.swift in Sources */,
+				4DB90F1D2C2C035A00B3977C /* PaymentHandler.swift in Sources */,
 				4D7DA6382BFDD4D2007948BF /* TitlePlaygroundViewModel.swift in Sources */,
 				4D6848472C1C78A200378EE2 /* StoreView.swift in Sources */,
 				4DB90EF12C29AA3300B3977C /* SecureTextFieldBuilder.swift in Sources */,
 				4D3D1D992C11CE0D004A32E0 /* CardInfo.swift in Sources */,
+				4DB90F2F2C2C22CA00B3977C /* MarkPhotoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
