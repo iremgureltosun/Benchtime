@@ -47,9 +47,6 @@ struct FacetedBuilderView: View {
                 ValidatingPillFieldBuilder(field: field1, placeholderText: "Enter a number with max 5 digits", type: .rightArrow, themeStyle: .ocean)
                     .build()
                 
-                ValidatingPillFieldBuilder(field: fieldIban, placeholderText: "TR33 0006 1005 1978 6457 8413 26", type: .rightArrow, themeStyle: .desert)
-                    .buildWithSubmissionValidation()
-                
                 ValidatingPillFieldBuilder(field: fieldIban, placeholderText: "TR33 0006 1005 1978 6457 8413 26", type: .custom(sfSymbolName: "chevron.right.circle.fill"), themeStyle: .desert)
                     .buildWithSubmissionValidation()
                 
