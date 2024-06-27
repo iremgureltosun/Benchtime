@@ -8,14 +8,19 @@
 import Foundation
 
 final class PaymentHandler: HandlerProtocol {
-    typealias T = Order
+    typealias T = OrderModel
     
     var next: ShippingHandler?
 
-    func handle(_ input: inout Order) {
-        if input.isPaid {
+    func handle(_ input: inout OrderModel) throws {
+        input.checkout()
+        
+        if input.paymentSuccess {
             print("Order \(input.id) has been paid.")
-            next?.handle(&input)
+            
+            var shipping = ShippingModel.init(order: input, deliveryAddress: "eee", postalCode: "3333", cityName: "Istanbul", deliveryStartDate: Date())
+            try next?.handle(&shipping)
+            
         } else {
             print("Order \(input.id) payment failed. Stopping the process.")
         }

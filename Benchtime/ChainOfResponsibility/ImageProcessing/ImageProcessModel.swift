@@ -8,10 +8,10 @@
 import UIKit
 
 struct ImageProcessModel {
-    var image: UIImage
+    private(set) var image: UIImage
     var filterName: String
     var sizes: CGSize
-    
+
     mutating func updateImage(image: UIImage) {
         self.image = image
     }

@@ -12,9 +12,11 @@ struct SetupOrderHandlers {
         let checkInventoryHandler = CheckInventoryHandler()
         let paymentHandler = PaymentHandler()
         let shippingHandler = ShippingHandler()
-
+        let confirmHandler = ConfirmHandler()
+        
         checkInventoryHandler.next = paymentHandler
         paymentHandler.next = shippingHandler
+        shippingHandler.next = confirmHandler
         
         return checkInventoryHandler
     }
