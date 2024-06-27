@@ -23,33 +23,33 @@ struct FacetedBuilderView: View {
                 Text("Buttons")
                     .font(.title)
                 Divider()
-                
+
                 buttonsGenerated
-                
+
                 Text("Text Fields")
                     .font(.title)
-                
+
                 Divider()
-                
+
                 textFieldsGenerated
-                
+
                 Text("Pill Fields")
                     .font(.title)
-                
+
                 Divider()
-                
-                PillFieldBuilder(text: $addressText, placeholderText: "Enter your address", type: .custom(sfSymbolName: "location.circle"), themeStyle: .ocean)
+
+                PillFieldBuilder(text: $addressText, placeholderText: "Enter your address", type: .custom(sfSymbolName: "location.circle"), themeStyle: .ocean, buttonHandler: {})
                     .build()
-                
-                PillFieldBuilder(text: $addressText, placeholderText: "Search", type: .custom(sfSymbolName: "location.circle.fill"), themeStyle: .desert)
+
+                PillFieldBuilder(text: $addressText, placeholderText: "Search", type: .custom(sfSymbolName: "location.circle.fill"), themeStyle: .desert, buttonHandler: {})
                     .build()
-                
+
                 ValidatingPillFieldBuilder(field: field1, placeholderText: "Enter a number with max 5 digits", type: .rightArrow, themeStyle: .ocean)
                     .build()
-                
+
                 ValidatingPillFieldBuilder(field: fieldIban, placeholderText: "TR33 0006 1005 1978 6457 8413 26", type: .custom(sfSymbolName: "chevron.right.circle.fill"), themeStyle: .desert)
                     .buildWithSubmissionValidation()
-                
+
                 ValidatingPillFieldBuilder(field: fieldPhone, placeholderText: "111 222 3333 or 111-222-3333", type: .custom(sfSymbolName: "phone.circle"), themeStyle: .ocean)
                     .buildWithSubmissionValidation()
             }
