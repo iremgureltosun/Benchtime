@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct MementoDoUndoView: View {
-    @State private var viewModel = MementoDoUndoViewModel.init()
+    @State private var viewModel = MementoDoUndoViewModel()
 
     @State private var currentPath: Path = Path()
 
     var body: some View {
         VStack {
+            Text("Welcome to drawing board. Feel free to draw what you want.")
             Canvas { context, _ in
                 // Draw all paths stored in 'drawings'
                 for drawing in viewModel.list {
@@ -50,7 +51,7 @@ struct MementoDoUndoView: View {
                         .foregroundColor(.white)
                         .cornerRadius(8)
                 }
-                
+
                 // Undo button
                 Button(action: {
                     viewModel.undo()
@@ -61,7 +62,7 @@ struct MementoDoUndoView: View {
                         .foregroundColor(.white)
                         .cornerRadius(8)
                 }
-                
+
                 // Redo button
                 Button(action: {
                     viewModel.redo()

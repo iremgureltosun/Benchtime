@@ -33,8 +33,12 @@ import SwiftUI
     }
 
     func undo() {
-        careTaker.undo()
-        updateList()
+        let lastMemento = careTaker.undo()
+        if lastMemento == nil {
+            list = []
+        } else {
+            updateList()
+        }
     }
 
     func redo() {
@@ -44,7 +48,7 @@ import SwiftUI
 
     func removeAllMementos() {
         careTaker.removeAll()
-        updateList()
+        list = []
     }
 }
 
