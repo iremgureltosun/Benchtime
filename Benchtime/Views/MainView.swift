@@ -47,6 +47,12 @@ struct MainView: View {
                         Button("Mark Photo View") {
                             appManager.navigate(to: .markPhoto)
                         }
+                        Button("Memento Search View") {
+                            appManager.navigate(to: .mementoSearchView)
+                        }
+                        Button("Memento Drawing View") {
+                            appManager.navigate(to: .mementoDoUndo)
+                        }
                     } label: {
                         Image(systemName: "ellipsis.circle")
                             .imageScale(.large)
@@ -69,6 +75,10 @@ struct MainView: View {
                     FacetedBuilderView()
                 case .markPhoto:
                     MarkPhotoView()
+                case .mementoSearchView:
+                    SearchView()
+                case .mementoDoUndo:
+                    MementoDoUndoView()
                 }
             }
         }

@@ -8,7 +8,7 @@
 import Foundation
 
 /// The Originator class will also be generic, allowing it to create and restore mementos of any type.
-class Originator<T> {
+final class Originator<T> {
     private(set) var state: T
 
     init(initialState: T) {

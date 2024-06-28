@@ -23,6 +23,6 @@ struct PillFieldBuilder {
     }
     
     func build() -> some View {
-        PillField(text: $text, placeholderText: placeholderText, type: type, themeStyle: themeStyle, buttonHandler: {})
+        PillField(text: $text, placeholderText: placeholderText, type: type, themeStyle: themeStyle, buttonHandler: buttonHandler)
     }
 }

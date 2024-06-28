@@ -14,4 +14,6 @@ enum Route: Hashable {
     case titlePlayground
     case facetedBuilder
     case markPhoto
+    case mementoSearchView
+    case mementoDoUndo
 }

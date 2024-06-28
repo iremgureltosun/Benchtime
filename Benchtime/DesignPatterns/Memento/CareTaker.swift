@@ -8,9 +8,9 @@
 import Foundation
 
 /// The Caretaker class will manage mementos of any type.
-class Caretaker<T> {
-    private (set) var mementos: [Memento<T>] = []
-    private var currentIndex: Int = -1
+final class CareTaker<T> where T: Equatable {
+    private(set) var mementos: [Memento<T>] = []
+    private(set) var currentIndex: Int = -1
 
     func save(_ memento: Memento<T>) {
         if currentIndex < mementos.count - 1 {
@@ -20,15 +20,23 @@ class Caretaker<T> {
         currentIndex += 1
     }
 
+    @discardableResult
     func undo() -> Memento<T>? {
         guard currentIndex > 0 else { return nil }
         currentIndex -= 1
         return mementos[currentIndex]
     }
 
+    @discardableResult
     func redo() -> Memento<T>? {
         guard currentIndex < mementos.count - 1 else { return nil }
         currentIndex += 1
         return mementos[currentIndex]
+    }
+
+
+    func removeAll() {
+        mementos.removeAll()
+        currentIndex = -1
     }
 }

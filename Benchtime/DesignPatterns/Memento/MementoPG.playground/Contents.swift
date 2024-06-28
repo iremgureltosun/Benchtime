@@ -2,7 +2,7 @@ import UIKit
 
 // Example usage with a text editor
 let textEditor = Originator(initialState: "Initial text")
-let textCaretaker = Caretaker<String>()
+let textCaretaker = CareTaker<String>()
 
 // Initial write
 textEditor.setState("Hello, World!")
