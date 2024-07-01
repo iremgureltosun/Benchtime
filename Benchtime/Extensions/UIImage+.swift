@@ -1,23 +1,15 @@
 //
-//  WatermarkHandler.swift
+//  UIImage.swift
 //  Benchtime
 //
-//  Created by Tosun, Irem on 26.06.2024.
+//  Created by Tosun, Irem on 1.07.2024.
 //
 
 import UIKit
 
-final class WatermarkHandler: HandlerProtocol {
-    typealias T = ImageProcessModel
-
-    func handle(_ input: inout ImageProcessModel) throws {
-        print("Adding watermark to image...")
-        let markedImage = try addWatermark(image: input.image, watermark: "Adesso")
-        input.updateImage(image: markedImage)
-        print("Added watermark successfully!")
-    }
-
-    private func addWatermark(image: UIImage, watermark: String) throws -> UIImage {
+extension UIImage {
+    func addWatermark(watermark: String) throws -> UIImage {
+        let image = self
         let textColor = UIColor.white
         let textFont = UIFont.systemFont(ofSize: 60)
         
@@ -64,5 +56,39 @@ final class WatermarkHandler: HandlerProtocol {
         UIGraphicsEndImageContext()
         return newImage
     }
+    
+    func applyFilter(filterName: String) throws -> UIImage{
+        let image = self
+        let context = CIContext()
+        guard let ciImage = CIImage(image: image) else { throw ProcessingError.ciImageError }
 
+        guard let filter = CIFilter(name: filterName) else {
+            throw ProcessingError.filterNotFound
+        }
+        filter.setValue(ciImage, forKey: kCIInputImageKey)
+
+        // Dynamically set the filter's other parameters if they exist
+        let attributes = filter.attributes
+        for (key, _) in attributes {
+            if key != kCIInputImageKey, filter.inputKeys.contains(key) {
+                // Example of setting a default value for some common filter parameters
+                switch key {
+                case kCIInputIntensityKey:
+                    filter.setValue(0.5, forKey: key)
+                case kCIInputRadiusKey:
+                    filter.setValue(10.0, forKey: key)
+                case kCIInputScaleKey:
+                    filter.setValue(1.0, forKey: key)
+                case kCIInputCenterKey:
+                    filter.setValue(CIVector(x: ciImage.extent.midX, y: ciImage.extent.midY), forKey: key)
+                default:
+                    break
+                }
+            }
+        }
+
+        guard let outputImage = filter.outputImage, let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else { throw ProcessingError.filterError }
+
+        return UIImage(cgImage: cgImage)
+    }
 }

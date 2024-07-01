@@ -53,6 +53,9 @@ struct MainView: View {
                         Button("Memento Drawing View") {
                             appManager.navigate(to: .mementoDoUndo)
                         }
+                        Button("Decorator Example View") {
+                            appManager.navigate(to: .decoratorExampleView)
+                        }
                     } label: {
                         Image(systemName: "ellipsis.circle")
                             .imageScale(.large)
@@ -79,6 +82,8 @@ struct MainView: View {
                     SearchView()
                 case .mementoDoUndo:
                     MementoDoUndoView()
+                case .decoratorExampleView:
+                    DecoratorView()
                 }
             }
         }

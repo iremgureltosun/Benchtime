@@ -28,7 +28,7 @@ import Observation
     }
 
     func removeMemento(named mementoValue: String) {
-        if let memento = careTaker.mementos.first(where: { $0.state == mementoValue }) {
+        if let _ = careTaker.mementos.first(where: { $0.state == mementoValue }) {
             careTaker.removeAll()
             list = careTaker.mementos.map { $0.state }
         }
