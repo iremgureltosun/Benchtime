@@ -19,9 +19,10 @@ struct MarkPhotoView: View {
     @State var selectedFilterName = "CISepiaTone"
     let sizes: CGSize = CGSize(width: 300, height: 300)
     
-    // Setting up the chain of responsibility
-    
-    let resizeHandler = ImageProcessingSetup.setup()
+    // Defining the handlers for image processing
+    let resizeHandler = AnyHandler(ResizeHandler())
+    let filterHandler = AnyHandler(ApplyFilterHandler())
+    let watermarkHandler = AnyHandler(WatermarkHandler())
 
     var body: some View {
         VStack {
@@ -54,6 +55,8 @@ struct MarkPhotoView: View {
                     if let inputImage = image.getUIImage() {
                         do {
                             var modelProcess = ImageProcessModel(image: inputImage, filterName: selectedFilterName, sizes: sizes)
+                            resizeHandler.setNext(handler: filterHandler).setNext(handler: watermarkHandler)
+                            
                             try resizeHandler.handle(&modelProcess)
                             markedImage = modelProcess.image.swiftUIImage()
                             selectedImage = nil

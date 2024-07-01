@@ -9,10 +9,11 @@ import CoreImage
 import UIKit
 
 final class ApplyFilterHandler: HandlerProtocol {
-    typealias T = ImageProcessModel
-
-    var next: WatermarkHandler?
-
+    
+    typealias ContentType = ImageProcessModel
+    
+    var next: AnyHandler<ImageProcessModel>?
+    
     func handle(_ input: inout ImageProcessModel) throws {
         print("Applying filter to image...")
         let filteredImage = try input.image.applyFilter(filterName: input.filterName)

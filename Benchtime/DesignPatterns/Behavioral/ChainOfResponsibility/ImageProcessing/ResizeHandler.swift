@@ -8,9 +8,10 @@
 import UIKit
 
 final class ResizeHandler: HandlerProtocol {
-    typealias T = ImageProcessModel
-
-    var next: ApplyFilterHandler?
+    
+    typealias ContentType = ImageProcessModel
+    
+    var next: AnyHandler<ImageProcessModel>?
 
     func handle(_ input: inout ImageProcessModel) throws {
         print("Resizing image...")

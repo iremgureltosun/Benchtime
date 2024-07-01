@@ -44,7 +44,7 @@ struct MainView: View {
                         Button("Faceted Builders View") {
                             appManager.navigate(to: .facetedBuilder)
                         }
-                        Button("Mark Photo View") {
+                        Button("Chain Of Responsibility View") {
                             appManager.navigate(to: .markPhoto)
                         }
                         Button("Memento Search View") {

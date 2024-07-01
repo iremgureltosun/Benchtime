@@ -8,7 +8,9 @@
 import UIKit
 
 final class WatermarkHandler: HandlerProtocol {
-    typealias T = ImageProcessModel
+    typealias ContentType = ImageProcessModel
+
+    var next: AnyHandler<ImageProcessModel>?
 
     func handle(_ input: inout ImageProcessModel) throws {
         print("Adding watermark to image...")

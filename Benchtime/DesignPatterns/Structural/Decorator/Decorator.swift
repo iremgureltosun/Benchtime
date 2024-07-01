@@ -10,25 +10,24 @@ import UIKit
 class Decorator<T: Editor>: Editor {
     private var editor: T
 
-      required init(_ editor: T) {
-          self.editor = editor
-      }
+    required init(_ editor: T) {
+        self.editor = editor
+    }
 
     func apply() throws -> T.ContentType {
-          print(editor.description + " applies changes")
-          return try editor.apply()
-      }
+        print(editor.description + " applies changes")
+        return try editor.apply()
+    }
 
-      var description: String {
-          return "Decorator"
-      }
+    var description: String {
+        return "Decorator"
+    }
 }
-
 
 extension ImageProcessModel: Editor {
     typealias ContentType = ImageProcessModel
-    
-    func apply() -> ImageProcessModel  {
+
+    func apply() -> ImageProcessModel {
         return self
     }
 
