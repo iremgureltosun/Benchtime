@@ -7,27 +7,22 @@
 
 import SwiftUI
 
-typealias ColorPair = (backgroundColor: Color, foregroundColor: Color)
+struct ColorCatalog {
+    let backgroundColor: Color
+    let textColor: Color
+    let highlightedColor: Color
+}
 
-enum ThemeStyle {
+enum ThemeStyle: Theme {
     case ocean
     case desert
 
-    var colorPair: ColorPair {
+    var colorCatalog: ColorCatalog {
         switch self {
         case .ocean:
-            return (.blue, .white)
+            return .init(backgroundColor: .blue, textColor: .secondary, highlightedColor: .green)
         case .desert:
-            return (.orange, .black)
-        }
-    }
-
-    var degree: Double {
-        switch self {
-        case .ocean:
-            return 15
-        case .desert:
-            return -15
+            return .init(backgroundColor: .orange, textColor: .black, highlightedColor: .red)
         }
     }
 }

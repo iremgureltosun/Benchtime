@@ -49,14 +49,11 @@ struct MarkPhotoView: View {
                 }
                 .pickerStyle(MenuPickerStyle())
 
-        
-
                 CustomButton(buttonTitle: "Start Processing the Image", themeStyle: .desert) {
                     if let inputImage = image.getUIImage() {
                         do {
                             var modelProcess = ImageProcessModel(image: inputImage, filterName: selectedFilterName, sizes: sizes)
                             resizeHandler.setNext(handler: filterHandler).setNext(handler: watermarkHandler)
-                            
                             try resizeHandler.handle(&modelProcess)
                             markedImage = modelProcess.image.swiftUIImage()
                             selectedImage = nil

@@ -15,9 +15,9 @@ struct ImageButtonStyleBuilder {
     func build() -> some View {
         Button(action: action) {
             Image(systemName: imageName)
-                .foregroundColor(themeStyle.colorPair.foregroundColor)
+                .foregroundColor(themeStyle.colorCatalog.textColor)
                 .padding()
-                .background(themeStyle.colorPair.backgroundColor)
+                .background(themeStyle.colorCatalog.backgroundColor)
                 .cornerRadius(10)
         }
     }

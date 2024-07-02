@@ -26,7 +26,7 @@ extension HandlerProtocol {
 }
 
 // Type-erased handler to allow chaining different concrete handlers
-class AnyHandler<T>: HandlerProtocol {
+final class AnyHandler<T>: HandlerProtocol {
     private let _handle: (inout T) throws -> Void
     var next: AnyHandler<T>?
 

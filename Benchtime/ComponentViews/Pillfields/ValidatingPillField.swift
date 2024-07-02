@@ -30,7 +30,7 @@ struct ValidatingPillField: View {
                     type.image
                         .resizable()
                         .frame(width: 30, height: 30)
-                        .foregroundColor(themeStyle.colorPair.backgroundColor)
+                        .foregroundColor(themeStyle.colorCatalog.backgroundColor)
                         .padding(.trailing, 10)
                 }
             )

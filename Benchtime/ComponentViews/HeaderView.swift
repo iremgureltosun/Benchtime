@@ -12,9 +12,7 @@ struct HeaderView: View {
     private let title: String
     private let subtitle: String
     
-    private var angle: Angle {
-        Angle(degrees: themeStyle.degree)
-    }
+    private let angle: Angle = Angle(degrees: 15)
     
     init(themeStyle: ThemeStyle, title: String, subtitle: String) {
         self.themeStyle = themeStyle
@@ -25,7 +23,7 @@ struct HeaderView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundColor(themeStyle.colorPair.backgroundColor)
+                .foregroundColor(themeStyle.colorCatalog.backgroundColor)
                 .rotationEffect(angle)
 
             VStack {
@@ -35,12 +33,12 @@ struct HeaderView: View {
                 Group {
                     Text(title)
                         .font(.title)
-                        .foregroundColor(themeStyle.colorPair.foregroundColor)
+                        .foregroundColor(themeStyle.colorCatalog.textColor)
                     
                     Text(subtitle)
                         .font(.subheadline)
                         .lineLimit(2)
-                        .foregroundColor(themeStyle.colorPair.foregroundColor)
+                        .foregroundColor(themeStyle.colorCatalog.textColor)
                 }
                 .padding(.horizontal, Constants.Spaces.mediumSpace)
             }

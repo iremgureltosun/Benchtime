@@ -17,4 +17,5 @@ enum Route: Hashable {
     case mementoSearchView
     case mementoDoUndo
     case decoratorExampleView
+    case compositeExampleView
 }

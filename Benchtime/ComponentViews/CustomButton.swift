@@ -24,10 +24,10 @@ struct CustomButton: View {
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(themeStyle.colorPair.backgroundColor)
+                    .foregroundColor(themeStyle.colorCatalog.backgroundColor)
                 
                 Text(buttonTitle)
-                    .foregroundColor(themeStyle.colorPair.foregroundColor)
+                    .foregroundColor(themeStyle.colorCatalog.textColor)
                     .bold()
             }
         }

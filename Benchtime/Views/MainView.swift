@@ -24,7 +24,7 @@ struct MainView: View {
                     .tabItem {
                         Label("Users", systemImage: "person")
                     }
-                
+
                 StoreView()
                     .environment(\.appManager, appManager)
                     .tabItem {
@@ -56,13 +56,15 @@ struct MainView: View {
                         Button("Decorator Example View") {
                             appManager.navigate(to: .decoratorExampleView)
                         }
+                        Button("Composite Example View") {
+                            appManager.navigate(to: .compositeExampleView)
+                        }
                     } label: {
                         Image(systemName: "ellipsis.circle")
                             .imageScale(.large)
                             .foregroundColor(.black)
                     }
                 }
-                
             }
             .navigationDestination(for: Route.self) { route in
                 switch route {
@@ -84,6 +86,8 @@ struct MainView: View {
                     MementoDoUndoView()
                 case .decoratorExampleView:
                     DecoratorView()
+                case .compositeExampleView:
+                    CompositeListView()
                 }
             }
         }
