@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Rectangle: Component {
     func applyTheme(_ theme: Theme) -> some View {
-        foregroundColor(theme.colorCatalog.highlightedColor)
+        foregroundColor(theme.colorCatalog.backgroundColor)
     }
 }
 

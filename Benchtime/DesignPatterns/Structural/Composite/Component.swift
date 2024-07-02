@@ -13,7 +13,7 @@ protocol Component: View {
     func applyTheme(_ theme: Theme) -> Content
 }
 
-struct AnyComponentView: View {
+struct AnyComponentView: Component {
     private let _applyTheme: (Theme) -> AnyView
 
     init<T: Component>(_ component: T) {

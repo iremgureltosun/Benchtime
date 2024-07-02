@@ -87,7 +87,7 @@ struct MainView: View {
                 case .decoratorExampleView:
                     DecoratorView()
                 case .compositeExampleView:
-                    CompositeListView()
+                    CompositeTestView()
                 }
             }
         }
