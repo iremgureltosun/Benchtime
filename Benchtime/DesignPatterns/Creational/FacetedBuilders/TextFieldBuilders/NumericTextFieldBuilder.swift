@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NumericTextFieldBuilder {
     var placeholder: String
-    @Binding var value: Double
+    @Binding var value: Int
     
     func build() -> some View {
         TextField(placeholder, value: $value, formatter: NumberFormatter())

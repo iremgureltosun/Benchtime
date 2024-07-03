@@ -15,7 +15,7 @@ class AppearanceFactory {
             print("AppearanceFactory: Reusing an existing \(key.rawValue)-appearance.")
             return value
         } else {
-            print("AppearanceFactory: Can't find a cached \(key.rawValue)-object, creating a new one.")
+            print("AppearanceFactory: Can't find a cached \(key.rawValue)-appearance, creating a new one.")
 
             var appearence = Appearance(image: Image(key.rawValue))
 

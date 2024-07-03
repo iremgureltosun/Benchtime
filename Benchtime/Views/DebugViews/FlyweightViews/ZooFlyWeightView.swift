@@ -9,41 +9,21 @@ import SwiftUI
 
 struct ZooFlyWeightView: View {
     @State private var animals = [Animal]()
-    @State private var numMonkey: Double = 10
-    @State private var numLion: Double = 6
-    @State private var numZebra: Double = 8
-    @State private var numElephant: Double = 3
-    @State private var numGiraffe: Double = 5
+    @State private var numMonkey: Int = 10
+    @State private var numLion: Int = 6
+    @State private var numZebra: Int = 8
+    @State private var numElephant: Int = 3
+    @State private var numGiraffe: Int = 5
 
     private let listItems: [GridItem] = Array(repeating: .init(.fixed(CGFloat(80))), count: 4)
 
     var body: some View {
         VStack {
-            HStack {
-                Text("Enter monkey number")
-                NumericTextFieldBuilder(placeholder: "", value: $numMonkey)
-                    .build()
-            }
-            HStack {
-                Text("Enter lion number")
-                NumericTextFieldBuilder(placeholder: "", value: $numLion)
-                    .build()
-            }
-            HStack {
-                Text("Enter zebra number")
-                NumericTextFieldBuilder(placeholder: "", value: $numZebra)
-                    .build()
-            }
-            HStack {
-                Text("Enter elephant number")
-                NumericTextFieldBuilder(placeholder: "", value: $numElephant)
-                    .build()
-            }
-            HStack {
-                Text("Enter giraffe number")
-                NumericTextFieldBuilder(placeholder: "", value: $numGiraffe)
-                    .build()
-            }
+            getRow(placeholder: "Enter monkey number", value: $numMonkey)
+            getRow(placeholder: "Enter lion number", value: $numLion)
+            getRow(placeholder: "Enter zebra number", value: $numZebra)
+            getRow(placeholder: "Enter elephant number", value: $numElephant)
+            getRow(placeholder: "Enter giraffe number", value: $numGiraffe)
 
             CustomButton(buttonTitle: "Generate") {
                 addAnimals()
@@ -61,6 +41,16 @@ struct ZooFlyWeightView: View {
             .padding()
         }
         .padding(.horizontal, Constants.Spaces.mediumSpace)
+    }
+
+    @ViewBuilder private func getRow(placeholder: String, value: Binding<Int>) -> some View {
+        HStack {
+            Text(placeholder)
+            Spacer()
+            NumericTextFieldBuilder(placeholder: "", value: value)
+                .build()
+                .frame(width: 200)
+        }
     }
 
     private func addAnimals() {

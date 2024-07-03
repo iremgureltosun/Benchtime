@@ -10,7 +10,7 @@ import SwiftUI
 struct FacetedBuilderView: View {
     @State private var nameSurname: String = ""
     @State private var password: String = ""
-    @State private var height: Double = 0
+    @State private var height: Int = 0
     @State private var addressText: String = ""
 
     let field1 = FieldValidator(validator: .fiveDigitsNumber, "")
