@@ -18,4 +18,6 @@ enum Route: Hashable {
     case mementoDoUndo
     case decoratorExampleView
     case compositeExampleView
+    case flyWeightTextEditorView
+    case flyWeightZooView
 }

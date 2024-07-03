@@ -59,6 +59,12 @@ struct MainView: View {
                         Button("Composite Example View") {
                             appManager.navigate(to: .compositeExampleView)
                         }
+                        Button("Flyweight Font View") {
+                            appManager.navigate(to: .flyWeightTextEditorView)
+                        }
+                        Button("Flyweight Zoo View") {
+                            appManager.navigate(to: .flyWeightZooView)
+                        }
                     } label: {
                         Image(systemName: "ellipsis.circle")
                             .imageScale(.large)
@@ -88,6 +94,10 @@ struct MainView: View {
                     DecoratorView()
                 case .compositeExampleView:
                     CompositeTestView()
+                case .flyWeightTextEditorView:
+                    TextEditorFlyWeightView()
+                case .flyWeightZooView:
+                    ZooFlyWeightView()
                 }
             }
         }

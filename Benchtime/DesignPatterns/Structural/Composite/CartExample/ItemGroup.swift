@@ -8,7 +8,7 @@
 import Foundation
 
 /// The Composite class represents groups of items in the shopping cart. It can contain both individual items and other groups.
-///
+
 final class ItemGroup: ShoppingCartComponent {
     let name: String
     private var items = [ShoppingCartComponent]()

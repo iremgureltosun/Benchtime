@@ -33,6 +33,15 @@
 		4D282C592C2DA7DD003A2EAB /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D282C582C2DA7DD003A2EAB /* SearchView.swift */; };
 		4D32EA6A2C33002D005E4304 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32EA692C33002D005E4304 /* Theme.swift */; };
 		4D32EA6C2C33005A005E4304 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D32EA6B2C33005A005E4304 /* Component.swift */; };
+		4D3A58602C353969007A6622 /* CharacterStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A585F2C353969007A6622 /* CharacterStyle.swift */; };
+		4D3A58622C353A06007A6622 /* CharacterStyleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A58612C353A06007A6622 /* CharacterStyleFactory.swift */; };
+		4D3A58692C353ABC007A6622 /* TextEditorFlyWeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A58682C353ABC007A6622 /* TextEditorFlyWeightView.swift */; };
+		4D3A586B2C353E7A007A6622 /* StyledText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A586A2C353E7A007A6622 /* StyledText.swift */; };
+		4D3A58702C354687007A6622 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A586F2C354687007A6622 /* Appearance.swift */; };
+		4D3A58722C3546AA007A6622 /* AppearanceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A58712C3546AA007A6622 /* AppearanceFactory.swift */; };
+		4D3A58742C3548C6007A6622 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A58732C3548C6007A6622 /* Animal.swift */; };
+		4D3A58762C354E93007A6622 /* ZooFlyWeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A58752C354E93007A6622 /* ZooFlyWeightView.swift */; };
+		4D3A58782C355431007A6622 /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A58772C355431007A6622 /* AnimalCell.swift */; };
 		4D3D1D992C11CE0D004A32E0 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D1D982C11CE0D004A32E0 /* CardInfo.swift */; };
 		4D3D1D9B2C11E2ED004A32E0 /* MockPaymentProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D1D9A2C11E2ED004A32E0 /* MockPaymentProcessor.swift */; };
 		4D3D698C2C3440C6009E1662 /* FactoryPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D698B2C3440C6009E1662 /* FactoryPattern.swift */; };
@@ -68,6 +77,7 @@
 		4D6FE0F62C05B4ED005BC361 /* ProfileRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6FE0F52C05B4ED005BC361 /* ProfileRowView.swift */; };
 		4D6FE0F82C05B56E005BC361 /* ProfileTitleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6FE0F72C05B56E005BC361 /* ProfileTitleRowView.swift */; };
 		4D6FE0FA2C05C0F0005BC361 /* ConstantSizeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6FE0F92C05C0F0005BC361 /* ConstantSizeCategory.swift */; };
+		4D7024242C352601008BE738 /* AbstractFactoryPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7024232C352601008BE738 /* AbstractFactoryPattern.swift */; };
 		4D7057892C104158009E6A35 /* MockCharacterDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7057882C104158009E6A35 /* MockCharacterDetailService.swift */; };
 		4D7057932C10605E009E6A35 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7057922C10605E009E6A35 /* MockDataProvider.swift */; };
 		4D78B2072BFC747A00BD56B0 /* RefreshableContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D78B2062BFC747A00BD56B0 /* RefreshableContentView.swift */; };
@@ -182,6 +192,15 @@
 		4D282C582C2DA7DD003A2EAB /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		4D32EA692C33002D005E4304 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4D32EA6B2C33005A005E4304 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		4D3A585F2C353969007A6622 /* CharacterStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStyle.swift; sourceTree = "<group>"; };
+		4D3A58612C353A06007A6622 /* CharacterStyleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStyleFactory.swift; sourceTree = "<group>"; };
+		4D3A58682C353ABC007A6622 /* TextEditorFlyWeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorFlyWeightView.swift; sourceTree = "<group>"; };
+		4D3A586A2C353E7A007A6622 /* StyledText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledText.swift; sourceTree = "<group>"; };
+		4D3A586F2C354687007A6622 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		4D3A58712C3546AA007A6622 /* AppearanceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceFactory.swift; sourceTree = "<group>"; };
+		4D3A58732C3548C6007A6622 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		4D3A58752C354E93007A6622 /* ZooFlyWeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooFlyWeightView.swift; sourceTree = "<group>"; };
+		4D3A58772C355431007A6622 /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
 		4D3D1D982C11CE0D004A32E0 /* CardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		4D3D1D9A2C11E2ED004A32E0 /* MockPaymentProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaymentProcessor.swift; sourceTree = "<group>"; };
 		4D3D698B2C3440C6009E1662 /* FactoryPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryPattern.swift; sourceTree = "<group>"; };
@@ -218,6 +237,7 @@
 		4D6FE0F52C05B4ED005BC361 /* ProfileRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRowView.swift; sourceTree = "<group>"; };
 		4D6FE0F72C05B56E005BC361 /* ProfileTitleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTitleRowView.swift; sourceTree = "<group>"; };
 		4D6FE0F92C05C0F0005BC361 /* ConstantSizeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantSizeCategory.swift; sourceTree = "<group>"; };
+		4D7024232C352601008BE738 /* AbstractFactoryPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractFactoryPattern.swift; sourceTree = "<group>"; };
 		4D7057882C104158009E6A35 /* MockCharacterDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterDetailService.swift; sourceTree = "<group>"; };
 		4D70578D2C1043F5009E6A35 /* characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 		4D7057922C10605E009E6A35 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
@@ -452,6 +472,7 @@
 		4D11F0862C2EEAD900D321B5 /* Structural */ = {
 			isa = PBXGroup;
 			children = (
+				4D3A585D2C353921007A6622 /* Flyweight */,
 				4D11F0832C2EE8F300D321B5 /* Decorator */,
 				4D11F0842C2EEAB700D321B5 /* Composite */,
 			);
@@ -490,10 +511,50 @@
 			path = MementoViews;
 			sourceTree = "<group>";
 		};
+		4D3A585D2C353921007A6622 /* Flyweight */ = {
+			isa = PBXGroup;
+			children = (
+				4D3A586C2C354527007A6622 /* ImageDisplayExample */,
+				4D3A585E2C35394B007A6622 /* FontStyleExample */,
+			);
+			path = Flyweight;
+			sourceTree = "<group>";
+		};
+		4D3A585E2C35394B007A6622 /* FontStyleExample */ = {
+			isa = PBXGroup;
+			children = (
+				4D3A585F2C353969007A6622 /* CharacterStyle.swift */,
+				4D3A58612C353A06007A6622 /* CharacterStyleFactory.swift */,
+				4D3A586A2C353E7A007A6622 /* StyledText.swift */,
+			);
+			path = FontStyleExample;
+			sourceTree = "<group>";
+		};
+		4D3A58672C353A9E007A6622 /* FlyweightViews */ = {
+			isa = PBXGroup;
+			children = (
+				4D3A58682C353ABC007A6622 /* TextEditorFlyWeightView.swift */,
+				4D3A58752C354E93007A6622 /* ZooFlyWeightView.swift */,
+			);
+			path = FlyweightViews;
+			sourceTree = "<group>";
+		};
+		4D3A586C2C354527007A6622 /* ImageDisplayExample */ = {
+			isa = PBXGroup;
+			children = (
+				4D3A58772C355431007A6622 /* AnimalCell.swift */,
+				4D3A58732C3548C6007A6622 /* Animal.swift */,
+				4D3A586F2C354687007A6622 /* Appearance.swift */,
+				4D3A58712C3546AA007A6622 /* AppearanceFactory.swift */,
+			);
+			path = ImageDisplayExample;
+			sourceTree = "<group>";
+		};
 		4D3D698A2C344078009E1662 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
 				4D3D698B2C3440C6009E1662 /* FactoryPattern.swift */,
+				4D7024232C352601008BE738 /* AbstractFactoryPattern.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -857,6 +918,7 @@
 		4DC352502C17118F0091A96E /* DebugViews */ = {
 			isa = PBXGroup;
 			children = (
+				4D3A58672C353A9E007A6622 /* FlyweightViews */,
 				4D1086A62C33E22B00510B4A /* CompositeView */,
 				4D41F4072C327F9B0034203B /* DecoratorView */,
 				4D282C572C2DA602003A2EAB /* MementoViews */,
@@ -1008,6 +1070,7 @@
 				4D6C79412BFF5C110059BE83 /* AnimationClockViewModel.swift in Sources */,
 				4D4D70672C0473F600BE2A59 /* EpisodeService.swift in Sources */,
 				4D6848352C1C5DFD00378EE2 /* HttpMethod.swift in Sources */,
+				4D3A58692C353ABC007A6622 /* TextEditorFlyWeightView.swift in Sources */,
 				4DA078E82C2D9497001D7F72 /* Stock.swift in Sources */,
 				4DDCC3862C32911E007CED6A /* UIImage+.swift in Sources */,
 				4DB90F1B2C2C02FA00B3977C /* HandlerProtocol.swift in Sources */,
@@ -1024,6 +1087,7 @@
 				4D7DA63D2BFDE232007948BF /* ApplicationManager.swift in Sources */,
 				4D41F4022C327B770034203B /* Decorator.swift in Sources */,
 				4DB90F052C2AA37900B3977C /* Route.swift in Sources */,
+				4D3A58622C353A06007A6622 /* CharacterStyleFactory.swift in Sources */,
 				4DC352592C17223D0091A96E /* AppointmentsView.swift in Sources */,
 				4D7DA63F2BFDE2F6007948BF /* CharacterDetailView.swift in Sources */,
 				4DB90EEA2C296F8000B3977C /* UpdateProductsService.swift in Sources */,
@@ -1054,6 +1118,8 @@
 				4D90DE232BFB537A004E40A2 /* MainView.swift in Sources */,
 				4D2790632C2DA1E100408B29 /* Originator.swift in Sources */,
 				4D78B2072BFC747A00BD56B0 /* RefreshableContentView.swift in Sources */,
+				4D3A586B2C353E7A007A6622 /* StyledText.swift in Sources */,
+				4D3A58782C355431007A6622 /* AnimalCell.swift in Sources */,
 				4DB90F022C2AA2A700B3977C /* PillFieldType.swift in Sources */,
 				4DB90EE42C295B6C00B3977C /* CustomButton.swift in Sources */,
 				4D90DE3C2BFB7343004E40A2 /* HeaderView.swift in Sources */,
@@ -1068,6 +1134,7 @@
 				4D2790652C2DA22200408B29 /* CareTaker.swift in Sources */,
 				4D2790612C2DA18A00408B29 /* Memento.swift in Sources */,
 				4D41F4062C327DE60034203B /* ResizeEditor.swift in Sources */,
+				4D3A58762C354E93007A6622 /* ZooFlyWeightView.swift in Sources */,
 				4DB90F002C2AA23B00B3977C /* PillFieldBuilder.swift in Sources */,
 				4D282C592C2DA7DD003A2EAB /* SearchView.swift in Sources */,
 				4D7DA6362BFDD4AE007948BF /* TitlePlaygroundView.swift in Sources */,
@@ -1105,8 +1172,10 @@
 				4DB90EE02C29593200B3977C /* SliderView.swift in Sources */,
 				4DB90EEC2C29703600B3977C /* ProductResponse.swift in Sources */,
 				4D78B20B2BFC7CB100BD56B0 /* LoadingAnimationView.swift in Sources */,
+				4D3A58742C3548C6007A6622 /* Animal.swift in Sources */,
 				4D90DE282BFB540B004E40A2 /* RickAndMortyEndpoints.swift in Sources */,
 				4D802E7C2C07436700B3F919 /* CharacterHelper.swift in Sources */,
+				4D3A58702C354687007A6622 /* Appearance.swift in Sources */,
 				4D6848442C1C71AF00378EE2 /* ProductService.swift in Sources */,
 				4DB90F352C2C3B9400B3977C /* ProcessingError.swift in Sources */,
 				4D41F4092C327FB00034203B /* DecoratorView.swift in Sources */,
@@ -1129,10 +1198,13 @@
 				4D6FE0FA2C05C0F0005BC361 /* ConstantSizeCategory.swift in Sources */,
 				4D6848312C1C523000378EE2 /* APIRequestBuilder.swift in Sources */,
 				4D3D1D9B2C11E2ED004A32E0 /* MockPaymentProcessor.swift in Sources */,
+				4D3A58602C353969007A6622 /* CharacterStyle.swift in Sources */,
 				4D101A2D2C2EAAEF00D3C92C /* ToolTipModifier.swift in Sources */,
 				4D1086B62C340C0B00510B4A /* Rectangle+.swift in Sources */,
+				4D7024242C352601008BE738 /* AbstractFactoryPattern.swift in Sources */,
 				4D7DA6382BFDD4D2007948BF /* TitlePlaygroundViewModel.swift in Sources */,
 				4D6848472C1C78A200378EE2 /* StoreView.swift in Sources */,
+				4D3A58722C3546AA007A6622 /* AppearanceFactory.swift in Sources */,
 				4DB90EF12C29AA3300B3977C /* SecureTextFieldBuilder.swift in Sources */,
 				4D3D698C2C3440C6009E1662 /* FactoryPattern.swift in Sources */,
 				4D3D1D992C11CE0D004A32E0 /* CardInfo.swift in Sources */,
