@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State var appManager = ApplicationManager.shared
-
+   
     var body: some View {
         NavigationStack(path: $appManager.routes) {
             TabView {
@@ -73,32 +73,7 @@ struct MainView: View {
                 }
             }
             .navigationDestination(for: Route.self) { route in
-                switch route {
-                case let .characterDetail(id):
-                    CharacterDetailView(id: id)
-                case .addProduct:
-                    AddProductView()
-                case .animatedClock:
-                    AnimatedClockView()
-                case .titlePlayground:
-                    TitlePlaygroundView()
-                case .facetedBuilder:
-                    FacetedBuilderView()
-                case .markPhoto:
-                    MarkPhotoView()
-                case .mementoSearchView:
-                    SearchView()
-                case .mementoDoUndo:
-                    MementoDoUndoView()
-                case .decoratorExampleView:
-                    DecoratorView()
-                case .compositeExampleView:
-                    CompositeTestView()
-                case .flyWeightTextEditorView:
-                    TextEditorFlyWeightView()
-                case .flyWeightZooView:
-                    ZooFlyWeightView()
-                }
+                appManager.view(for: route)
             }
         }
     }

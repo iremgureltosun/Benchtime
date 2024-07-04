@@ -1,7 +1,6 @@
 import UIKit
 
-// Prototype patten
-
+// Prototype pattern
 let book = Book(authorName: "Irem Tosun", subject: "iOS", price: 400)
 let page = Page(title: "page 1", content: "contents", book: book)
 

@@ -42,6 +42,16 @@
 		4D3A58742C3548C6007A6622 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A58732C3548C6007A6622 /* Animal.swift */; };
 		4D3A58762C354E93007A6622 /* ZooFlyWeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A58752C354E93007A6622 /* ZooFlyWeightView.swift */; };
 		4D3A58782C355431007A6622 /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A58772C355431007A6622 /* AnimalCell.swift */; };
+		4D3A587C2C35696C007A6622 /* FahrenheitWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A587B2C35696C007A6622 /* FahrenheitWeatherService.swift */; };
+		4D3A587E2C35699A007A6622 /* CelsiusWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A587D2C35699A007A6622 /* CelsiusWeatherService.swift */; };
+		4D3A58802C3569CA007A6622 /* FahreneitToCelciusAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A587F2C3569CA007A6622 /* FahreneitToCelciusAdapter.swift */; };
+		4D3A58832C3587B2007A6622 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A58822C3587B2007A6622 /* Chart.swift */; };
+		4D3A58852C3587EA007A6622 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A58842C3587EA007A6622 /* BarChart.swift */; };
+		4D3A58872C3587F4007A6622 /* LineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A58862C3587F4007A6622 /* LineChart.swift */; };
+		4D3A58892C358803007A6622 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A58882C358803007A6622 /* PieChart.swift */; };
+		4D3A588B2C358884007A6622 /* CoreGraphicsRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A588A2C358884007A6622 /* CoreGraphicsRenderer.swift */; };
+		4D3A588D2C35889A007A6622 /* MetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A588C2C35889A007A6622 /* MetalRenderer.swift */; };
+		4D3A588F2C3588C3007A6622 /* SwiftUIRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3A588E2C3588C3007A6622 /* SwiftUIRenderer.swift */; };
 		4D3D1D992C11CE0D004A32E0 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D1D982C11CE0D004A32E0 /* CardInfo.swift */; };
 		4D3D1D9B2C11E2ED004A32E0 /* MockPaymentProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D1D9A2C11E2ED004A32E0 /* MockPaymentProcessor.swift */; };
 		4D3D698C2C3440C6009E1662 /* FactoryPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3D698B2C3440C6009E1662 /* FactoryPattern.swift */; };
@@ -115,6 +125,9 @@
 		4DA078EA2C2D9523001D7F72 /* BuyStockCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA078E92C2D9523001D7F72 /* BuyStockCommand.swift */; };
 		4DA078EC2C2D957D001D7F72 /* SellStockCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA078EB2C2D957D001D7F72 /* SellStockCommand.swift */; };
 		4DA078EE2C2D95A2001D7F72 /* CommandInvoker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA078ED2C2D95A2001D7F72 /* CommandInvoker.swift */; };
+		4DB5DC8F2C359290004E1165 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5DC8E2C359290004E1165 /* BarChartView.swift */; };
+		4DB5DC912C3592E5004E1165 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5DC902C3592E5004E1165 /* LineChartView.swift */; };
+		4DB5DC932C359364004E1165 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB5DC922C359364004E1165 /* PieChartView.swift */; };
 		4DB90EDC2C2950B700B3977C /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90EDB2C2950B700B3977C /* AddProductView.swift */; };
 		4DB90EDE2C29579C00B3977C /* ProductViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90EDD2C29579C00B3977C /* ProductViewState.swift */; };
 		4DB90EE02C29593200B3977C /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90EDF2C29593200B3977C /* SliderView.swift */; };
@@ -150,6 +163,13 @@
 		4DC352592C17223D0091A96E /* AppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC352582C17223D0091A96E /* AppointmentsView.swift */; };
 		4DC3525D2C1727E10091A96E /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3525C2C1727E10091A96E /* Date+.swift */; };
 		4DC3525F2C1729BA0091A96E /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC3525E2C1729BA0091A96E /* String+.swift */; };
+		4DCD6BCE2C36C4B2003D3E66 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6BCD2C36C4B2003D3E66 /* Observer.swift */; };
+		4DCD6BD02C36C530003D3E66 /* ObserverImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6BCF2C36C530003D3E66 /* ObserverImpl.swift */; };
+		4DCD6BD32C36D19C003D3E66 /* CharacterDetailNavigationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6BD22C36D19C003D3E66 /* CharacterDetailNavigationStrategy.swift */; };
+		4DCD6BD52C36D1C9003D3E66 /* NavigationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6BD42C36D1C8003D3E66 /* NavigationStrategy.swift */; };
+		4DCD6BD72C36D20A003D3E66 /* AddProductNavigationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6BD62C36D20A003D3E66 /* AddProductNavigationStrategy.swift */; };
+		4DCD6BD92C36D232003D3E66 /* DebugViewsNavigationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6BD82C36D232003D3E66 /* DebugViewsNavigationStrategy.swift */; };
+		4DCD6BDB2C36D278003D3E66 /* DesignPatternsNavigationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCD6BDA2C36D278003D3E66 /* DesignPatternsNavigationStrategy.swift */; };
 		4DDCC3842C328F84007CED6A /* WatermarkEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDCC3832C328F84007CED6A /* WatermarkEditor.swift */; };
 		4DDCC3862C32911E007CED6A /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDCC3852C32911E007CED6A /* UIImage+.swift */; };
 		4DEB7FA72C1313850055C12C /* Hobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FA62C1313850055C12C /* Hobby.swift */; };
@@ -201,6 +221,17 @@
 		4D3A58732C3548C6007A6622 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		4D3A58752C354E93007A6622 /* ZooFlyWeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooFlyWeightView.swift; sourceTree = "<group>"; };
 		4D3A58772C355431007A6622 /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
+		4D3A587B2C35696C007A6622 /* FahrenheitWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FahrenheitWeatherService.swift; sourceTree = "<group>"; };
+		4D3A587D2C35699A007A6622 /* CelsiusWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelsiusWeatherService.swift; sourceTree = "<group>"; };
+		4D3A587F2C3569CA007A6622 /* FahreneitToCelciusAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FahreneitToCelciusAdapter.swift; sourceTree = "<group>"; };
+		4D3A58822C3587B2007A6622 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		4D3A58842C3587EA007A6622 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
+		4D3A58862C3587F4007A6622 /* LineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChart.swift; sourceTree = "<group>"; };
+		4D3A58882C358803007A6622 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
+		4D3A588A2C358884007A6622 /* CoreGraphicsRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphicsRenderer.swift; sourceTree = "<group>"; };
+		4D3A588C2C35889A007A6622 /* MetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalRenderer.swift; sourceTree = "<group>"; };
+		4D3A588E2C3588C3007A6622 /* SwiftUIRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIRenderer.swift; sourceTree = "<group>"; };
+		4D3A58902C3588F2007A6622 /* StructuralPG.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructuralPG.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4D3D1D982C11CE0D004A32E0 /* CardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		4D3D1D9A2C11E2ED004A32E0 /* MockPaymentProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPaymentProcessor.swift; sourceTree = "<group>"; };
 		4D3D698B2C3440C6009E1662 /* FactoryPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryPattern.swift; sourceTree = "<group>"; };
@@ -277,6 +308,9 @@
 		4DA078EB2C2D957D001D7F72 /* SellStockCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellStockCommand.swift; sourceTree = "<group>"; };
 		4DA078ED2C2D95A2001D7F72 /* CommandInvoker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandInvoker.swift; sourceTree = "<group>"; };
 		4DA078EF2C2D95CC001D7F72 /* CommandPG.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = CommandPG.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4DB5DC8E2C359290004E1165 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
+		4DB5DC902C3592E5004E1165 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
+		4DB5DC922C359364004E1165 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		4DB90EDB2C2950B700B3977C /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
 		4DB90EDD2C29579C00B3977C /* ProductViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewState.swift; sourceTree = "<group>"; };
 		4DB90EDF2C29593200B3977C /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
@@ -313,6 +347,14 @@
 		4DC352582C17223D0091A96E /* AppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsView.swift; sourceTree = "<group>"; };
 		4DC3525C2C1727E10091A96E /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		4DC3525E2C1729BA0091A96E /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		4DCD6BCD2C36C4B2003D3E66 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		4DCD6BCF2C36C530003D3E66 /* ObserverImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverImpl.swift; sourceTree = "<group>"; };
+		4DCD6BD12C36C5AA003D3E66 /* BehavioralPG.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BehavioralPG.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		4DCD6BD22C36D19C003D3E66 /* CharacterDetailNavigationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailNavigationStrategy.swift; sourceTree = "<group>"; };
+		4DCD6BD42C36D1C8003D3E66 /* NavigationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStrategy.swift; sourceTree = "<group>"; };
+		4DCD6BD62C36D20A003D3E66 /* AddProductNavigationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductNavigationStrategy.swift; sourceTree = "<group>"; };
+		4DCD6BD82C36D232003D3E66 /* DebugViewsNavigationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewsNavigationStrategy.swift; sourceTree = "<group>"; };
+		4DCD6BDA2C36D278003D3E66 /* DesignPatternsNavigationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignPatternsNavigationStrategy.swift; sourceTree = "<group>"; };
 		4DDCC3832C328F84007CED6A /* WatermarkEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkEditor.swift; sourceTree = "<group>"; };
 		4DDCC3852C32911E007CED6A /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		4DEB7FA62C1313850055C12C /* Hobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hobby.swift; sourceTree = "<group>"; };
@@ -472,9 +514,12 @@
 		4D11F0862C2EEAD900D321B5 /* Structural */ = {
 			isa = PBXGroup;
 			children = (
+				4D3A58812C35879E007A6622 /* Bridge */,
+				4D3A58792C356945007A6622 /* Adapter */,
 				4D3A585D2C353921007A6622 /* Flyweight */,
 				4D11F0832C2EE8F300D321B5 /* Decorator */,
 				4D11F0842C2EEAB700D321B5 /* Composite */,
+				4D3A58902C3588F2007A6622 /* StructuralPG.playground */,
 			);
 			path = Structural;
 			sourceTree = "<group>";
@@ -482,9 +527,13 @@
 		4D11F0872C2EEAF000D321B5 /* Behavioral */ = {
 			isa = PBXGroup;
 			children = (
+				4DCD6BCC2C36C249003D3E66 /* Observer */,
+				4DCD6BCB2C36C1C2003D3E66 /* Template */,
+				4DCD6BCA2C36C1B0003D3E66 /* Strategy */,
 				4D27905F2C2DA10F00408B29 /* Memento */,
 				4DA078E12C2D9194001D7F72 /* Command */,
 				4DB90F132C2C011B00B3977C /* ChainOfResponsibility */,
+				4DCD6BD12C36C5AA003D3E66 /* BehavioralPG.playground */,
 			);
 			path = Behavioral;
 			sourceTree = "<group>";
@@ -548,6 +597,38 @@
 				4D3A58712C3546AA007A6622 /* AppearanceFactory.swift */,
 			);
 			path = ImageDisplayExample;
+			sourceTree = "<group>";
+		};
+		4D3A58792C356945007A6622 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				4D3A587A2C35694C007A6622 /* WeatherExample */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		4D3A587A2C35694C007A6622 /* WeatherExample */ = {
+			isa = PBXGroup;
+			children = (
+				4D3A587B2C35696C007A6622 /* FahrenheitWeatherService.swift */,
+				4D3A587D2C35699A007A6622 /* CelsiusWeatherService.swift */,
+				4D3A587F2C3569CA007A6622 /* FahreneitToCelciusAdapter.swift */,
+			);
+			path = WeatherExample;
+			sourceTree = "<group>";
+		};
+		4D3A58812C35879E007A6622 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				4D3A58822C3587B2007A6622 /* Chart.swift */,
+				4D3A58842C3587EA007A6622 /* BarChart.swift */,
+				4D3A58862C3587F4007A6622 /* LineChart.swift */,
+				4D3A58882C358803007A6622 /* PieChart.swift */,
+				4D3A588A2C358884007A6622 /* CoreGraphicsRenderer.swift */,
+				4D3A588C2C35889A007A6622 /* MetalRenderer.swift */,
+				4D3A588E2C3588C3007A6622 /* SwiftUIRenderer.swift */,
+			);
+			path = Bridge;
 			sourceTree = "<group>";
 		};
 		4D3D698A2C344078009E1662 /* Factory */ = {
@@ -781,6 +862,9 @@
 				4DB90F0B2C2AD29500B3977C /* BenchTimePlay.playground */,
 				4DB90F302C2C233D00B3977C /* ImagePicker.swift */,
 				4D1086A42C33E0FD00510B4A /* ListCell.swift */,
+				4DB5DC8E2C359290004E1165 /* BarChartView.swift */,
+				4DB5DC902C3592E5004E1165 /* LineChartView.swift */,
+				4DB5DC922C359364004E1165 /* PieChartView.swift */,
 			);
 			path = ComponentViews;
 			sourceTree = "<group>";
@@ -939,6 +1023,34 @@
 			path = BookingViews;
 			sourceTree = "<group>";
 		};
+		4DCD6BCA2C36C1B0003D3E66 /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				4DCD6BD42C36D1C8003D3E66 /* NavigationStrategy.swift */,
+				4DCD6BD22C36D19C003D3E66 /* CharacterDetailNavigationStrategy.swift */,
+				4DCD6BD62C36D20A003D3E66 /* AddProductNavigationStrategy.swift */,
+				4DCD6BD82C36D232003D3E66 /* DebugViewsNavigationStrategy.swift */,
+				4DCD6BDA2C36D278003D3E66 /* DesignPatternsNavigationStrategy.swift */,
+			);
+			path = Strategy;
+			sourceTree = "<group>";
+		};
+		4DCD6BCB2C36C1C2003D3E66 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		4DCD6BCC2C36C249003D3E66 /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				4DCD6BCD2C36C4B2003D3E66 /* Observer.swift */,
+				4DCD6BCF2C36C530003D3E66 /* ObserverImpl.swift */,
+			);
+			path = Observer;
+			sourceTree = "<group>";
+		};
 		4DEB7FAA2C13327E0055C12C /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
@@ -1062,7 +1174,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCD6BD72C36D20A003D3E66 /* AddProductNavigationStrategy.swift in Sources */,
+				4D3A58802C3569CA007A6622 /* FahreneitToCelciusAdapter.swift in Sources */,
 				4D90DE3F2BFB7379004E40A2 /* ThemeStyle.swift in Sources */,
+				4D3A58872C3587F4007A6622 /* LineChart.swift in Sources */,
 				4DB90EE62C29613300B3977C /* ProductRequest.swift in Sources */,
 				4DA078E62C2D9481001D7F72 /* Portfolio.swift in Sources */,
 				4DB90F2C2C2C1A1500B3977C /* WatermarkHandler.swift in Sources */,
@@ -1080,6 +1195,7 @@
 				4D1086A82C33E23C00510B4A /* CompositeView.swift in Sources */,
 				4D1086B02C340B2E00510B4A /* Button+.swift in Sources */,
 				4DEB7FB82C1340CE0055C12C /* BookingEndpoint.swift in Sources */,
+				4DCD6BD92C36D232003D3E66 /* DebugViewsNavigationStrategy.swift in Sources */,
 				4D78B2092BFC75AA00BD56B0 /* ShowMorelndicatorView.swift in Sources */,
 				4DB90F312C2C233D00B3977C /* ImagePicker.swift in Sources */,
 				4DEB7FBA2C1341E50055C12C /* ListUsersView.swift in Sources */,
@@ -1103,6 +1219,7 @@
 				4D7057892C104158009E6A35 /* MockCharacterDetailService.swift in Sources */,
 				4D90DE2F2BFB5D07004E40A2 /* CharacterListView.swift in Sources */,
 				4D1086C22C341F2100510B4A /* Item.swift in Sources */,
+				4D3A58832C3587B2007A6622 /* Chart.swift in Sources */,
 				4D32EA6A2C33002D005E4304 /* Theme.swift in Sources */,
 				4D6FE0F82C05B56E005BC361 /* ProfileTitleRowView.swift in Sources */,
 				4D90DE2D2BFB582A004E40A2 /* CharacterService.swift in Sources */,
@@ -1115,6 +1232,7 @@
 				4D4D70652C04739600BE2A59 /* CharacterGender.swift in Sources */,
 				4D1086B82C340D1B00510B4A /* HeaderComponentView.swift in Sources */,
 				4D90DE3A2BFB6EFE004E40A2 /* RemoteImageView.swift in Sources */,
+				4DB5DC932C359364004E1165 /* PieChartView.swift in Sources */,
 				4D90DE232BFB537A004E40A2 /* MainView.swift in Sources */,
 				4D2790632C2DA1E100408B29 /* Originator.swift in Sources */,
 				4D78B2072BFC747A00BD56B0 /* RefreshableContentView.swift in Sources */,
@@ -1134,22 +1252,29 @@
 				4D2790652C2DA22200408B29 /* CareTaker.swift in Sources */,
 				4D2790612C2DA18A00408B29 /* Memento.swift in Sources */,
 				4D41F4062C327DE60034203B /* ResizeEditor.swift in Sources */,
+				4DCD6BDB2C36D278003D3E66 /* DesignPatternsNavigationStrategy.swift in Sources */,
 				4D3A58762C354E93007A6622 /* ZooFlyWeightView.swift in Sources */,
 				4DB90F002C2AA23B00B3977C /* PillFieldBuilder.swift in Sources */,
 				4D282C592C2DA7DD003A2EAB /* SearchView.swift in Sources */,
+				4D3A587E2C35699A007A6622 /* CelsiusWeatherService.swift in Sources */,
 				4D7DA6362BFDD4AE007948BF /* TitlePlaygroundView.swift in Sources */,
 				4D6C793F2BFF43500059BE83 /* AnimatedClockView.swift in Sources */,
 				4D68483C2C1C609400378EE2 /* APIRequestBuilderImpl.swift in Sources */,
+				4D3A588B2C358884007A6622 /* CoreGraphicsRenderer.swift in Sources */,
 				4DDCC3842C328F84007CED6A /* WatermarkEditor.swift in Sources */,
 				4DA078EE2C2D95A2001D7F72 /* CommandInvoker.swift in Sources */,
 				4D101A2B2C2E8C2100D3C92C /* SearchViewModel.swift in Sources */,
 				4D6C793B2BFF35D40059BE83 /* SubheadlineView.swift in Sources */,
+				4DB5DC8F2C359290004E1165 /* BarChartView.swift in Sources */,
+				4DCD6BD02C36C530003D3E66 /* ObserverImpl.swift in Sources */,
 				4DA078EC2C2D957D001D7F72 /* SellStockCommand.swift in Sources */,
 				4D90DDF42BFB460D004E40A2 /* BenchtimeApp.swift in Sources */,
 				4D802E792C073F7E00B3F919 /* CharacterFilterCriteria.swift in Sources */,
+				4D3A587C2C35696C007A6622 /* FahrenheitWeatherService.swift in Sources */,
 				4D0E6E0A2C187E8600E1DA0B /* MockEpisodesService.swift in Sources */,
 				4D7DA6452BFDE797007948BF /* CharacterDetailService.swift in Sources */,
 				4D7057932C10605E009E6A35 /* MockDataProvider.swift in Sources */,
+				4DB5DC912C3592E5004E1165 /* LineChartView.swift in Sources */,
 				4D0E6DFE2C184AB000E1DA0B /* CoreNetworkService.swift in Sources */,
 				4DB90F122C2ADE7400B3977C /* FieldValidator.swift in Sources */,
 				4DEB7FB62C1340480055C12C /* UserService.swift in Sources */,
@@ -1172,6 +1297,7 @@
 				4DB90EE02C29593200B3977C /* SliderView.swift in Sources */,
 				4DB90EEC2C29703600B3977C /* ProductResponse.swift in Sources */,
 				4D78B20B2BFC7CB100BD56B0 /* LoadingAnimationView.swift in Sources */,
+				4D3A58892C358803007A6622 /* PieChart.swift in Sources */,
 				4D3A58742C3548C6007A6622 /* Animal.swift in Sources */,
 				4D90DE282BFB540B004E40A2 /* RickAndMortyEndpoints.swift in Sources */,
 				4D802E7C2C07436700B3F919 /* CharacterHelper.swift in Sources */,
@@ -1188,8 +1314,10 @@
 				4D7DA6482BFE0035007948BF /* EnvironmentVales+.swift in Sources */,
 				4DC352552C1720690091A96E /* AppointmentsService.swift in Sources */,
 				4D78B20F2BFCB30600BD56B0 /* SearchTextfield.swift in Sources */,
+				4D3A588D2C35889A007A6622 /* MetalRenderer.swift in Sources */,
 				4D9AA8A42C2C4AC10035DC2E /* ImageProcessModel.swift in Sources */,
 				4D101A322C2ED1CA00D3C92C /* MementoDoUndoViewModel.swift in Sources */,
+				4DCD6BD32C36D19C003D3E66 /* CharacterDetailNavigationStrategy.swift in Sources */,
 				4D6FE0F22C05B3F7005BC361 /* ExtraLargeCharacterDetailView.swift in Sources */,
 				4DB90EF92C29AAF300B3977C /* CustomButtonBuilder.swift in Sources */,
 				4D1086C42C341F7D00510B4A /* ItemGroup.swift in Sources */,
@@ -1202,8 +1330,12 @@
 				4D101A2D2C2EAAEF00D3C92C /* ToolTipModifier.swift in Sources */,
 				4D1086B62C340C0B00510B4A /* Rectangle+.swift in Sources */,
 				4D7024242C352601008BE738 /* AbstractFactoryPattern.swift in Sources */,
+				4D3A588F2C3588C3007A6622 /* SwiftUIRenderer.swift in Sources */,
+				4DCD6BCE2C36C4B2003D3E66 /* Observer.swift in Sources */,
+				4D3A58852C3587EA007A6622 /* BarChart.swift in Sources */,
 				4D7DA6382BFDD4D2007948BF /* TitlePlaygroundViewModel.swift in Sources */,
 				4D6848472C1C78A200378EE2 /* StoreView.swift in Sources */,
+				4DCD6BD52C36D1C9003D3E66 /* NavigationStrategy.swift in Sources */,
 				4D3A58722C3546AA007A6622 /* AppearanceFactory.swift in Sources */,
 				4DB90EF12C29AA3300B3977C /* SecureTextFieldBuilder.swift in Sources */,
 				4D3D698C2C3440C6009E1662 /* FactoryPattern.swift in Sources */,

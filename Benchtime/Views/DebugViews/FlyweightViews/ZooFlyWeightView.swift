@@ -15,7 +15,7 @@ struct ZooFlyWeightView: View {
     @State private var numElephant: Int = 3
     @State private var numGiraffe: Int = 5
 
-    private let listItems: [GridItem] = Array(repeating: .init(.fixed(CGFloat(80))), count: 4)
+  //  private let listItems: [GridItem] = Array(repeating: .init(.fixed(CGFloat(80))), count: 4)
 
     var body: some View {
         VStack {
@@ -31,7 +31,7 @@ struct ZooFlyWeightView: View {
             .frame(height: 50)
 
             ScrollView(showsIndicators: false) {
-                LazyVGrid(columns: listItems) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
                     ForEach(animals, id: \.id) { animal in
                         let appearence = AppearanceFactory.getAppearance(for: animal.animalType)
                         AnimalCell(appearence)
