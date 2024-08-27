@@ -13,9 +13,9 @@ struct FacetedBuilderView: View {
     @State private var height: Int = 0
     @State private var addressText: String = ""
 
-    let field1 = FieldValidator(validator: .fiveDigitsNumber, "")
-    let fieldIban = FieldValidator(validator: .iban, "")
-    let fieldPhone = FieldValidator(validator: .phone, "")
+    let fiveDigitsNumberValidator = FieldValidator(validator: .fiveDigitsNumber, errorMessage: "Enter up to 5 digits")
+    let ibanValidator = FieldValidator(validator: .iban, errorMessage: "Invalid IBAN format")
+    let phoneNumberValidator = FieldValidator(validator: .phone, errorMessage: "Invalid phone number")
 
     var body: some View {
         ScrollView {
@@ -24,89 +24,21 @@ struct FacetedBuilderView: View {
                     .font(.title)
                 Divider()
 
-                buttonsGenerated
+                // Example Pill Field without Validation
+                PillFieldBuilder(
+                    contentBuilder: PillFieldContentBuilder(text: $addressText, placeholderText: "Enter your address"),
+                    appearanceBuilder: PillFieldAppearanceBuilder(type: .custom(sfSymbolName: "location.circle"), themeStyle: .ocean)
+                ).build()
 
-                Text("Text Fields")
-                    .font(.title)
-
-                Divider()
-
-                textFieldsGenerated
-
-                Text("Pill Fields")
-                    .font(.title)
-
-                Divider()
-
-                PillFieldBuilder(text: $addressText, placeholderText: "Enter your address", type: .custom(sfSymbolName: "location.circle"), themeStyle: .ocean, buttonHandler: {})
-                    .build()
-
-                PillFieldBuilder(text: $addressText, placeholderText: "Search", type: .custom(sfSymbolName: "location.circle.fill"), themeStyle: .desert, buttonHandler: {})
-                    .build()
-
-                ValidatingPillFieldBuilder(field: field1, placeholderText: "Enter a number with max 5 digits", type: .rightArrow, themeStyle: .ocean)
-                    .build()
-
-                ValidatingPillFieldBuilder(field: fieldIban, placeholderText: "TR33 0006 1005 1978 6457 8413 26", type: .custom(sfSymbolName: "chevron.right.circle.fill"), themeStyle: .desert)
-                    .buildWithSubmissionValidation()
-
-                ValidatingPillFieldBuilder(field: fieldPhone, placeholderText: "111 222 3333 or 111-222-3333", type: .custom(sfSymbolName: "phone.circle"), themeStyle: .ocean)
-                    .buildWithSubmissionValidation()
+                // Example Pill Field with Validation
+                PillFieldBuilder(
+                    contentBuilder: PillFieldContentBuilder(text: $addressText, placeholderText: "Enter a number with max 5 digits"),
+                    appearanceBuilder: PillFieldAppearanceBuilder(type: .rightArrow, themeStyle: .ocean),
+                    validationBuilder: PillFieldValidationBuilder(validator: fiveDigitsNumberValidator, placeholderText: "Enter a number")
+                ).build()
             }
-            .padding(.horizontal, Constants.Spaces.mediumSpace)
+            .padding(.horizontal, 16)
         }
-    }
-
-    @ViewBuilder private var buttonsGenerated: some View {
-        Group {
-            HStack {
-                CustomButtonBuilder(themeStyle: .ocean, buttonTitle: "Testing the pattern") {
-                    print("do nothing for now")
-                }
-                .build()
-                .frame(width: 150)
-
-                CustomButtonBuilder(themeStyle: .desert, buttonTitle: "Testing the pattern") {
-                    print("do nothing for now")
-                }
-                .build()
-                .frame(width: 150)
-            }
-
-        }.frame(height: 50)
-
-        HStack {
-            ImageButtonStyleBuilder(themeStyle: .ocean, imageName: "plus", action: {
-                print("do nothing for now")
-            })
-            .build()
-
-            ImageButtonStyleBuilder(themeStyle: .ocean, imageName: "minus", action: {
-                print("do nothing for now")
-            })
-            .build()
-
-            ImageButtonStyleBuilder(themeStyle: .desert, imageName: "plus", action: {
-                print("do nothing for now")
-            })
-            .build()
-
-            ImageButtonStyleBuilder(themeStyle: .desert, imageName: "minus", action: {
-                print("do nothing for now")
-            })
-            .build()
-        }
-    }
-
-    @ViewBuilder private var textFieldsGenerated: some View {
-        PlainTextFieldBuilder(placeholder: "Name surname", text: $nameSurname)
-            .build()
-
-        SecureTextFieldBuilder(placeholder: "Password", text: $password)
-            .build()
-
-        NumericTextFieldBuilder(placeholder: "Height", value: $height)
-            .build()
     }
 }
 

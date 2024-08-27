@@ -11,7 +11,7 @@ import Observation
 @Observable final class FieldValidator {
     let validator: RegexValidator
 
-    var value: String
+   // var value: String
 
     init(validator: RegexValidator, _ value: String) {
         self.validator = validator
