@@ -68,9 +68,9 @@
 		4D4D70672C0473F600BE2A59 /* EpisodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D70662C0473F600BE2A59 /* EpisodeService.swift */; };
 		4D4D706A2C048E0800BE2A59 /* EpisodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D70692C048E0800BE2A59 /* EpisodeHelper.swift */; };
 		4D4D706D2C04AF3B00BE2A59 /* AnimatedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D706C2C04AF3B00BE2A59 /* AnimatedTextView.swift */; };
-		4D6505BE2C7E056D0027E802 /* PillFieldValidationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6505BD2C7E056D0027E802 /* PillFieldValidationBuilder.swift */; };
+		4D6505BE2C7E056D0027E802 /* PillFieldValidationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6505BD2C7E056D0027E802 /* PillFieldValidationModifier.swift */; };
 		4D6505C02C7E05870027E802 /* PillfieldContentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6505BF2C7E05870027E802 /* PillfieldContentBuilder.swift */; };
-		4D6505C22C7E05A60027E802 /* PillfieldAppearenceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6505C12C7E05A60027E802 /* PillfieldAppearenceBuilder.swift */; };
+		4D6505C22C7E05A60027E802 /* PillFieldAppearanceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6505C12C7E05A60027E802 /* PillFieldAppearanceModifier.swift */; };
 		4D68482F2C1C4E5600378EE2 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D68482E2C1C4E5600378EE2 /* APIRequest.swift */; };
 		4D6848312C1C523000378EE2 /* APIRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6848302C1C523000378EE2 /* APIRequestBuilder.swift */; };
 		4D6848352C1C5DFD00378EE2 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6848342C1C5DFD00378EE2 /* HttpMethod.swift */; };
@@ -181,6 +181,7 @@
 		4DEB7FB62C1340480055C12C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FB52C1340480055C12C /* UserService.swift */; };
 		4DEB7FB82C1340CE0055C12C /* BookingEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FB72C1340CE0055C12C /* BookingEndpoint.swift */; };
 		4DEB7FBA2C1341E50055C12C /* ListUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FB92C1341E50055C12C /* ListUsersView.swift */; };
+		6A8824DA2C7EF989005FD729 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 6A8824D92C7EF989005FD729 /* Resolver */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -250,9 +251,9 @@
 		4D4D70692C048E0800BE2A59 /* EpisodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeHelper.swift; sourceTree = "<group>"; };
 		4D4D706B2C048E8300BE2A59 /* HelperPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HelperPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4D4D706C2C04AF3B00BE2A59 /* AnimatedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextView.swift; sourceTree = "<group>"; };
-		4D6505BD2C7E056D0027E802 /* PillFieldValidationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillFieldValidationBuilder.swift; sourceTree = "<group>"; };
+		4D6505BD2C7E056D0027E802 /* PillFieldValidationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillFieldValidationModifier.swift; sourceTree = "<group>"; };
 		4D6505BF2C7E05870027E802 /* PillfieldContentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillfieldContentBuilder.swift; sourceTree = "<group>"; };
-		4D6505C12C7E05A60027E802 /* PillfieldAppearenceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillfieldAppearenceBuilder.swift; sourceTree = "<group>"; };
+		4D6505C12C7E05A60027E802 /* PillFieldAppearanceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillFieldAppearanceModifier.swift; sourceTree = "<group>"; };
 		4D68482E2C1C4E5600378EE2 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		4D6848302C1C523000378EE2 /* APIRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBuilder.swift; sourceTree = "<group>"; };
 		4D6848342C1C5DFD00378EE2 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
@@ -375,6 +376,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A8824DA2C7EF989005FD729 /* Resolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,9 +949,9 @@
 			isa = PBXGroup;
 			children = (
 				4DB90EFF2C2AA23B00B3977C /* PillFieldBuilder.swift */,
-				4D6505BD2C7E056D0027E802 /* PillFieldValidationBuilder.swift */,
+				4D6505BD2C7E056D0027E802 /* PillFieldValidationModifier.swift */,
 				4D6505BF2C7E05870027E802 /* PillfieldContentBuilder.swift */,
-				4D6505C12C7E05A60027E802 /* PillfieldAppearenceBuilder.swift */,
+				4D6505C12C7E05A60027E802 /* PillFieldAppearanceModifier.swift */,
 			);
 			path = PillFieldBuilders;
 			sourceTree = "<group>";
@@ -1116,6 +1118,7 @@
 			);
 			name = Benchtime;
 			packageProductDependencies = (
+				6A8824D92C7EF989005FD729 /* Resolver */,
 			);
 			productName = Benchtime;
 			productReference = 4D90DDF02BFB460D004E40A2 /* Benchtime.app */;
@@ -1146,7 +1149,7 @@
 			);
 			mainGroup = 4D90DDE72BFB460D004E40A2;
 			packageReferences = (
-				4DABA26C2C7E0CCB00B66FA5 /* XCRemoteSwiftPackageReference "Resolver" */,
+				6A8824D82C7EF989005FD729 /* XCRemoteSwiftPackageReference "Resolver" */,
 			);
 			productRefGroup = 4D90DDF12BFB460D004E40A2 /* Products */;
 			projectDirPath = "";
@@ -1213,7 +1216,7 @@
 				4D41F4042C327D830034203B /* FilterEditor.swift in Sources */,
 				4D90DE312BFB5D18004E40A2 /* Debouncer.swift in Sources */,
 				4D41F4002C327B170034203B /* Editor.swift in Sources */,
-				4D6505BE2C7E056D0027E802 /* PillFieldValidationBuilder.swift in Sources */,
+				4D6505BE2C7E056D0027E802 /* PillFieldValidationModifier.swift in Sources */,
 				4DB90EDE2C29579C00B3977C /* ProductViewState.swift in Sources */,
 				4D90DE2B2BFB572F004E40A2 /* CharacterResponse.swift in Sources */,
 				4DB90F082C2AA97900B3977C /* ValidatingPillField.swift in Sources */,
@@ -1326,7 +1329,7 @@
 				4DB90EF92C29AAF300B3977C /* CustomButtonBuilder.swift in Sources */,
 				4D1086C42C341F7D00510B4A /* ItemGroup.swift in Sources */,
 				4DEB7FA72C1313850055C12C /* Hobby.swift in Sources */,
-				4D6505C22C7E05A60027E802 /* PillfieldAppearenceBuilder.swift in Sources */,
+				4D6505C22C7E05A60027E802 /* PillFieldAppearanceModifier.swift in Sources */,
 				4D6FE0FA2C05C0F0005BC361 /* ConstantSizeCategory.swift in Sources */,
 				4D6848312C1C523000378EE2 /* APIRequestBuilder.swift in Sources */,
 				4D3D1D9B2C11E2ED004A32E0 /* MockPaymentProcessor.swift in Sources */,
@@ -1553,7 +1556,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4DABA26C2C7E0CCB00B66FA5 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+		6A8824D82C7EF989005FD729 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Resolver";
 			requirement = {
@@ -1562,6 +1565,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6A8824D92C7EF989005FD729 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6A8824D82C7EF989005FD729 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4D90DDE82BFB460D004E40A2 /* Project object */;
 }

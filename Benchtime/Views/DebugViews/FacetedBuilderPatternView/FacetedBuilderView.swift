@@ -13,9 +13,9 @@ struct FacetedBuilderView: View {
     @State private var height: Int = 0
     @State private var addressText: String = ""
 
-    let fiveDigitsNumberValidator = FieldValidator(validator: .fiveDigitsNumber, errorMessage: "Enter up to 5 digits")
-    let ibanValidator = FieldValidator(validator: .iban, errorMessage: "Invalid IBAN format")
-    let phoneNumberValidator = FieldValidator(validator: .phone, errorMessage: "Invalid phone number")
+    let fiveDigitsNumberValidator = RegexValidator.fiveDigitsNumber
+    let ibanValidator = RegexValidator.iban
+    let phoneNumberValidator = RegexValidator.phone
 
     var body: some View {
         ScrollView {
@@ -24,18 +24,17 @@ struct FacetedBuilderView: View {
                     .font(.title)
                 Divider()
 
-                // Example Pill Field without Validation
+                PillFieldBuilder(
+                    contentBuilder: PillFieldContentBuilder(text: $nameSurname, placeholderText: "Enter your name surname"),
+                    appearanceModifier: PillFieldAppearanceModifier(type: .custom(sfSymbolName: "person.3"), themeStyle: .ocean)
+                ).build()
+                
                 PillFieldBuilder(
                     contentBuilder: PillFieldContentBuilder(text: $addressText, placeholderText: "Enter your address"),
-                    appearanceBuilder: PillFieldAppearanceBuilder(type: .custom(sfSymbolName: "location.circle"), themeStyle: .ocean)
+                    appearanceModifier: PillFieldAppearanceModifier(type: .custom(sfSymbolName: "location.circle"), themeStyle: .ocean)
                 ).build()
 
-                // Example Pill Field with Validation
-                PillFieldBuilder(
-                    contentBuilder: PillFieldContentBuilder(text: $addressText, placeholderText: "Enter a number with max 5 digits"),
-                    appearanceBuilder: PillFieldAppearanceBuilder(type: .rightArrow, themeStyle: .ocean),
-                    validationBuilder: PillFieldValidationBuilder(validator: fiveDigitsNumberValidator, placeholderText: "Enter a number")
-                ).build()
+               
             }
             .padding(.horizontal, 16)
         }

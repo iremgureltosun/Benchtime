@@ -6,18 +6,15 @@
 //
 
 import Foundation
-import Observation
-
-@Observable final class FieldValidator {
-    let validator: RegexValidator
-
-   // var value: String
-
-    init(validator: RegexValidator, _ value: String) {
-        self.validator = validator
-        self.value = value
-    }
-}
+//import Observation
+//
+//@Observable final class FieldValidator {
+//    let validator: RegexValidator
+//
+//    init(validator: RegexValidator) {
+//        self.validator = validator
+//    }
+//}
 
 struct RegexValidator {
     let pattern: String

@@ -14,11 +14,9 @@ struct SearchView: View {
     @State private var showList: Bool = true
     var body: some View {
         VStack {
-            PillFieldBuilder(text: $viewModel.searchText, placeholderText: "Type your search", type: .searchIcon, themeStyle: .desert, buttonHandler: {
-                // Initial write
-                showList = true
-                viewModel.saveMementoIfNotExists()
-            })
+            PillFieldBuilder(contentBuilder: PillFieldContentBuilder(text: $viewModel.searchText, placeholderText: "Type your search"),
+                             appearanceModifier: PillFieldAppearanceModifier(type: .downArrow, themeStyle: .desert),
+                             validationModifier: nil)
             .build()
 
             if viewModel.list.count > 0 && !viewModel.searchText.isEmpty && showList {

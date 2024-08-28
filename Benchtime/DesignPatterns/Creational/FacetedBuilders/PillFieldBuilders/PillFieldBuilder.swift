@@ -8,27 +8,26 @@
 import SwiftUI
 
 struct PillFieldBuilder {
-    private var contentBuilder: PillFieldContentBuilder
-    private var appearanceBuilder: PillFieldAppearanceBuilder
-    private var validationBuilder: PillFieldValidationBuilder?
+    private let contentBuilder: PillFieldContentBuilder
+    private let appearanceModifier: PillFieldAppearanceModifier
+    private let validationModifier: PillFieldValidationModifier?
 
-    init(contentBuilder: PillFieldContentBuilder, appearanceBuilder: PillFieldAppearanceBuilder, validationBuilder: PillFieldValidationBuilder? = nil) {
+    init(contentBuilder: PillFieldContentBuilder, appearanceModifier: PillFieldAppearanceModifier, validationModifier: PillFieldValidationModifier? = nil) {
         self.contentBuilder = contentBuilder
-        self.appearanceBuilder = appearanceBuilder
-        self.validationBuilder = validationBuilder
+        self.appearanceModifier = appearanceModifier
+        self.validationModifier = validationModifier
     }
 
     func build() -> some View {
-        VStack(alignment: .leading) {
-            contentBuilder.buildContent()
-            appearanceBuilder.buildAppearance()
-
-            if let validationBuilder = validationBuilder {
-                validationBuilder.buildValidatedField()
-            }
-        }
-        .padding()
+        contentBuilder.buildContent()
+            .modifier(appearanceModifier)
+            .modifierIf(validationModifier != nil, apply: { $0.modifier(validationModifier!) })
     }
 }
 
+extension View {
+    func modifierIf<Content: View>(_ condition: Bool, apply modifier: (Self) -> Content) -> some View {
+        condition ? AnyView(modifier(self)) : AnyView(self)
+    }
+}
 
