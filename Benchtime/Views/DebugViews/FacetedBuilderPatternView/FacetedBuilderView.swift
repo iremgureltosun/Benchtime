@@ -34,6 +34,11 @@ struct FacetedBuilderView: View {
                 ).build()
                 
                 PillFieldBuilder(
+                    contentBuilder: PillFieldContentBuilder(contentModel: $nameSurnameContentModel, behaviourType: .placeHolderAlwaysOnTop),
+                    appearanceModifier: PillFieldAppearanceModifier(iconsType: .withTrailingIcon(personIcon), themeStyle: .ocean)
+                ).build()
+                
+                PillFieldBuilder(
                     contentBuilder: PillFieldContentBuilder(contentModel: $addressContentModel),
                     appearanceModifier: PillFieldAppearanceModifier(iconsType: .withLeadingIcon(locationIcon), themeStyle: .desert)
                 ).build()

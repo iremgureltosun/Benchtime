@@ -39,48 +39,47 @@ fileprivate struct TextFieldView: View {
     }
 
     @ViewBuilder private var displayInputArea: some View {
-//        RoundedRectangle(cornerRadius: 20)
-//            .strokeBorder(.black, lineWidth: 1)
-//            .frame(height: 60)
-//            .background(
-//                RoundedRectangle(cornerRadius: 20)
-//                    .fill(.indigo)
-//            )
-//            .overlay {
-                VStack {
-                    switch behaviourType {
-                    case .placeholderOnTopWhenFilled:
-                        if contentModel.isTyping {
-                            microPlaceholder
-                        }
-                    case .placeHolderAlwaysOnTop:
-
-                        microPlaceholder
-
-                        ZStack {
-                            if contentModel.text.isEmpty && !isFocused {
-                                Text(contentModel.placeholderText)
-                                    .font(.caption)
-                                    .foregroundColor(.gray) // Optional: Change placeholder color
-                            }
-                            TextField("", text: $contentModel.text)
-                                .focused($isFocused)
-                                .font(.subheadline)
-                        }
-                    case .stable:
-
-                        TextField(contentModel.placeholderText, text: $contentModel.text)
-                            .focused($isFocused)
-                            .font(.subheadline)
-                    }
+        VStack {
+            switch behaviourType {
+            case .placeholderOnTopWhenFilled:
+                if contentModel.isTyping {
+                    microPlaceholder
                 }
-                .padding()
-           // }
+                ZStack(alignment: .leading) {
+                    if !contentModel.isTyping {
+                        Text(contentModel.placeholderText)
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+                    TextField("", text: $contentModel.text)
+                        .focused($isFocused)
+                        .font(.subheadline)
+                }
+            case .placeHolderAlwaysOnTop:
+
+                microPlaceholder
+
+                TextField("", text: $contentModel.text)
+                    .focused($isFocused)
+                    .font(.subheadline)
+
+            case .stable:
+
+                TextField(contentModel.placeholderText, text: $contentModel.text)
+                    .focused($isFocused)
+                    .font(.subheadline)
+            }
+        }
+        .padding()
     }
 
     @ViewBuilder private var microPlaceholder: some View {
-        Text(contentModel.placeholderText)
-            .font(.caption)
-            .foregroundColor(.white)
+        HStack {
+            Text(contentModel.placeholderText)
+                .font(.caption)
+                .foregroundColor(.black)
+            Spacer()
+        }
+        .frame(height: 25)
     }
 }

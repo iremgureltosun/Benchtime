@@ -25,12 +25,12 @@ struct PillFieldAppearanceModifier: ViewModifier {
                     .fill(.bar)
             )
             .overlay {
-                ZStack {
+                ZStack(alignment: .leading) {
                     content
                         .padding([.top, .bottom], 8)
                         .padding(.leading, leadingIconExists ? 40 : 12)
                         .padding(.trailing, trailingIconExists ? 40 : 12)
-                    
+
                     iconsView
                 }
             }
