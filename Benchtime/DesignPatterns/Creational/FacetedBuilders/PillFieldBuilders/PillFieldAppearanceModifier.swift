@@ -17,18 +17,23 @@ struct PillFieldAppearanceModifier: ViewModifier {
     }
 
     func body(content: Content) -> some View {
-        ZStack {
-            content
-                .padding([.top, .bottom], 8)
-                .padding(.leading, leadingIconExists ? 40 : 12)
-                .padding(.trailing, trailingIconExists ? 40 : 12)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.gray, lineWidth: 1)
+        RoundedRectangle(cornerRadius: 20)
+            .strokeBorder(.black, lineWidth: 1)
+            .frame(height: 60)
+            .background(
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(.bar)
+            )
+            .overlay {
+                ZStack {
+                    content
+                        .padding([.top, .bottom], 8)
+                        .padding(.leading, leadingIconExists ? 40 : 12)
+                        .padding(.trailing, trailingIconExists ? 40 : 12)
+                    
+                    iconsView
                 }
-
-            iconsView
-        }
+            }
     }
 
     private var leadingIconExists: Bool {

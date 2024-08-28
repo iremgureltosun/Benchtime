@@ -183,6 +183,7 @@
 		4DEB7FBA2C1341E50055C12C /* ListUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB7FB92C1341E50055C12C /* ListUsersView.swift */; };
 		6A8824DA2C7EF989005FD729 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 6A8824D92C7EF989005FD729 /* Resolver */; };
 		6AFD06222C7F0AE800773B65 /* PillfieldContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD06212C7F0AE800773B65 /* PillfieldContentModel.swift */; };
+		6AFD06242C7F11F200773B65 /* PillfieldBehaviourType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD06232C7F11F200773B65 /* PillfieldBehaviourType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -371,6 +372,7 @@
 		4DEB7FB72C1340CE0055C12C /* BookingEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingEndpoint.swift; sourceTree = "<group>"; };
 		4DEB7FB92C1341E50055C12C /* ListUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersView.swift; sourceTree = "<group>"; };
 		6AFD06212C7F0AE800773B65 /* PillfieldContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillfieldContentModel.swift; sourceTree = "<group>"; };
+		6AFD06232C7F11F200773B65 /* PillfieldBehaviourType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillfieldBehaviourType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -941,7 +943,6 @@
 			children = (
 				4DB90EE12C295A5600B3977C /* Constants.swift */,
 				4D90DE3E2BFB7379004E40A2 /* ThemeStyle.swift */,
-				4DB90F012C2AA2A700B3977C /* PillFieldIconsType.swift */,
 				4DB90F042C2AA37900B3977C /* Route.swift */,
 			);
 			path = CommonEnums;
@@ -950,11 +951,11 @@
 		4DB90F062C2AA95300B3977C /* PillFieldBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				6AFD06252C7F121100773B65 /* ModelsEnums */,
 				4DB90EFF2C2AA23B00B3977C /* PillFieldBuilder.swift */,
 				4D6505BD2C7E056D0027E802 /* PillFieldValidationModifier.swift */,
 				4D6505BF2C7E05870027E802 /* PillfieldContentBuilder.swift */,
 				4D6505C12C7E05A60027E802 /* PillFieldAppearanceModifier.swift */,
-				6AFD06212C7F0AE800773B65 /* PillfieldContentModel.swift */,
 			);
 			path = PillFieldBuilders;
 			sourceTree = "<group>";
@@ -1104,6 +1105,16 @@
 			path = Booking;
 			sourceTree = "<group>";
 		};
+		6AFD06252C7F121100773B65 /* ModelsEnums */ = {
+			isa = PBXGroup;
+			children = (
+				4DB90F012C2AA2A700B3977C /* PillFieldIconsType.swift */,
+				6AFD06232C7F11F200773B65 /* PillfieldBehaviourType.swift */,
+				6AFD06212C7F0AE800773B65 /* PillfieldContentModel.swift */,
+			);
+			path = ModelsEnums;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1212,6 +1223,7 @@
 				4D7DA63D2BFDE232007948BF /* ApplicationManager.swift in Sources */,
 				4D41F4022C327B770034203B /* Decorator.swift in Sources */,
 				4DB90F052C2AA37900B3977C /* Route.swift in Sources */,
+				6AFD06242C7F11F200773B65 /* PillfieldBehaviourType.swift in Sources */,
 				4D3A58622C353A06007A6622 /* CharacterStyleFactory.swift in Sources */,
 				4DC352592C17223D0091A96E /* AppointmentsView.swift in Sources */,
 				4D7DA63F2BFDE2F6007948BF /* CharacterDetailView.swift in Sources */,

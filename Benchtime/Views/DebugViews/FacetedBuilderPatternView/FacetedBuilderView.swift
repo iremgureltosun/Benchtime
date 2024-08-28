@@ -29,7 +29,7 @@ struct FacetedBuilderView: View {
                 Divider()
 
                 PillFieldBuilder(
-                    contentBuilder: PillFieldContentBuilder(contentModel: $nameSurnameContentModel),
+                    contentBuilder: PillFieldContentBuilder(contentModel: $nameSurnameContentModel, behaviourType: .placeholderOnTopWhenFilled),
                     appearanceModifier: PillFieldAppearanceModifier(iconsType: .withTrailingIcon(personIcon), themeStyle: .ocean)
                 ).build()
                 

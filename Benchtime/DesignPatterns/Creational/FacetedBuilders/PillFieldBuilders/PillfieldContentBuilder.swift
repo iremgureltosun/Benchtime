@@ -8,55 +8,79 @@
 import SwiftUI
 
 struct PillFieldContentBuilder {
-    
+    private let behaviourType: PillfieldBehaviourType
     @Binding private var contentModel: PillFieldContentModel
 
-    init(contentModel: Binding<PillFieldContentModel>) {
+    init(contentModel: Binding<PillFieldContentModel>, behaviourType: PillfieldBehaviourType = .stable) {
         _contentModel = contentModel
+        self.behaviourType = behaviourType
     }
 
     func build() -> some View {
-        TextFieldView(contentModel: $contentModel)
+        TextFieldView(contentModel: $contentModel, behaviourType: behaviourType)
     }
 }
 
 fileprivate struct TextFieldView: View {
     @FocusState private var isFocused: Bool
     @Binding var contentModel: PillFieldContentModel
-    
-    init(contentModel: Binding<PillFieldContentModel>) {
+    private let behaviourType: PillfieldBehaviourType
+
+    init(contentModel: Binding<PillFieldContentModel>, behaviourType: PillfieldBehaviourType) {
         _contentModel = contentModel
+        self.behaviourType = behaviourType
     }
-    
+
     var body: some View {
-        ZStack(alignment: .leading) {
-            if contentModel.text.isEmpty && !isFocused {
-                Text(contentModel.placeholderText)
-                    .font(.caption)
-                    .foregroundColor(.gray) // Optional: Change placeholder color
+        displayInputArea
+            .onChange(of: isFocused) { _, newValue in
+                contentModel.isTyping = newValue
             }
-            TextField("", text: $contentModel.text)
-                .focused($isFocused)
-                .font(.subheadline)
-        }
-        .onChange(of: isFocused) { _, newValue in
-            contentModel.isTyping = newValue
-        }
+    }
+
+    @ViewBuilder private var displayInputArea: some View {
+//        RoundedRectangle(cornerRadius: 20)
+//            .strokeBorder(.black, lineWidth: 1)
+//            .frame(height: 60)
+//            .background(
+//                RoundedRectangle(cornerRadius: 20)
+//                    .fill(.indigo)
+//            )
+//            .overlay {
+                VStack {
+                    switch behaviourType {
+                    case .placeholderOnTopWhenFilled:
+                        if contentModel.isTyping {
+                            microPlaceholder
+                        }
+                    case .placeHolderAlwaysOnTop:
+
+                        microPlaceholder
+
+                        ZStack {
+                            if contentModel.text.isEmpty && !isFocused {
+                                Text(contentModel.placeholderText)
+                                    .font(.caption)
+                                    .foregroundColor(.gray) // Optional: Change placeholder color
+                            }
+                            TextField("", text: $contentModel.text)
+                                .focused($isFocused)
+                                .font(.subheadline)
+                        }
+                    case .stable:
+
+                        TextField(contentModel.placeholderText, text: $contentModel.text)
+                            .focused($isFocused)
+                            .font(.subheadline)
+                    }
+                }
+                .padding()
+           // }
+    }
+
+    @ViewBuilder private var microPlaceholder: some View {
+        Text(contentModel.placeholderText)
+            .font(.caption)
+            .foregroundColor(.white)
     }
 }
-
-//struct PillFieldContentModel {
-//    var text: String
-//    var placeholderText: String
-//    var isTyping: Bool
-//    
-//    init(text: String, placeholderText: String, isTyping: Bool = false) {
-//        self.text = text
-//        self.placeholderText = placeholderText
-//        self.isTyping = isTyping
-//    }
-//}
-
-
-
-
