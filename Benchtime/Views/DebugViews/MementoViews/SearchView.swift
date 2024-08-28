@@ -14,12 +14,12 @@ struct SearchView: View {
     @State private var showList: Bool = true
     var body: some View {
         VStack {
-            PillFieldBuilder(contentBuilder: PillFieldContentBuilder(text: $viewModel.searchText, placeholderText: "Type your search"),
+            PillFieldBuilder(contentBuilder: PillFieldContentBuilder(contentModel: $viewModel.searchContentModel),
                              appearanceModifier: PillFieldAppearanceModifier(iconsType: .withTrailingIcon(Image(systemName: "chevron.down")) ,themeStyle: .desert),
                              validationModifier: nil)
             .build()
 
-            if viewModel.list.count > 0 && !viewModel.searchText.isEmpty && showList {
+            if viewModel.list.count > 0 && !viewModel.searchContentModel.text.isEmpty && showList {
                 VStack {
                     searchHistoryRemoveAllButton
 
@@ -33,7 +33,7 @@ struct SearchView: View {
                             .listRowSeparator(.hidden, edges: /*@START_MENU_TOKEN@*/ .all/*@END_MENU_TOKEN@*/) // Remove divider from cells
                             .onTapGesture {
                                 showList = false
-                                viewModel.searchText = searchedText
+                                viewModel.searchContentModel.text = searchedText
                             }
                     }
                     .listStyle(.plain)

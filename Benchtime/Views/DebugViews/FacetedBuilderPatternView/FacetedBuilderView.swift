@@ -8,11 +8,6 @@
 import SwiftUI
 
 struct FacetedBuilderView: View {
-    @State private var nameSurname: String = ""
-    @State private var password: String = ""
-    @State private var height: String = ""
-    @State private var addressText: String = ""
-
     let fiveDigitsNumberValidator = RegexValidator.fiveDigitsNumber
     let ibanValidator = RegexValidator.iban
     let phoneNumberValidator = RegexValidator.phone
@@ -22,6 +17,10 @@ struct FacetedBuilderView: View {
     private let minusIconon = Image(systemName: "minus.circle.fill")
     private let plusIcon = Image(systemName: "plus.circle.fill")
     
+    @State private var nameSurnameContentModel = PillFieldContentModel(text: "", placeholderText: "Enter your name surname")
+    @State private var addressContentModel = PillFieldContentModel(text: "", placeholderText: "Enter your address")
+    @State private var heightContentModel = PillFieldContentModel(text: "", placeholderText: "Enter your height")
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
@@ -30,17 +29,17 @@ struct FacetedBuilderView: View {
                 Divider()
 
                 PillFieldBuilder(
-                    contentBuilder: PillFieldContentBuilder(text: $nameSurname, placeholderText: "Enter your name surname"),
+                    contentBuilder: PillFieldContentBuilder(contentModel: $nameSurnameContentModel),
                     appearanceModifier: PillFieldAppearanceModifier(iconsType: .withTrailingIcon(personIcon), themeStyle: .ocean)
                 ).build()
                 
                 PillFieldBuilder(
-                    contentBuilder: PillFieldContentBuilder(text: $addressText, placeholderText: "Enter your address"),
+                    contentBuilder: PillFieldContentBuilder(contentModel: $addressContentModel),
                     appearanceModifier: PillFieldAppearanceModifier(iconsType: .withLeadingIcon(locationIcon), themeStyle: .desert)
                 ).build()
                 
                 PillFieldBuilder(
-                    contentBuilder: PillFieldContentBuilder(text: $height, placeholderText: "Enter your height"),
+                    contentBuilder: PillFieldContentBuilder(contentModel: $heightContentModel),
                     appearanceModifier: PillFieldAppearanceModifier(iconsType: .withIconsOnBothSide(leadingIcon: minusIconon, trailingIcon: plusIcon), themeStyle: .desert)
                 ).build()
 

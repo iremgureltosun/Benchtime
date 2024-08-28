@@ -19,7 +19,7 @@ struct PillFieldBuilder {
     }
 
     func build() -> some View {
-        contentBuilder.buildContent()
+        contentBuilder.build()
             .modifier(appearanceModifier)
             .modifierIf(validationModifier != nil, apply: { $0.modifier(validationModifier!) })
     }

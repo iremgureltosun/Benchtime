@@ -12,7 +12,7 @@ import Observation
     static let shared = SearchViewModel()
     private init() {}
 
-    var searchText = ""
+    var searchContentModel = PillFieldContentModel(text: "", placeholderText: "Enter a word to search for")
 
     let originator = Originator(initialState: "")
     let careTaker = CareTaker<String>()
@@ -20,9 +20,9 @@ import Observation
     var list: [String] = [] // Computed properties are not re-rendered in Observation
 
     func saveMementoIfNotExists() {
-        if !list.contains(where: { $0 == searchText }) {
-            originator.setState(searchText)
-            careTaker.save(Memento(state: searchText))
+        if !list.contains(where: { $0 == searchContentModel.text }) {
+            originator.setState(searchContentModel.text)
+            careTaker.save(Memento(state: searchContentModel.text))
         }
         list = careTaker.mementos.map { $0.state }
     }
