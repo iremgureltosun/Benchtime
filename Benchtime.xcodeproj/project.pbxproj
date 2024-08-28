@@ -184,6 +184,7 @@
 		6A8824DA2C7EF989005FD729 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 6A8824D92C7EF989005FD729 /* Resolver */; };
 		6AFD06222C7F0AE800773B65 /* PillfieldContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD06212C7F0AE800773B65 /* PillfieldContentModel.swift */; };
 		6AFD06242C7F11F200773B65 /* PillfieldBehaviourType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD06232C7F11F200773B65 /* PillfieldBehaviourType.swift */; };
+		6AFD06292C7F1E0300773B65 /* StableModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFD06282C7F1E0300773B65 /* StableModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -373,6 +374,7 @@
 		4DEB7FB92C1341E50055C12C /* ListUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUsersView.swift; sourceTree = "<group>"; };
 		6AFD06212C7F0AE800773B65 /* PillfieldContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillfieldContentModel.swift; sourceTree = "<group>"; };
 		6AFD06232C7F11F200773B65 /* PillfieldBehaviourType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillfieldBehaviourType.swift; sourceTree = "<group>"; };
+		6AFD06282C7F1E0300773B65 /* StableModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -956,6 +958,7 @@
 				4D6505BD2C7E056D0027E802 /* PillFieldValidationModifier.swift */,
 				4D6505BF2C7E05870027E802 /* PillfieldContentBuilder.swift */,
 				4D6505C12C7E05A60027E802 /* PillFieldAppearanceModifier.swift */,
+				6AFD06282C7F1E0300773B65 /* StableModifier.swift */,
 			);
 			path = PillFieldBuilders;
 			sourceTree = "<group>";
@@ -1331,6 +1334,7 @@
 				4DEB7FAD2C1332A30055C12C /* UserModel.swift in Sources */,
 				4D101A302C2ED12800D3C92C /* MementoDoUndoView.swift in Sources */,
 				4D6FE0F62C05B4ED005BC361 /* ProfileRowView.swift in Sources */,
+				6AFD06292C7F1E0300773B65 /* StableModifier.swift in Sources */,
 				4D1086B22C340B9F00510B4A /* Text+.swift in Sources */,
 				4DB90EF32C29AA6600B3977C /* PlainTextFieldBuilder.swift in Sources */,
 				4D1086B42C340BD500510B4A /* List+.swift in Sources */,

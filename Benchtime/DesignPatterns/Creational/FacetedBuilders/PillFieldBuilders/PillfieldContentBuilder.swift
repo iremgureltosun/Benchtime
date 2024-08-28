@@ -21,6 +21,8 @@ struct PillFieldContentBuilder {
     }
 }
 
+import SwiftUI
+
 fileprivate struct TextFieldView: View {
     @FocusState private var isFocused: Bool
     @Binding var contentModel: PillFieldContentModel
@@ -32,54 +34,24 @@ fileprivate struct TextFieldView: View {
     }
 
     var body: some View {
-        displayInputArea
-            .onChange(of: isFocused) { _, newValue in
-                contentModel.isTyping = newValue
-            }
-    }
-
-    @ViewBuilder private var displayInputArea: some View {
-        VStack {
+        Group {
             switch behaviourType {
             case .placeholderOnTopWhenFilled:
-                if contentModel.isTyping {
-                    microPlaceholder
-                }
-                ZStack(alignment: .leading) {
-                    if !contentModel.isTyping {
-                        Text(contentModel.placeholderText)
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                    }
-                    TextField("", text: $contentModel.text)
-                        .focused($isFocused)
-                        .font(.subheadline)
-                }
-            case .placeHolderAlwaysOnTop:
-
-                microPlaceholder
-
                 TextField("", text: $contentModel.text)
-                    .focused($isFocused)
-                    .font(.subheadline)
-
+                    .modifier(PlaceholderOnTopWhenFilledModifier(contentModel: $contentModel))
+            case .placeHolderAlwaysOnTop:
+                TextField("", text: $contentModel.text)
+                    .modifier(PlaceholderAlwaysOnTopModifier(contentModel: $contentModel))
             case .stable:
-
                 TextField(contentModel.placeholderText, text: $contentModel.text)
-                    .focused($isFocused)
-                    .font(.subheadline)
+                    .modifier(StableModifier(contentModel: $contentModel))
             }
         }
-        .padding()
-    }
-
-    @ViewBuilder private var microPlaceholder: some View {
-        HStack {
-            Text(contentModel.placeholderText)
-                .font(.caption)
-                .foregroundColor(.black)
-            Spacer()
+        .focused($isFocused)
+        .font(.subheadline)
+        .onChange(of: isFocused) { newValue in
+            contentModel.isTyping = newValue
         }
-        .frame(height: 25)
     }
 }
+
