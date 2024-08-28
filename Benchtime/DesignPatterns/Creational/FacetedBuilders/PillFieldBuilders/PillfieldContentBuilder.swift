@@ -18,6 +18,5 @@ struct PillFieldContentBuilder {
 
     func buildContent() -> some View {
         TextField(placeholderText, text: $text)
-            .textFieldStyle(.roundedBorder)
     }
 }

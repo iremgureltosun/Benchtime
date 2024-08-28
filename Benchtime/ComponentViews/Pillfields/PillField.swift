@@ -10,11 +10,11 @@ import SwiftUI
 struct PillField: View {
     @Binding private var text: String
     private let placeholderText: String
-    private let type: PillFieldType
+    private let type: PillFieldIconsType
     private let themeStyle: ThemeStyle
     var buttonHandler: () -> Void
 
-    init(text: Binding<String>, placeholderText: String, type: PillFieldType, themeStyle: ThemeStyle, buttonHandler: @escaping () -> Void) {
+    init(text: Binding<String>, placeholderText: String, type: PillFieldIconsType, themeStyle: ThemeStyle, buttonHandler: @escaping () -> Void) {
         _text = text
         self.placeholderText = placeholderText
         self.type = type
@@ -32,7 +32,7 @@ struct PillField: View {
         .overlay(
             HStack {
                 Spacer()
-                type.image
+                Image(systemName: "plus.square")
                     .resizable()
                     .frame(width: 30, height: 30)
                     .foregroundColor(themeStyle.colorCatalog.backgroundColor)
@@ -45,6 +45,3 @@ struct PillField: View {
     }
 }
 
-#Preview {
-    PillField(text: .constant(""), placeholderText: "Search", type: .searchIcon, themeStyle: .ocean, buttonHandler: {})
-}

@@ -146,7 +146,7 @@
 		4DB90EFC2C29AB8300B3977C /* FacetedBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90EFB2C29AB8300B3977C /* FacetedBuilderView.swift */; };
 		4DB90EFE2C2A9FB500B3977C /* PillField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90EFD2C2A9FB500B3977C /* PillField.swift */; };
 		4DB90F002C2AA23B00B3977C /* PillFieldBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90EFF2C2AA23B00B3977C /* PillFieldBuilder.swift */; };
-		4DB90F022C2AA2A700B3977C /* PillFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F012C2AA2A700B3977C /* PillFieldType.swift */; };
+		4DB90F022C2AA2A700B3977C /* PillFieldIconsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F012C2AA2A700B3977C /* PillFieldIconsType.swift */; };
 		4DB90F052C2AA37900B3977C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F042C2AA37900B3977C /* Route.swift */; };
 		4DB90F082C2AA97900B3977C /* ValidatingPillField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F072C2AA97900B3977C /* ValidatingPillField.swift */; };
 		4DB90F0A2C2AAAD300B3977C /* RegexValidator+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB90F092C2AAAD300B3977C /* RegexValidator+.swift */; };
@@ -332,7 +332,7 @@
 		4DB90EFB2C29AB8300B3977C /* FacetedBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacetedBuilderView.swift; sourceTree = "<group>"; };
 		4DB90EFD2C2A9FB500B3977C /* PillField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillField.swift; sourceTree = "<group>"; };
 		4DB90EFF2C2AA23B00B3977C /* PillFieldBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillFieldBuilder.swift; sourceTree = "<group>"; };
-		4DB90F012C2AA2A700B3977C /* PillFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillFieldType.swift; sourceTree = "<group>"; };
+		4DB90F012C2AA2A700B3977C /* PillFieldIconsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillFieldIconsType.swift; sourceTree = "<group>"; };
 		4DB90F042C2AA37900B3977C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		4DB90F072C2AA97900B3977C /* ValidatingPillField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatingPillField.swift; sourceTree = "<group>"; };
 		4DB90F092C2AAAD300B3977C /* RegexValidator+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegexValidator+.swift"; sourceTree = "<group>"; };
@@ -939,7 +939,7 @@
 			children = (
 				4DB90EE12C295A5600B3977C /* Constants.swift */,
 				4D90DE3E2BFB7379004E40A2 /* ThemeStyle.swift */,
-				4DB90F012C2AA2A700B3977C /* PillFieldType.swift */,
+				4DB90F012C2AA2A700B3977C /* PillFieldIconsType.swift */,
 				4DB90F042C2AA37900B3977C /* Route.swift */,
 			);
 			path = CommonEnums;
@@ -1245,7 +1245,7 @@
 				4D78B2072BFC747A00BD56B0 /* RefreshableContentView.swift in Sources */,
 				4D3A586B2C353E7A007A6622 /* StyledText.swift in Sources */,
 				4D3A58782C355431007A6622 /* AnimalCell.swift in Sources */,
-				4DB90F022C2AA2A700B3977C /* PillFieldType.swift in Sources */,
+				4DB90F022C2AA2A700B3977C /* PillFieldIconsType.swift in Sources */,
 				4DB90EE42C295B6C00B3977C /* CustomButton.swift in Sources */,
 				4D90DE3C2BFB7343004E40A2 /* HeaderView.swift in Sources */,
 				4DB90EFE2C2A9FB500B3977C /* PillField.swift in Sources */,

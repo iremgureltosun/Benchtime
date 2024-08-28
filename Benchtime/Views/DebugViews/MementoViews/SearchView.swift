@@ -15,7 +15,7 @@ struct SearchView: View {
     var body: some View {
         VStack {
             PillFieldBuilder(contentBuilder: PillFieldContentBuilder(text: $viewModel.searchText, placeholderText: "Type your search"),
-                             appearanceModifier: PillFieldAppearanceModifier(type: .downArrow, themeStyle: .desert),
+                             appearanceModifier: PillFieldAppearanceModifier(iconsType: .withTrailingIcon(Image(systemName: "chevron.down")) ,themeStyle: .desert),
                              validationModifier: nil)
             .build()
 
